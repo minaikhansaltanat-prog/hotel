@@ -1538,6 +1538,35 @@
   document.querySelectorAll(".mobile-link").forEach(function(a){ a.addEventListener("click", closeMenu); });
   document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeMenu(); });
 
+  /* ---------- FLOATING CONTACT BUTTON ---------- */
+  var fabMain = document.getElementById("fab-main");
+  var fabMenu = document.getElementById("fab-menu");
+  var fabChatIcon = document.getElementById("fab-icon-chat");
+  var fabCloseIcon = document.getElementById("fab-icon-close");
+  fabMain.addEventListener("click", function(e){
+    e.stopPropagation();
+    var open = fabMenu.classList.toggle("open");
+    fabMain.setAttribute("aria-expanded", open ? "true" : "false");
+    fabChatIcon.classList.toggle("hidden", open);
+    fabCloseIcon.classList.toggle("hidden", !open);
+  });
+  document.addEventListener("click", function(e){
+    if(!fabWrapEl.contains(e.target)){
+      fabMenu.classList.remove("open");
+      fabMain.setAttribute("aria-expanded", "false");
+      fabChatIcon.classList.remove("hidden");
+      fabCloseIcon.classList.add("hidden");
+    }
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && fabMenu.classList.contains("open")){
+      fabMenu.classList.remove("open");
+      fabMain.setAttribute("aria-expanded", "false");
+      fabChatIcon.classList.remove("hidden");
+      fabCloseIcon.classList.add("hidden");
+    }
+  });
+
   /* ---------- REVEAL ON SCROLL ---------- */
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
