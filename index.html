@@ -424,12 +424,12 @@
   </div>
 
   <div class="container-x flex items-center justify-between gap-4" id="header-main-row">
-    <a href="#home" class="flex items-center gap-2.5 min-w-0 shrink-0 group" aria-label="Business Hotel Almaty">
+    <a href="#home" class="flex items-center gap-2.5 min-w-0 shrink-0 group" aria-label="Бизнес-отель Алматы" data-i18n-aria="header.brandName">
       <img src="images/logo-emblem.png" alt="" width="176" height="159" class="shrink-0 h-11 w-auto">
-      <span class="sm:hidden font-display text-[.98rem] leading-none text-[var(--text)] tracking-tight whitespace-nowrap">Business Hotel</span>
+      <span class="sm:hidden font-display text-[.98rem] leading-none text-[var(--text)] tracking-tight whitespace-nowrap" data-i18n="header.brandShort">Бизнес-отель</span>
       <span class="hidden sm:flex flex-col leading-none whitespace-nowrap">
-        <span class="font-display text-[1.2rem] text-[var(--red)] tracking-tight">BUSINESS HOTEL <span class="text-[var(--text)]">ALMATY</span></span>
-        <span class="header-logo-sub text-[.62rem] font-bold tracking-[.2em] text-[var(--text-dim)] mt-1" style="font-family:'Manrope',sans-serif">— 4 ЖҰЛДЫЗДЫ ҚОНАҚ ҮЙ — <span class="text-[var(--gold)]">★★★★</span></span>
+        <span class="font-display text-[1.2rem] text-[var(--red)] tracking-tight" data-i18n="header.brandName">БИЗНЕС-ОТЕЛЬ <span class="text-[var(--text)]">АЛМАТЫ</span></span>
+        <span class="header-logo-sub text-[.62rem] font-bold tracking-[.2em] text-[var(--text-dim)] mt-1" style="font-family:'Manrope',sans-serif" data-i18n="header.brandSub">— 4-ЗВЁЗДОЧНЫЙ ОТЕЛЬ — <span class="text-[var(--gold)]">★★★★</span></span>
       </span>
     </a>
 
@@ -1251,6 +1251,9 @@
     "topbar.address":{ru:"Алматы, проспект Райымбека, 298а",kz:"Алматы, Райымбек даңғылы, 298а",en:"Almaty, Raiymbek Ave, 298a",zh:"阿拉木图，赖姆别克大道298a"},
 
     "brand.fullName":{ru:"Международный Гранд-отель «Шёлковый путь — Один пояс, один путь»",kz:"Халықаралық Гранд-отель «Жібек жолы — Бір белдеу, бір жол»",en:"International Grand Hotel \"Silk Road — One Belt, One Road\"",zh:"国际丝绸之路大酒店\"一带一路\""},
+    "header.brandShort":{ru:"Бизнес-отель",kz:"Бизнес қонақ үй",en:"Business Hotel",zh:"商务酒店"},
+    "header.brandName":{ru:"БИЗНЕС-ОТЕЛЬ <span class=\"text-[var(--text)]\">АЛМАТЫ</span>",kz:"БИЗНЕС ҚОНАҚ ҮЙ <span class=\"text-[var(--text)]\">АЛМАТЫ</span>",en:"BUSINESS HOTEL <span class=\"text-[var(--text)]\">ALMATY</span>",zh:"商务酒店 <span class=\"text-[var(--text)]\">阿拉木图</span>"},
+    "header.brandSub":{ru:"— 4-ЗВЁЗДОЧНЫЙ ОТЕЛЬ — <span class=\"text-[var(--gold)]\">★★★★</span>",kz:"— 4 ЖҰЛДЫЗДЫ ҚОНАҚ ҮЙ — <span class=\"text-[var(--gold)]\">★★★★</span>",en:"— 4-STAR HOTEL — <span class=\"text-[var(--gold)]\">★★★★</span>",zh:"— 四星级酒店 — <span class=\"text-[var(--gold)]\">★★★★</span>"},
     "hero.titleName":{ru:"Международный Гранд-отель<br><span class=\"text-[var(--red)]\">«Шёлковый путь — Один пояс, один путь»</span>",kz:"Халықаралық Гранд-отель<br><span class=\"text-[var(--red)]\">«Жібек жолы — Бір белдеу, бір жол»</span>",en:"International Grand Hotel<br><span class=\"text-[var(--red)]\">\"Silk Road — One Belt, One Road\"</span>",zh:"国际丝绸之路大酒店<br><span class=\"text-[var(--red)]\">\"一带一路\"</span>"},
     "meta.title":{ru:"Международный Гранд-отель «Шёлковый путь — Один пояс, один путь» — Алматы",kz:"Халықаралық Гранд-отель «Жібек жолы — Бір белдеу, бір жол» — Алматы",en:"International Grand Hotel \"Silk Road — One Belt, One Road\" — Almaty",zh:"国际丝绸之路大酒店\"一带一路\"——阿拉木图"},
     "meta.description":{ru:"Международный Гранд-отель «Шёлковый путь — Один пояс, один путь» — 4* бизнес-отель в Алматы. 118 номеров, конференц-залы, банкетный зал, Karaoke Club. Рейтинг 4.9 на 2ГИС.",kz:"Халықаралық Гранд-отель «Жібек жолы — Бір белдеу, бір жол» — Алматыдағы 4 жұлдызды бизнес-отель. 118 нөмір, конференц-залдар, банкет залы, Karaoke Club. 2ГИС бойынша рейтинг 4.9.",en:"International Grand Hotel \"Silk Road — One Belt, One Road\" — a 4-star business hotel in Almaty. 118 rooms, conference halls, a banquet hall, Karaoke Club. 4.9 rating on 2GIS.",zh:"国际丝绸之路大酒店\"一带一路\"——阿拉木图四星级商务酒店。118间客房、会议厅、宴会厅、卡拉OK俱乐部。2GIS评分4.9。"},
@@ -1428,6 +1431,11 @@
       var key = el.getAttribute("data-i18n-placeholder");
       var entry = STRINGS[key];
       if(entry && entry[lang] !== undefined){ el.setAttribute("placeholder", entry[lang]); }
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
+      var key = el.getAttribute("data-i18n-aria");
+      var entry = STRINGS[key];
+      if(entry && entry[lang] !== undefined){ el.setAttribute("aria-label", entry[lang].replace(/<[^>]+>/g, "")); }
     });
     document.querySelectorAll(".lang-dd-item, .lang-btn-footer").forEach(function(btn){
       btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
