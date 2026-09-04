@@ -26,7 +26,10 @@
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  html,body{max-width:100%;overflow-x:hidden;}
+  /* overflow-x:clip (not hidden) — clips stray horizontal overflow without
+     turning body into a scroll container, which would break the sticky
+     header (position:sticky needs the viewport, not body, as its scroller). */
+  html,body{max-width:100%;overflow-x:clip;}
   section[id]{scroll-margin-top:88px}
   body{
     background:var(--ink);
