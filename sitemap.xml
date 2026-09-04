@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://minaikhansaltanat-prog.github.io/hotel/</loc>
+    <loc>https://sicoinhotel.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://minaikhansaltanat-prog.github.io/hotel/#rooms</loc>
+    <loc>https://sicoinhotel.com/#rooms</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://minaikhansaltanat-prog.github.io/hotel/#conference</loc>
+    <loc>https://sicoinhotel.com/#conference</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://minaikhansaltanat-prog.github.io/hotel/#banquet</loc>
+    <loc>https://sicoinhotel.com/#banquet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://minaikhansaltanat-prog.github.io/hotel/#karaoke</loc>
+    <loc>https://sicoinhotel.com/#karaoke</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://minaikhansaltanat-prog.github.io/hotel/#gallery</loc>
+    <loc>https://sicoinhotel.com/#gallery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://minaikhansaltanat-prog.github.io/hotel/#reviews</loc>
+    <loc>https://sicoinhotel.com/#reviews</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://minaikhansaltanat-prog.github.io/hotel/#location</loc>
+    <loc>https://sicoinhotel.com/#location</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://minaikhansaltanat-prog.github.io/hotel/#booking</loc>
+    <loc>https://sicoinhotel.com/#booking</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
