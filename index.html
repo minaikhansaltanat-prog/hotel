@@ -1484,25 +1484,46 @@
   });
 
   /* ---------- STICKY HEADER: compact on scroll ---------- */
+  /* ---------- SCROLL: sticky-header compact state + active nav link ----------
+     Both used to be separate, unthrottled "scroll" listeners. Each one wrote
+     (toggled a class that animates header height) and the other then read
+     layout (offsetTop) on the very next listener call for the same event —
+     classic read-after-write layout thrashing, forced on every raw scroll
+     event (there can be dozens per second). That's what made the header
+     visibly judder while scrolling. Fixed by: batching both into a single
+     rAF-throttled handler (runs at most once per frame), caching section
+     offsets up front instead of re-reading offsetTop on every scroll tick,
+     and giving the compact-header toggle a hysteresis gap so it can't
+     flicker back and forth around one exact pixel threshold. */
   var siteHeader = document.getElementById("site-header");
-  function onHeaderScroll(){
-    if(window.scrollY > 40){ siteHeader.classList.add("is-scrolled"); }
-    else{ siteHeader.classList.remove("is-scrolled"); }
-  }
-  window.addEventListener("scroll", onHeaderScroll, {passive:true});
-  onHeaderScroll();
-
-  /* ---------- ACTIVE NAV LINK ON SCROLL ---------- */
   var navLinks = document.querySelectorAll(".nav-link[href^='#']");
   var navSections = Array.prototype.map.call(navLinks, function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
-  function onNavScroll(){
-    var pos = window.scrollY + 140;
-    var activeIdx = 0;
-    navSections.forEach(function(sec, i){ if(sec.offsetTop <= pos) activeIdx = i; });
-    navLinks.forEach(function(a, i){ a.classList.toggle("is-active", i === activeIdx); });
+  var sectionOffsets = [];
+  function measureSections(){
+    sectionOffsets = navSections.map(function(sec){ return sec.offsetTop; });
   }
-  window.addEventListener("scroll", onNavScroll, {passive:true});
-  onNavScroll();
+  measureSections();
+  window.addEventListener("resize", measureSections);
+  window.addEventListener("load", measureSections);
+
+  var headerCompact = false;
+  function updateOnScroll(){
+    var y = window.scrollY;
+    if(!headerCompact && y > 72){ headerCompact = true; siteHeader.classList.add("is-scrolled"); }
+    else if(headerCompact && y < 32){ headerCompact = false; siteHeader.classList.remove("is-scrolled"); }
+
+    var pos = y + 140;
+    var activeIdx = 0;
+    for(var i = 0; i < sectionOffsets.length; i++){ if(sectionOffsets[i] <= pos) activeIdx = i; }
+    navLinks.forEach(function(a, i){ a.classList.toggle("is-active", i === activeIdx); });
+
+    scrollTicking = false;
+  }
+  var scrollTicking = false;
+  window.addEventListener("scroll", function(){
+    if(!scrollTicking){ scrollTicking = true; requestAnimationFrame(updateOnScroll); }
+  }, {passive:true});
+  updateOnScroll();
 
   /* ---------- MOBILE MENU ---------- */
   var menuToggle = document.getElementById("mobile-menu-toggle");
