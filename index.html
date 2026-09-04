@@ -262,6 +262,14 @@
   .img-tone{position:relative; overflow:hidden}
   .img-tone img{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
   .img-tone:hover img{transform:scale(1.06)}
+  /* fine film-grain texture over every photo — subtle, tactile, not a flat/bare image */
+  .img-tone::after{
+    content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2126 0.7152 0.0722 0 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:160px 160px;
+    opacity:.1;
+    mix-blend-mode:overlay;
+  }
 
   .rating-badge{background:rgba(255,255,255,.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.28)}
 
