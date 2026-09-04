@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://minaikhansaltanat-prog.github.io/hotel/sitemap.xml

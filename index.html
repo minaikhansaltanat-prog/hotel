@@ -1,49 +1,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#12141b">
+<meta name="theme-color" content="#C91818">
 <title>Business Hotel Almaty</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Ccircle cx='22' cy='22' r='21' fill='%23C91818'/%3E%3Cg stroke='%23fff' stroke-width='1.6' fill='none' stroke-linecap='round'%3E%3Ccircle cx='22' cy='22' r='14'/%3E%3Cpath d='M22 8v28M8 22h28M11.6 11.6l20.8 20.8M32.4 11.6L11.6 32.4'/%3E%3Ccircle cx='22' cy='22' r='5.5'/%3E%3C/g%3E%3C/svg%3E">
 <meta name="description" content="Business Hotel Almaty — 4* бизнес-отель в Алматы. 118 номеров, конференц-залы, банкетный зал, Karaoke Club. Рейтинг 4.9 на 2ГИС.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Business Hotel Almaty",
+  "image": "https://minaikhansaltanat-prog.github.io/hotel/images/hero-exterior-1.jpg",
+  "starRating": {"@type": "Rating", "ratingValue": "4"},
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "проспект Райымбека, 298А",
+    "addressLocality": "Алматы",
+    "addressCountry": "KZ"
+  },
+  "telephone": "+7-707-218-86-29",
+  "priceRange": "₸₸",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "154",
+    "ratingCount": "880"
+  }
+}
+</script>
 <style>
   :root{
-    --ink:#12141b;
-    --ink-2:#191c26;
-    --ink-3:#212433;
-    --ink-4:#2a2e40;
-    --paper:#f7f3ea;
-    --paper-dim:#eae4d5;
-    --gold:#c9a15a;
-    --gold-light:#e6cd97;
-    --gold-deep:#8f6f36;
-    --line:rgba(201,161,90,.16);
-    --line-strong:rgba(201,161,90,.32);
-    --ink-text:#e9e6dd;
-    --ink-text-dim:#a8a596;
-    color-scheme: dark;
+    --red:#C91818;
+    --red-dark:#9E1010;
+    --white:#FFFFFF;
+    --off-white:#FAF9F7;
+    --warm-gray:#F4F2EF;
+    --text:#171717;
+    --text-dim:#666666;
+    --gold:#C9A45C;
+    --gold-light:#ddc088;
+    --gold-deep:#9c7a3a;
+    --line:rgba(23,23,23,.10);
+    --line-soft:rgba(23,23,23,.06);
+    --line-strong:rgba(201,24,24,.22);
+    color-scheme: light;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  /* overflow-x:clip (not hidden) — clips stray horizontal overflow without
-     turning body into a scroll container, which would break the sticky
-     header (position:sticky needs the viewport, not body, as its scroller). */
   html,body{max-width:100%;overflow-x:clip;}
-  section[id]{scroll-margin-top:88px}
+  section[id]{scroll-margin-top:112px}
   body{
-    background:var(--ink);
-    color:var(--ink-text);
+    background:var(--white);
+    color:var(--text);
     font-family:'Manrope',system-ui,sans-serif;
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
     position:relative;
   }
   h1,h2,h3,h4,.font-display{
-    font-family:'PT Serif',Georgia,serif;
+    font-family:'Playfair Display',Georgia,serif;
     font-weight:700;
-    letter-spacing:-0.02em;
-    line-height:1.12;
+    letter-spacing:-0.015em;
+    line-height:1.1;
   }
   .eyebrow{
     font-family:'Manrope',sans-serif;
@@ -51,43 +72,40 @@
     font-size:.72rem;
     letter-spacing:.22em;
     text-transform:uppercase;
-    color:var(--gold);
+    color:var(--red);
   }
   img{max-width:100%;display:block}
   a,button{cursor:pointer}
-  ::selection{background:var(--gold);color:var(--ink)}
+  ::selection{background:var(--red);color:#fff}
 
-  /* scrollbar */
   ::-webkit-scrollbar{width:10px;height:10px}
-  ::-webkit-scrollbar-track{background:var(--ink)}
-  ::-webkit-scrollbar-thumb{background:var(--ink-4);border-radius:8px}
+  ::-webkit-scrollbar-track{background:var(--off-white)}
+  ::-webkit-scrollbar-thumb{background:#d8d3c9;border-radius:8px}
 
-  /* Focus states */
   a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
-    outline:2px solid var(--gold);
+    outline:2px solid var(--red);
     outline-offset:3px;
     border-radius:4px;
   }
 
-  /* Layered gold-tinted shadows */
   .shadow-elevated{
     box-shadow:
-      0 1px 1px rgba(0,0,0,.35),
-      0 12px 28px -10px rgba(0,0,0,.55),
-      0 0 0 1px rgba(201,161,90,.08) inset;
+      0 1px 1px rgba(23,23,23,.03),
+      0 16px 32px -14px rgba(23,23,23,.16),
+      0 0 0 1px rgba(23,23,23,.04);
   }
   .shadow-floating{
     box-shadow:
-      0 2px 4px rgba(0,0,0,.35),
-      0 24px 48px -16px rgba(0,0,0,.6),
-      0 0 0 1px rgba(201,161,90,.12) inset;
+      0 2px 4px rgba(23,23,23,.04),
+      0 30px 60px -20px rgba(23,23,23,.22),
+      0 0 0 1px rgba(23,23,23,.05);
   }
-  .shadow-gold{
-    box-shadow: 0 10px 30px -8px rgba(201,161,90,.45), 0 2px 8px rgba(0,0,0,.35);
+  .shadow-red{
+    box-shadow: 0 12px 28px -8px rgba(201,24,24,.4), 0 2px 8px rgba(201,24,24,.15);
   }
 
   .noise{
-    position:absolute; inset:0; pointer-events:none; opacity:.05; mix-blend-mode:overlay;
+    position:absolute; inset:0; pointer-events:none; opacity:.035; mix-blend-mode:multiply;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
@@ -96,90 +114,132 @@
 
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
-    font-family:'Manrope',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.04em;
+    font-family:'Manrope',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.02em;
     padding:.9rem 1.7rem;border-radius:999px;white-space:nowrap;
-    transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s cubic-bezier(.2,.8,.2,1), background-color .25s ease;
+    transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s cubic-bezier(.2,.8,.2,1), background-color .25s ease, color .25s ease;
   }
-  .btn-gold{
-    background:linear-gradient(135deg,var(--gold-light),var(--gold) 55%,var(--gold-deep));
-    color:#211705;
+  .btn-red{
+    background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:#fff;
   }
-  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px -8px rgba(201,161,90,.55)}
-  .btn-gold:active{transform:translateY(0px) scale(.98)}
+  .btn-red:hover{transform:translateY(-2px);box-shadow:0 16px 36px -8px rgba(201,24,24,.5)}
+  .btn-red:active{transform:translateY(0px) scale(.98)}
   .btn-outline{
-    border:1px solid var(--line-strong); color:var(--ink-text); background:rgba(255,255,255,.02);
+    border:1.5px solid var(--line); color:var(--text); background:#fff;
   }
-  .btn-outline:hover{border-color:var(--gold); background:rgba(201,161,90,.08); transform:translateY(-2px)}
+  .btn-outline:hover{border-color:var(--red); color:var(--red); transform:translateY(-2px)}
+  .btn-outline-light{
+    border:1.5px solid rgba(255,255,255,.55); color:#fff; background:rgba(255,255,255,.06);
+  }
+  .btn-outline-light:hover{border-color:#fff; background:rgba(255,255,255,.14); transform:translateY(-2px)}
 
   .card{
-    background:linear-gradient(180deg,var(--ink-3),var(--ink-2));
+    background:var(--white);
     border:1px solid var(--line);
-    border-radius:20px;
+    border-radius:18px;
   }
   .card-float{
     transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s cubic-bezier(.2,.8,.2,1), border-color .35s ease;
   }
-  .card-float:hover{transform:translateY(-6px); border-color:var(--line-strong)}
+  .card-float:hover{transform:translateY(-6px); box-shadow:0 30px 50px -20px rgba(23,23,23,.18); border-color:var(--line-strong)}
 
-  .divider-gold{
-    width:64px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);
-  }
+  .divider-flourish{display:flex;align-items:center;justify-content:center;gap:.9rem}
+  .divider-flourish .fl-line{height:1px;width:2.75rem;background:linear-gradient(90deg,transparent,var(--gold));}
+  .divider-flourish .fl-line.right{background:linear-gradient(90deg,var(--gold),transparent);}
+  .divider-flourish.left-align{justify-content:flex-start}
+  .divider-flourish.left-align .fl-line:first-child{display:none}
 
-  /* Header */
+  .section-eyebrow-wrap{text-align:center}
+
+  /* ============ HEADER ============ */
   #site-header{
     position:sticky; top:0; z-index:60;
-    background:rgba(18,20,27,.82);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
+    transition:box-shadow .3s ease;
   }
+  #site-header.is-scrolled{box-shadow:0 4px 24px -10px rgba(23,23,23,.18)}
+  #header-topbar{
+    max-height:40px; opacity:1; overflow:hidden;
+    transition:max-height .3s cubic-bezier(.2,.8,.2,1), opacity .25s ease;
+  }
+  #site-header.is-scrolled #header-topbar{max-height:0; opacity:0}
+  #header-main-row{height:92px; transition:height .3s cubic-bezier(.2,.8,.2,1)}
+  #site-header.is-scrolled #header-main-row{height:70px}
+  #site-header.is-scrolled .header-logo-sub{opacity:0; max-height:0}
+  .header-logo-sub{transition:opacity .25s ease, max-height .25s ease; overflow:hidden}
+
   .no-scrollbar{scrollbar-width:none}
   .no-scrollbar::-webkit-scrollbar{display:none}
   .nav-link{
-    position:relative; font-size:.72rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
-    color:var(--ink-text-dim); padding:.4rem 0; white-space:nowrap; flex:0 0 auto;
+    position:relative; font-size:.76rem; font-weight:700; letter-spacing:.01em;
+    color:var(--text); padding:.4rem 0; white-space:nowrap; flex:0 0 auto;
     transition:color .2s ease;
   }
   .nav-link::after{
-    content:''; position:absolute; left:0; right:100%; bottom:-2px; height:1px; background:var(--gold);
+    content:''; position:absolute; left:0; right:100%; bottom:-4px; height:2px; background:var(--red);
     transition:right .3s cubic-bezier(.2,.8,.2,1);
   }
-  .nav-link:hover{color:var(--ink-text)}
+  .nav-link:hover{color:var(--red)}
   .nav-link:hover::after{right:0}
+  .nav-link.is-active{color:var(--red)}
+  .nav-link.is-active::after{right:0}
 
-  .lang-btn{
-    font-size:.72rem; font-weight:800; letter-spacing:.05em; padding:.35rem .6rem; border-radius:8px;
-    color:var(--ink-text-dim); transition:background-color .2s ease,color .2s ease;
+  /* Language dropdown (shared component) */
+  .lang-dd{position:relative}
+  .lang-dd-btn{
+    display:flex;align-items:center;gap:.35rem;font-size:.74rem;font-weight:800;letter-spacing:.04em;
+    padding:.4rem .65rem;border-radius:999px;border:1px solid var(--line);color:var(--text);
+    transition:border-color .2s ease, background-color .2s ease;
   }
-  .lang-btn[aria-pressed="true"]{color:var(--gold); background:rgba(201,161,90,.12)}
-  .lang-btn:hover{color:var(--ink-text); background:rgba(255,255,255,.06)}
-  .lang-btn-sm{font-size:.62rem; padding:.3rem .38rem; letter-spacing:.01em}
+  .lang-dd-btn:hover{border-color:var(--red); background:var(--off-white)}
+  .lang-dd-btn svg{transition:transform .2s ease}
+  .lang-dd.open .lang-dd-btn svg{transform:rotate(180deg)}
+  .lang-dd-menu{
+    position:absolute; top:calc(100% + 8px); right:0; min-width:112px;
+    background:#fff; border:1px solid var(--line); border-radius:12px; padding:.35rem;
+    box-shadow:0 20px 40px -14px rgba(23,23,23,.25);
+    opacity:0; transform:translateY(-6px); pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease;
+    z-index:70;
+  }
+  .lang-dd.open .lang-dd-menu{opacity:1; transform:translateY(0); pointer-events:auto}
+  .lang-dd-item{
+    display:block; width:100%; text-align:left; font-size:.8rem; font-weight:700; padding:.5rem .65rem;
+    border-radius:8px; color:var(--text); transition:background-color .15s ease, color .15s ease;
+  }
+  .lang-dd-item:hover{background:var(--off-white)}
+  .lang-dd-item[aria-pressed="true"]{color:var(--red); background:rgba(201,24,24,.06)}
+  #header-topbar .lang-dd-btn{color:#fff; border-color:rgba(255,255,255,.35)}
+  #header-topbar .lang-dd-btn:hover{background:rgba(255,255,255,.1); border-color:#fff}
 
   /* Hamburger */
-  .hamburger{width:26px;height:18px;position:relative}
+  .hamburger{width:24px;height:16px;position:relative}
   .hamburger span{
-    position:absolute; left:0; right:0; height:2px; background:var(--ink-text); border-radius:2px;
+    position:absolute; left:0; right:0; height:2px; background:var(--text); border-radius:2px;
     transition:transform .3s cubic-bezier(.2,.8,.2,1), opacity .2s ease, top .3s cubic-bezier(.2,.8,.2,1);
   }
   .hamburger span:nth-child(1){top:0}
-  .hamburger span:nth-child(2){top:8px}
-  .hamburger span:nth-child(3){top:16px}
-  #mobile-menu-toggle[aria-expanded="true"] .hamburger span:nth-child(1){top:8px; transform:rotate(45deg)}
+  .hamburger span:nth-child(2){top:7px}
+  .hamburger span:nth-child(3){top:14px}
+  #mobile-menu-toggle[aria-expanded="true"] .hamburger span:nth-child(1){top:7px; transform:rotate(45deg)}
   #mobile-menu-toggle[aria-expanded="true"] .hamburger span:nth-child(2){opacity:0}
-  #mobile-menu-toggle[aria-expanded="true"] .hamburger span:nth-child(3){top:8px; transform:rotate(-45deg)}
+  #mobile-menu-toggle[aria-expanded="true"] .hamburger span:nth-child(3){top:7px; transform:rotate(-45deg)}
 
   /* Mobile menu panel */
   #mobile-menu{
     position:fixed; inset:0; z-index:70;
-    background:rgba(10,11,15,.72);
-    backdrop-filter:blur(4px);
+    background:rgba(23,17,15,.45);
+    backdrop-filter:blur(2px);
     opacity:0; pointer-events:none;
     transition:opacity .3s ease;
   }
   #mobile-menu.open{opacity:1; pointer-events:auto}
   #mobile-menu-panel{
     position:absolute; top:0; right:0; bottom:0; width:min(88vw,380px);
-    background:linear-gradient(180deg,var(--ink-2),var(--ink));
+    background:#fff;
     border-left:1px solid var(--line);
     transform:translateX(100%);
     transition:transform .38s cubic-bezier(.2,.8,.2,1);
@@ -188,34 +248,36 @@
     -webkit-overflow-scrolling:touch;
   }
   #mobile-menu.open #mobile-menu-panel{transform:translateX(0)}
+  .mobile-link{padding:.85rem 0;border-bottom:1px solid var(--line);font-weight:700;font-size:1.05rem;color:var(--text)}
+  .mobile-link:active{color:var(--red)}
 
-  /* Hero */
-  .hero-bg{
-    background-size:cover; background-position:center;
-    position:relative;
-  }
+  /* ============ HERO ============ */
+  .hero-bg{background-size:cover; background-position:center; position:relative}
   .hero-gradient{
     background:
-      linear-gradient(180deg, rgba(10,11,16,.55) 0%, rgba(10,11,16,.35) 35%, rgba(10,11,16,.82) 100%),
-      linear-gradient(90deg, rgba(10,11,16,.75) 0%, rgba(10,11,16,.15) 55%);
+      linear-gradient(180deg, rgba(20,10,8,.35) 0%, rgba(20,10,8,.25) 40%, rgba(15,8,7,.86) 100%),
+      linear-gradient(90deg, rgba(15,8,7,.82) 0%, rgba(15,8,7,.2) 58%);
   }
-  .img-tone{
-    position:relative; overflow:hidden;
-  }
-  .img-tone img{
-    transition:transform .7s cubic-bezier(.2,.8,.2,1);
-  }
+  .img-tone{position:relative; overflow:hidden}
+  .img-tone img{transition:transform .7s cubic-bezier(.2,.8,.2,1)}
   .img-tone:hover img{transform:scale(1.06)}
-  .img-tone::after{
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(18,20,27,0) 40%, rgba(18,20,27,.85) 100%);
-    mix-blend-mode:multiply;
-    pointer-events:none;
-  }
 
-  .rating-badge{
-    background:rgba(18,20,27,.7); backdrop-filter:blur(8px); border:1px solid var(--line-strong);
+  .rating-badge{background:rgba(255,255,255,.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.28)}
+
+  /* Booking widget */
+  .booking-widget{
+    background:#fff; border-radius:20px;
+    box-shadow:0 30px 70px -20px rgba(23,23,23,.35), 0 0 0 1px rgba(23,23,23,.04);
   }
+  .bw-field{position:relative}
+  .bw-field + .bw-field{border-top:1px solid var(--line)}
+  @media(min-width:900px){.bw-field + .bw-field{border-top:none; border-left:1px solid var(--line)}}
+  .bw-label{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
+  .bw-input{
+    width:100%; border:none; background:transparent; font-family:'Manrope',sans-serif; font-weight:700;
+    color:var(--text); font-size:.92rem; padding:0;
+  }
+  .bw-input:focus{outline:none}
 
   /* fade-up reveal */
   .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1)}
@@ -225,7 +287,7 @@
     html{scroll-behavior:auto}
   }
 
-  /* Testimonials carousel */
+  /* Carousels (rooms + testimonials) */
   .tcarousel{
     display:flex; gap:1.25rem; overflow-x:auto; scroll-snap-type:x mandatory;
     padding-bottom:.5rem; -webkit-overflow-scrolling:touch;
@@ -235,50 +297,42 @@
   .tcarousel > *{scroll-snap-align:start; flex:0 0 auto;}
 
   .tab-btn{
-    font-size:.78rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    font-size:.78rem; font-weight:700; letter-spacing:.02em;
     padding:.6rem 1.1rem; border-radius:999px; border:1px solid var(--line);
-    color:var(--ink-text-dim); transition:all .2s ease; white-space:nowrap;
+    color:var(--text-dim); transition:all .2s ease; white-space:nowrap;
   }
-  .tab-btn[aria-selected="true"]{background:var(--gold); color:#211705; border-color:var(--gold)}
-  .tab-btn:hover:not([aria-selected="true"]){border-color:var(--line-strong); color:var(--ink-text)}
+  .tab-btn[aria-selected="true"]{background:var(--red); color:#fff; border-color:var(--red)}
+  .tab-btn:hover:not([aria-selected="true"]){border-color:var(--red); color:var(--red)}
 
   .carousel-arrow{
-    width:42px;height:42px;border-radius:50%;border:1px solid var(--line-strong);
-    display:flex;align-items:center;justify-content:center;color:var(--ink-text);
-    background:rgba(255,255,255,.02); transition:all .2s ease;
+    width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--text);
+    background:#fff; transition:all .2s ease;
   }
-  .carousel-arrow:hover{background:var(--gold); color:#211705; border-color:var(--gold)}
+  .carousel-arrow:hover{background:var(--red); color:#fff; border-color:var(--red)}
 
-  .gis-btn{
-    background:linear-gradient(135deg,#3fbf5f,#1e9e46);
-    color:#fff; font-weight:800;
-  }
-  .gis-btn:hover{transform:translateY(-2px); box-shadow:0 14px 30px -8px rgba(46,163,80,.55)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--line-strong); transition:all .25s ease}
+  .dot.is-active{width:22px;border-radius:4px;background:var(--red)}
 
-  /* Floating contact button */
+  .gis-btn{background:linear-gradient(135deg,#3fbf5f,#1e9e46); color:#fff; font-weight:800}
+  .gis-btn:hover{transform:translateY(-2px); box-shadow:0 14px 30px -8px rgba(46,163,80,.5)}
+
+  /* Floating WhatsApp contact button */
   #fab-wrap{position:fixed; right:1.1rem; bottom:1.1rem; z-index:80}
   #fab-main{
     width:64px;height:64px;border-radius:50%;
     background:linear-gradient(135deg,#25d366,#128c4e);
     display:flex;align-items:center;justify-content:center;color:#fff;
-    position:relative;
+    position:relative; box-shadow:0 14px 30px -8px rgba(18,140,78,.5);
   }
   #fab-main::before,#fab-main::after{
     content:''; position:absolute; inset:0; border-radius:50%;
     border:2px solid rgba(37,211,102,.55);
     animation:fabPulse 2.4s ease-out infinite;
   }
-  #fab-main::after{
-    border-color:rgba(230,201,151,.55);
-    animation-delay:1.2s;
-  }
-  @keyframes fabPulse{
-    0%{transform:scale(1); opacity:.85}
-    100%{transform:scale(1.9); opacity:0}
-  }
-  @media (prefers-reduced-motion: reduce){
-    #fab-main::before,#fab-main::after{animation:none; display:none}
-  }
+  #fab-main::after{border-color:rgba(201,164,92,.55); animation-delay:1.2s}
+  @keyframes fabPulse{0%{transform:scale(1); opacity:.85}100%{transform:scale(1.9); opacity:0}}
+  @media (prefers-reduced-motion: reduce){#fab-main::before,#fab-main::after{animation:none; display:none}}
   #fab-menu{
     position:absolute; right:0; bottom:78px;
     display:flex; flex-direction:column; gap:.7rem;
@@ -288,31 +342,44 @@
   #fab-menu.open{opacity:1; pointer-events:auto; transform:translateY(0)}
   .fab-item{
     display:flex; align-items:center; gap:.65rem; padding:.5rem .5rem .5rem .9rem;
-    background:var(--ink-3); border:1px solid var(--line-strong); border-radius:999px;
-    color:var(--ink-text); white-space:nowrap;
+    background:#fff; border:1px solid var(--line); border-radius:999px;
+    color:var(--text); white-space:nowrap; box-shadow:0 10px 24px -10px rgba(23,23,23,.3);
     transition:transform .2s ease, background-color .2s ease;
   }
-  .fab-item:hover{transform:translateX(-4px); background:var(--ink-4)}
+  .fab-item:hover{transform:translateX(-4px); background:var(--off-white)}
   .fab-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;flex:0 0 auto}
 
-  .field-label{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-text-dim)}
+  .field-label{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim)}
   .field{
-    width:100%; background:rgba(255,255,255,.03); border:1px solid var(--line);
-    border-radius:10px; padding:.75rem .9rem; color:var(--ink-text); font-family:'Manrope',sans-serif;
+    width:100%; background:var(--off-white); border:1px solid var(--line);
+    border-radius:10px; padding:.75rem .9rem; color:var(--text); font-family:'Manrope',sans-serif;
     transition:border-color .2s ease, background-color .2s ease;
   }
-  .field:focus{border-color:var(--gold); background:rgba(255,255,255,.05); outline:none}
-  .field::placeholder{color:var(--ink-text-dim)}
+  .field:focus{border-color:var(--red); background:#fff; outline:none}
+  .field::placeholder{color:var(--text-dim)}
 
   .icon-badge{
     width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(135deg, rgba(201,161,90,.16), rgba(201,161,90,.04));
-    border:1px solid var(--line-strong); color:var(--gold);
+    background:linear-gradient(135deg, rgba(201,24,24,.08), rgba(201,164,92,.08));
+    border:1px solid var(--line); color:var(--red);
   }
+  .icon-badge-gold{color:var(--gold-deep); background:linear-gradient(135deg, rgba(201,164,92,.14), rgba(201,164,92,.04))}
 
-  [data-scale] .z-base{position:relative; z-index:1}
-  [data-scale] .z-elevated{position:relative; z-index:2}
-  [data-scale] .z-floating{position:relative; z-index:3}
+  /* subtle Chinese lattice pattern (decorative only) */
+  .lattice-bg{
+    position:absolute; inset:0; pointer-events:none; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84'%3E%3Cg fill='none' stroke='%23C9A45C' stroke-width='1'%3E%3Cpath d='M42 0v84M0 42h84M12 12l60 60M72 12L12 72'/%3E%3Ccircle cx='42' cy='42' r='20'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:84px 84px;
+  }
+  .lattice-bg-light{opacity:.06}
+  .pagoda-deco{position:absolute; pointer-events:none; opacity:.07; color:var(--gold)}
+
+  .lang-btn-footer{
+    font-size:.7rem; font-weight:800; letter-spacing:.04em; padding:.35rem .65rem; border-radius:999px;
+    border:1px solid var(--line); color:var(--text-dim); transition:all .2s ease;
+  }
+  .lang-btn-footer[aria-pressed="true"]{color:#fff; background:var(--red); border-color:var(--red)}
+  .lang-btn-footer:hover:not([aria-pressed="true"]){border-color:var(--red); color:var(--red)}
 
   .marquee-track{display:flex; gap:2.5rem; white-space:nowrap; animation:marquee 26s linear infinite}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -324,44 +391,96 @@
 
 <!-- ============ HEADER ============ -->
 <header id="site-header">
-  <div class="container-x flex items-center justify-between h-[76px] gap-4">
-    <a href="#home" class="flex items-center gap-2 min-w-0 shrink-0 group" aria-label="Business Hotel Almaty">
-      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" class="shrink-0">
-        <path d="M15 2 L18 12 L28 15 L18 18 L15 28 L12 18 L2 15 L12 12 Z" fill="url(#gg)"/>
-        <defs><linearGradient id="gg" x1="2" y1="2" x2="28" y2="28"><stop stop-color="#e6cd97"/><stop offset="1" stop-color="#8f6f36"/></linearGradient></defs>
+  <div id="header-topbar" class="hidden md:block bg-[var(--red-dark)] text-white">
+    <div class="container-x flex items-center justify-between h-10 text-[.74rem] font-medium">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5 opacity-95">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M12 21s7-6.3 7-12a7 7 0 10-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <span data-i18n="topbar.address">Алматы, Райымбек даңғылы, 298а</span>
+        </span>
+        <a href="tel:+77072188629" class="flex items-center gap-1.5 hover:text-[var(--gold-light)] transition-colors">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.36 1.79.7 2.63a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.45-1.27a2 2 0 012.11-.45c.84.34 1.73.58 2.63.7A2 2 0 0122 16.92z"/></svg>
+          +7 707 218-86-29
+        </a>
+        <a href="https://wa.me/77072188629" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-[var(--gold-light)] transition-colors">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18a7.9 7.9 0 01-4.24-1.23l-.3-.19-3 .79.8-2.93-.2-.3A7.93 7.93 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="lang-dd" id="lang-dd-top">
+        <button class="lang-dd-btn" type="button" aria-haspopup="true" aria-expanded="false">
+          <span data-lang-current>РУС</span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-dd-menu" role="menu">
+          <button class="lang-dd-item" data-lang="kz" aria-pressed="false" role="menuitem">ҚАЗ — Қазақша</button>
+          <button class="lang-dd-item" data-lang="ru" aria-pressed="true" role="menuitem">РУС — Русский</button>
+          <button class="lang-dd-item" data-lang="en" aria-pressed="false" role="menuitem">ENG — English</button>
+          <button class="lang-dd-item" data-lang="zh" aria-pressed="false" role="menuitem">中文 — Chinese</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-x flex items-center justify-between gap-4" id="header-main-row">
+    <a href="#home" class="flex items-center gap-2.5 min-w-0 shrink-0 group" aria-label="Business Hotel Almaty">
+      <svg width="42" height="42" viewBox="0 0 44 44" class="shrink-0">
+        <circle cx="22" cy="22" r="21" fill="#C91818"/>
+        <circle cx="22" cy="22" r="21" fill="none" stroke="#C9A45C" stroke-width="1"/>
+        <g stroke="#fff" stroke-width="1.3" fill="none" stroke-linecap="round">
+          <circle cx="22" cy="22" r="14"/>
+          <path d="M22 8v28M8 22h28M11.6 11.6l20.8 20.8M32.4 11.6L11.6 32.4"/>
+          <circle cx="22" cy="22" r="5.5"/>
+        </g>
       </svg>
-      <span class="sm:hidden font-display text-[.95rem] leading-none text-[var(--ink-text)] tracking-tight whitespace-nowrap">Business Hotel</span>
-      <span class="hidden sm:block font-display text-[1.15rem] leading-none text-[var(--ink-text)] tracking-tight whitespace-nowrap">Business Hotel<br><span class="text-[var(--gold)] text-[.68rem] font-sans font-bold tracking-[.28em] not-italic" style="font-family:'Manrope',sans-serif">ALMATY · 4★</span></span>
+      <span class="sm:hidden font-display text-[.98rem] leading-none text-[var(--text)] tracking-tight whitespace-nowrap">Business Hotel</span>
+      <span class="hidden sm:flex flex-col leading-none whitespace-nowrap">
+        <span class="font-display text-[1.2rem] text-[var(--red)] tracking-tight">BUSINESS HOTEL <span class="text-[var(--text)]">ALMATY</span></span>
+        <span class="header-logo-sub text-[.62rem] font-bold tracking-[.2em] text-[var(--text-dim)] mt-1" style="font-family:'Manrope',sans-serif">— 4 ЖҰЛДЫЗДЫ ҚОНАҚ ҮЙ — <span class="text-[var(--gold)]">★★★★</span></span>
+      </span>
     </a>
 
-    <nav class="hidden xl:flex items-center gap-4 2xl:gap-6 overflow-x-auto no-scrollbar min-w-0">
-      <a href="#rooms" class="nav-link" data-i18n="nav.rooms">Номера</a>
-      <a href="#conference" class="nav-link" data-i18n="nav.conference">Конференц</a>
-      <a href="#banquet" class="nav-link" data-i18n="nav.banquet">Банкет</a>
-      <a href="#karaoke" class="nav-link" data-i18n="nav.karaoke">Karaoke</a>
-      <a href="#reviews" class="nav-link" data-i18n="nav.reviews">Отзывы</a>
-      <a href="#location" class="nav-link" data-i18n="nav.location">Локация</a>
+    <nav class="hidden 2xl:flex items-center gap-5 overflow-x-auto no-scrollbar min-w-0">
+      <a href="#home" class="nav-link" data-i18n="nav.home">Басты бет</a>
+      <a href="#rooms" class="nav-link" data-i18n="nav.rooms">Нөмірлер</a>
+      <a href="#conference" class="nav-link" data-i18n="nav.conferenceFull">Конференц-залдар</a>
+      <a href="#banquet" class="nav-link" data-i18n="nav.banquetFull">Банкет залы</a>
+      <a href="#karaoke" class="nav-link" data-i18n="nav.karaoke">Karaoke Club</a>
+      <a href="#services" class="nav-link" data-i18n="nav.services">Қызметтер</a>
+      <a href="#gallery" class="nav-link" data-i18n="nav.gallery">Галерея</a>
+      <a href="#location" class="nav-link" data-i18n="nav.contact">Байланыс</a>
     </nav>
 
     <div class="flex items-center gap-1.5 md:gap-3 shrink-0">
-      <a href="#booking" class="btn btn-gold hidden md:inline-flex shadow-gold shrink-0" data-i18n="nav.book">Забронировать</a>
+      <a href="#booking" class="btn btn-red hidden md:inline-flex shadow-red shrink-0" data-i18n="nav.book">Брондау</a>
 
-      <div class="hidden md:flex items-center gap-1 border border-[var(--line)] rounded-full px-1 py-1 shrink-0" role="group" aria-label="Language">
-        <button class="lang-btn" data-lang="kz" aria-pressed="false">ҚАЗ</button>
-        <button class="lang-btn" data-lang="ru" aria-pressed="true">РУС</button>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">ENG</button>
-        <button class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+      <div class="hidden md:flex lang-dd" id="lang-dd-main">
+        <button class="lang-dd-btn" type="button" aria-haspopup="true" aria-expanded="false">
+          <span data-lang-current>РУС</span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-dd-menu" role="menu">
+          <button class="lang-dd-item" data-lang="kz" aria-pressed="false" role="menuitem">ҚАЗ — Қазақша</button>
+          <button class="lang-dd-item" data-lang="ru" aria-pressed="true" role="menuitem">РУС — Русский</button>
+          <button class="lang-dd-item" data-lang="en" aria-pressed="false" role="menuitem">ENG — English</button>
+          <button class="lang-dd-item" data-lang="zh" aria-pressed="false" role="menuitem">中文 — Chinese</button>
+        </div>
       </div>
 
-      <!-- mobile: compact language switcher sits left of hamburger -->
-      <div class="flex md:hidden items-center gap-0.5 border border-[var(--line)] rounded-full px-0.5 py-0.5 shrink-0" role="group" aria-label="Language">
-        <button class="lang-btn lang-btn-sm" data-lang="kz" aria-pressed="false">ҚАЗ</button>
-        <button class="lang-btn lang-btn-sm" data-lang="ru" aria-pressed="true">РУС</button>
-        <button class="lang-btn lang-btn-sm" data-lang="en" aria-pressed="false">EN</button>
-        <button class="lang-btn lang-btn-sm" data-lang="zh" aria-pressed="false">中</button>
+      <div class="flex md:hidden lang-dd" id="lang-dd-mobile">
+        <button class="lang-dd-btn" type="button" aria-haspopup="true" aria-expanded="false">
+          <span data-lang-current>РУС</span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-dd-menu" role="menu">
+          <button class="lang-dd-item" data-lang="kz" aria-pressed="false" role="menuitem">ҚАЗ</button>
+          <button class="lang-dd-item" data-lang="ru" aria-pressed="true" role="menuitem">РУС</button>
+          <button class="lang-dd-item" data-lang="en" aria-pressed="false" role="menuitem">ENG</button>
+          <button class="lang-dd-item" data-lang="zh" aria-pressed="false" role="menuitem">中文</button>
+        </div>
       </div>
 
-      <button id="mobile-menu-toggle" class="xl:hidden flex items-center justify-center w-11 h-11 rounded-full border border-[var(--line)] shrink-0" aria-expanded="false" aria-controls="mobile-menu" aria-label="Меню">
+      <button id="mobile-menu-toggle" class="2xl:hidden flex items-center justify-center w-11 h-11 rounded-full border border-[var(--line)] shrink-0" aria-expanded="false" aria-controls="mobile-menu" aria-label="Меню">
         <span class="hamburger"><span></span><span></span><span></span></span>
       </button>
     </div>
@@ -372,25 +491,25 @@
 <div id="mobile-menu" aria-hidden="true">
   <div id="mobile-menu-panel">
     <div class="flex items-center justify-between px-5 h-[76px] border-b border-[var(--line)] shrink-0">
-      <span class="font-display text-lg">Business Hotel Almaty</span>
+      <span class="font-display text-lg text-[var(--red)]">Business Hotel <span class="text-[var(--text)]">Almaty</span></span>
       <button id="mobile-menu-close" class="w-11 h-11 rounded-full border border-[var(--line)] flex items-center justify-center" aria-label="Жабу">
         <svg width="18" height="18" viewBox="0 0 18 18"><path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </div>
     <nav class="flex flex-col px-5 py-6 gap-1 overflow-y-auto grow">
-      <a href="#about" class="mobile-link" data-i18n="nav.about">Отель</a>
-      <a href="#rooms" class="mobile-link" data-i18n="nav.rooms">Номера</a>
-      <a href="#conference" class="mobile-link" data-i18n="nav.conference">Конференц-залы</a>
-      <a href="#banquet" class="mobile-link" data-i18n="nav.banquet">Банкет и торжества</a>
+      <a href="#home" class="mobile-link" data-i18n="nav.home">Басты бет</a>
+      <a href="#rooms" class="mobile-link" data-i18n="nav.rooms">Нөмірлер</a>
+      <a href="#conference" class="mobile-link" data-i18n="nav.conferenceFull">Конференц-залдар</a>
+      <a href="#banquet" class="mobile-link" data-i18n="nav.banquetFull">Банкет залы</a>
       <a href="#karaoke" class="mobile-link" data-i18n="nav.karaoke">Karaoke Club</a>
-      <a href="#restaurant" class="mobile-link" data-i18n="nav.restaurant">Ресторан</a>
-      <a href="#services" class="mobile-link" data-i18n="nav.services">Услуги</a>
+      <a href="#restaurant" class="mobile-link" data-i18n="nav.restaurant">Мейрамхана</a>
+      <a href="#services" class="mobile-link" data-i18n="nav.services">Қызметтер</a>
       <a href="#gallery" class="mobile-link" data-i18n="nav.gallery">Галерея</a>
-      <a href="#reviews" class="mobile-link" data-i18n="nav.reviews">Отзывы</a>
-      <a href="#location" class="mobile-link" data-i18n="nav.location">Локация</a>
+      <a href="#reviews" class="mobile-link" data-i18n="nav.reviews">Пікірлер</a>
+      <a href="#location" class="mobile-link" data-i18n="nav.contact">Байланыс</a>
     </nav>
     <div class="px-5 pb-8 pt-2 shrink-0">
-      <a href="#booking" class="btn btn-gold w-full shadow-gold" data-i18n="nav.book">Забронировать</a>
+      <a href="#booking" class="btn btn-red w-full shadow-red" data-i18n="nav.book">Брондау</a>
       <a href="tel:+77072188629" class="btn btn-outline w-full mt-3">+7 707 218-86-29</a>
     </div>
   </div>
@@ -402,245 +521,290 @@
 <section id="home" class="hero-bg" style="background-image:url('images/hero-exterior-1.jpg')">
   <div class="hero-gradient absolute inset-0"></div>
   <div class="noise"></div>
-  <div class="relative container-x pt-24 pb-28 md:pt-36 md:pb-40 min-h-[86vh] flex flex-col justify-end">
-    <p class="eyebrow reveal mb-5" data-i18n="hero.eyebrow">Бизнес-отель · Алматы</p>
-    <h1 class="reveal text-[2.6rem] leading-[1.05] sm:text-6xl md:text-7xl max-w-3xl text-white" data-i18n="hero.title">Гостеприимство<br>в сердце Алматы</h1>
-    <p class="reveal mt-6 max-w-xl text-[var(--ink-text-dim)] text-lg" data-i18n="hero.subtitle">118 номеров, конференц-залы, банкетный зал и Karaoke Club — всё для бизнеса и отдыха под одной крышей.</p>
+  <div class="relative container-x pt-16 pb-40 md:pt-20 md:pb-48 min-h-[78vh] flex flex-col justify-center">
+    <p class="eyebrow reveal mb-5" style="color:var(--gold-light)" data-i18n="hero.eyebrow">Алматыдағы 4 жұлдызды бизнес-отель</p>
+    <h1 class="reveal leading-[0.98] text-white">
+      <span class="block font-display font-800 text-[2.8rem] sm:text-6xl md:text-7xl xl:text-8xl tracking-tight">BUSINESS HOTEL</span>
+      <span class="block font-display font-800 text-[2.8rem] sm:text-6xl md:text-7xl xl:text-8xl tracking-tight text-[var(--red)]" style="-webkit-text-stroke:0">ALMATY</span>
+    </h1>
+    <p class="reveal mt-7 max-w-xl text-white/80 text-lg" data-i18n="hero.subtitle">Бизнес сапарлары, демалыс және іс-шаралар үшін ыңғайлы орналасқан заманауи қонақ үй.</p>
+
+    <div class="reveal mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-white/90 text-sm font-semibold">
+      <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13M3 21h18M9 21v-6h6v6"/></svg> <span data-i18n="hero.statRooms">118 нөмір</span></span>
+      <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold-light)" stroke="none"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg> <span data-i18n="hero.statStars">4 жұлдыз</span></span>
+      <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> <span data-i18n="hero.statService">24/7 қызмет</span></span>
+      <span class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2M17 11a3 3 0 100-6M22 21v-2a5 5 0 00-3-4.6"/></svg> <span data-i18n="hero.statHalls">2 конференц-зал</span></span>
+    </div>
 
     <div class="reveal mt-9 flex flex-wrap items-center gap-4">
-      <a href="#booking" class="btn btn-gold shadow-gold" data-i18n="hero.cta">Забронировать номер</a>
-      <a href="https://wa.me/77072188629" target="_blank" rel="noopener" class="btn btn-outline">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18a7.9 7.9 0 01-4.24-1.23l-.3-.19-3 .79.8-2.93-.2-.3A7.93 7.93 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.6c-.24-.12-1.4-.7-1.62-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1-.37-1.92-1.18-.7-.63-1.18-1.4-1.32-1.64-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.38.51.58.18 1.1.16 1.52.1.46-.07 1.4-.57 1.6-1.13.2-.55.2-1.02.14-1.12-.06-.1-.22-.16-.46-.28z"/></svg>
-        <span data-i18n="hero.whatsapp">Написать в WhatsApp</span>
+      <a href="#booking" class="btn btn-red shadow-red" data-i18n="hero.cta">Нөмірді брондау</a>
+      <a href="#trust" class="btn btn-outline-light">
+        <span data-i18n="hero.ctaSecondary">Біздің артықшылықтарымыз</span>
+        <span class="w-5 h-5 rounded-full border border-white/70 flex items-center justify-center text-xs">+</span>
       </a>
     </div>
   </div>
+</section>
 
-  <div class="relative container-x pb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-    <div class="reveal rating-badge rounded-2xl px-6 py-4 flex items-center gap-4 shadow-elevated w-fit">
-      <span class="font-display text-4xl text-[var(--gold)]">4.9</span>
-      <div class="text-sm leading-tight">
-        <div class="flex gap-0.5 text-[var(--gold)] mb-1">★★★★★</div>
-        <p class="text-[var(--ink-text-dim)]" data-i18n="hero.ratingNote">880 оценок · 154 отзыва на 2ГИС</p>
+<!-- ============ BOOKING WIDGET (floating, overlaps hero) ============ -->
+<div class="relative z-20 container-x -mt-16 md:-mt-14">
+  <form id="booking-widget" class="reveal booking-widget p-5 md:p-3 md:flex md:items-stretch">
+    <div class="bw-field flex-1 flex items-center gap-3 px-4 py-3 md:py-2">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" class="shrink-0"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+      <div class="min-w-0 grow">
+        <label class="bw-label block" for="bw-checkin" data-i18n="book.checkin">Кіру күні</label>
+        <input id="bw-checkin" type="date" class="bw-input">
       </div>
     </div>
-    <div class="reveal flex items-center gap-6 text-[var(--ink-text-dim)] text-sm">
-      <div><span class="text-[var(--gold)] font-display text-2xl mr-1">118</span><span data-i18n="hero.rooms">номеров</span></div>
-      <div class="w-px h-8 bg-[var(--line-strong)]"></div>
-      <div><span class="text-[var(--gold)] font-display text-2xl mr-1">2</span><span data-i18n="hero.halls">конференц-зала</span></div>
-      <div class="w-px h-8 bg-[var(--line-strong)] hidden sm:block"></div>
-      <div class="hidden sm:block"><span class="text-[var(--gold)] font-display text-2xl mr-1">25</span><span data-i18n="hero.parking">мест паркинга</span></div>
+    <div class="bw-field flex-1 flex items-center gap-3 px-4 py-3 md:py-2">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" class="shrink-0"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+      <div class="min-w-0 grow">
+        <label class="bw-label block" for="bw-checkout" data-i18n="book.checkout">Шығу күні</label>
+        <input id="bw-checkout" type="date" class="bw-input">
+      </div>
+    </div>
+    <div class="bw-field flex-1 flex items-center gap-3 px-4 py-3 md:py-2">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" class="shrink-0"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      <div class="min-w-0 grow">
+        <label class="bw-label block" for="bw-guests" data-i18n="book.guests">Қонақтар саны</label>
+        <input id="bw-guests" type="number" min="1" max="10" value="2" class="bw-input">
+      </div>
+    </div>
+    <div class="bw-field flex-1 flex items-center gap-3 px-4 py-3 md:py-2">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" class="shrink-0"><path d="M3 21V8l9-5 9 5v13M3 21h18M9 21v-6h6v6"/></svg>
+      <div class="min-w-0 grow">
+        <label class="bw-label block" for="bw-room" data-i18n="book.roomType">Нөмір түрі</label>
+        <select id="bw-room" class="bw-input">
+          <option data-i18n="rooms.std.title">Стандарт</option>
+          <option data-i18n="rooms.dlx.title">Де-люкс</option>
+          <option>TWIN</option>
+          <option data-i18n="rooms.lux.title">Люкс</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-red shadow-red mt-4 md:mt-0 md:ml-3 w-full md:w-auto shrink-0" data-i18n="book.search">Нөмірді іздеу</button>
+  </form>
+</div>
+
+<!-- ============ TRUST / ADVANTAGES ============ -->
+<section id="trust" class="pt-14 pb-16 md:pt-16 md:pb-20">
+  <div class="container-x">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      <div class="reveal text-center lg:text-left p-5 rounded-2xl bg-[var(--off-white)] border border-[var(--line)]">
+        <p class="font-display text-[2.6rem] leading-none text-[var(--red)] mb-1">4.9</p>
+        <p class="text-xs font-semibold text-[var(--text-dim)]" data-i18n="trust.gisRating">2ГИС рейтингі</p>
+      </div>
+      <div class="reveal text-center lg:text-left p-5 rounded-2xl border border-[var(--line)]">
+        <p class="font-display text-[2.6rem] leading-none mb-1">118</p>
+        <p class="text-xs font-semibold text-[var(--text-dim)]" data-i18n="trust.roomsLabel">Нөмір</p>
+      </div>
+      <div class="reveal text-center lg:text-left p-5 rounded-2xl border border-[var(--line)]">
+        <p class="font-display text-[2.6rem] leading-none mb-1">25</p>
+        <p class="text-xs font-semibold text-[var(--text-dim)]" data-i18n="trust.parkingLabel">Тегін автотұрақ</p>
+      </div>
+      <div class="reveal text-center lg:text-left p-5 rounded-2xl border border-[var(--line)]">
+        <p class="font-display text-[2.6rem] leading-none mb-1">24/7</p>
+        <p class="text-xs font-semibold text-[var(--text-dim)]" data-i18n="trust.serviceLabel">Қызмет</p>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm text-[var(--text-dim)] font-semibold">
+      <span class="reveal flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg> <span data-i18n="trust.breakfast">Тегін таңғы ас</span></span>
+      <span class="reveal flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> <span data-i18n="trust.wifi">Wi-Fi</span></span>
+      <span class="reveal flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8"><path d="M12 21s7-6.3 7-12a7 7 0 10-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg> <span data-i18n="trust.locationLine">Тұрғыт Озал көшесі — 250 м / 2 мин жаяу</span></span>
     </div>
   </div>
 </section>
-
-<!-- ============ WHY US / TRUST STRIP ============ -->
-<section class="border-y border-[var(--line)] bg-[var(--ink-2)]">
-  <div class="container-x py-10">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      <div class="reveal flex items-center gap-3">
-        <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg></div>
-        <div><p class="font-display text-xl">4.9 / 5</p><p class="text-xs text-[var(--ink-text-dim)]" data-i18n="trust.rating">Лучший рейтинг района</p></div>
-      </div>
-      <div class="reveal flex items-center gap-3">
-        <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V8l9-5 9 5v13M3 21h18M9 21v-6h6v6"/></svg></div>
-        <div><p class="font-display text-xl" data-i18n="trust.starsVal">4 звезды</p><p class="text-xs text-[var(--ink-text-dim)]" data-i18n="trust.stars">Официальная категория</p></div>
-      </div>
-      <div class="reveal flex items-center gap-3">
-        <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-        <div><p class="font-display text-xl" data-i18n="trust.hoursVal">24 / 7</p><p class="text-xs text-[var(--ink-text-dim)]" data-i18n="trust.hours">Круглосуточный ресепшн</p></div>
-      </div>
-      <div class="reveal flex items-center gap-3">
-        <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></div>
-        <div><p class="font-display text-xl" data-i18n="trust.locVal">Тастак-2</p><p class="text-xs text-[var(--ink-text-dim)]" data-i18n="trust.loc">Алмалинский район</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ ABOUT ============ -->
-<section id="about" class="py-24 md:py-32">
+<section id="about" class="py-20 md:py-28">
   <div class="container-x grid lg:grid-cols-2 gap-14 items-center">
     <div class="reveal order-2 lg:order-1">
       <p class="eyebrow mb-4" data-i18n="about.eyebrow">О нас</p>
       <h2 class="text-4xl md:text-5xl mb-6" data-i18n="about.title">История, построенная на гостеприимстве</h2>
-      <div class="divider-gold mb-6"></div>
-      <p class="text-[var(--ink-text-dim)] mb-5" data-i18n="about.p1">Business Hotel Almaty — четырёхзвёздочный отель на проспекте Райымбека, в шаговой доступности от центра деловой активности города. За годы работы отель стал выбором тысяч гостей — от деловых путешественников до участников торжеств.</p>
-      <p class="text-[var(--ink-text-dim)] mb-8" data-i18n="about.p2">118 номеров четырёх категорий, два конференц-зала, банкетный зал, собственный Karaoke Club и ресторан — всё продумано для комфортного пребывания и продуктивной работы.</p>
+      <div class="divider-flourish left-align mb-6"><span class="fl-line"></span></div>
+      <p class="text-[var(--text-dim)] mb-5" data-i18n="about.p1">Business Hotel Almaty — четырёхзвёздочный отель на проспекте Райымбека, в шаговой доступности от центра деловой активности города. За годы работы отель стал выбором тысяч гостей — от деловых путешественников до участников торжеств.</p>
+      <p class="text-[var(--text-dim)] mb-8" data-i18n="about.p2">118 номеров четырёх категорий, два конференц-зала, банкетный зал, собственный Karaoke Club и ресторан — всё продумано для комфортного пребывания и продуктивной работы.</p>
       <div class="grid grid-cols-2 gap-6">
         <div class="flex items-start gap-3">
           <div class="icon-badge shrink-0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M6 19V9l6-4 6 4v10"/></svg></div>
-          <div><p class="font-semibold" data-i18n="about.f1t">Доступная среда</p><p class="text-sm text-[var(--ink-text-dim)]" data-i18n="about.f1d">Пандус, широкий лифт, вход для МГН</p></div>
+          <div><p class="font-semibold" data-i18n="about.f1t">Доступная среда</p><p class="text-sm text-[var(--text-dim)]" data-i18n="about.f1d">Пандус, широкий лифт, вход для МГН</p></div>
         </div>
         <div class="flex items-start gap-3">
           <div class="icon-badge shrink-0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
-          <div><p class="font-semibold" data-i18n="about.f2t">Удобное расположение</p><p class="text-sm text-[var(--ink-text-dim)]" data-i18n="about.f2d">Рядом остановки и деловой центр</p></div>
+          <div><p class="font-semibold" data-i18n="about.f2t">Удобное расположение</p><p class="text-sm text-[var(--text-dim)]" data-i18n="about.f2d">Рядом остановки и деловой центр</p></div>
         </div>
       </div>
     </div>
     <div class="reveal order-1 lg:order-2 grid grid-cols-2 gap-4">
-      <div class="img-tone rounded-2xl overflow-hidden shadow-elevated col-span-2 aspect-[16/10]"><img src="images/lobby-lounge-2.jpg" alt="Лобби Business Hotel Almaty" class="w-full h-full object-cover"></div>
-      <div class="img-tone rounded-2xl overflow-hidden shadow-elevated aspect-square"><img src="images/lobby-reception-1.jpg" alt="Ресепшн" class="w-full h-full object-cover"></div>
-      <div class="img-tone rounded-2xl overflow-hidden shadow-elevated aspect-square"><img src="images/lobby-desk-1.jpg" alt="Стойка регистрации" class="w-full h-full object-cover"></div>
+      <div class="img-tone rounded-2xl overflow-hidden shadow-elevated col-span-2 aspect-[16/10]"><img src="images/lobby-lounge-2.jpg" alt="Лобби Business Hotel Almaty" class="w-full h-full object-cover" loading="lazy"></div>
+      <div class="img-tone rounded-2xl overflow-hidden shadow-elevated aspect-square"><img src="images/lobby-reception-1.jpg" alt="Ресепшн" class="w-full h-full object-cover" loading="lazy"></div>
+      <div class="img-tone rounded-2xl overflow-hidden shadow-elevated aspect-square"><img src="images/lobby-desk-1.jpg" alt="Стойка регистрации" class="w-full h-full object-cover" loading="lazy"></div>
     </div>
   </div>
 </section>
 
 <!-- ============ ROOMS ============ -->
-<section id="rooms" class="py-24 md:py-32 bg-[var(--ink-2)] border-y border-[var(--line)]">
-  <div class="container-x">
-    <div class="reveal max-w-2xl mb-14">
+<section id="rooms" class="py-20 md:py-28 bg-[var(--off-white)] border-y border-[var(--line)] relative overflow-hidden">
+  <svg class="pagoda-deco hidden md:block" style="top:2rem;right:2rem;width:220px;height:120px" viewBox="0 0 220 120" fill="none" stroke="currentColor" stroke-width="1.2">
+    <path d="M10 110h60M40 110V70M20 70h40l-6-16H26l-6 16zM40 54l-14 16h28L40 54z"/>
+    <path d="M90 110h90M135 110V60M100 60h70l-9-22h-52l-9 22zM135 38l-20 22h40l-20-22z"/>
+  </svg>
+  <div class="container-x relative">
+    <div class="reveal section-eyebrow-wrap max-w-2xl mx-auto mb-14 text-center">
       <p class="eyebrow mb-4" data-i18n="rooms.eyebrow">Размещение</p>
-      <h2 class="text-4xl md:text-5xl mb-6" data-i18n="rooms.title">Номера на любой формат поездки</h2>
-      <div class="divider-gold"></div>
+      <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
+      <h2 class="text-4xl md:text-5xl" data-i18n="rooms.title">Номера на любой формат поездки</h2>
     </div>
 
-    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-      <!-- Standard -->
-      <div class="reveal card card-float shadow-elevated overflow-hidden flex flex-col">
-        <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/1c1f2b/c9a15a?text=Standard" alt="Стандартный номер" class="w-full h-full object-cover"></div>
-        <div class="p-6 flex flex-col grow">
-          <h3 class="font-display text-2xl mb-2" data-i18n="rooms.std.title">Стандартный номер</h3>
-          <p class="text-sm text-[var(--ink-text-dim)] mb-4 grow" data-i18n="rooms.std.desc">Уютный номер с всем необходимым для комфортного отдыха после насыщенного дня.</p>
-          <ul class="text-xs text-[var(--ink-text-dim)] space-y-1.5 mb-5">
-            <li data-i18n="rooms.amenity.wifi">· Wi-Fi</li>
-            <li data-i18n="rooms.amenity.ac">· Кондиционер</li>
-            <li data-i18n="rooms.amenity.breakfast">· Завтрак включён</li>
-          </ul>
-          <div class="flex items-center justify-between">
-            <div><span class="text-[var(--ink-text-dim)] text-xs" data-i18n="rooms.from">от</span> <span class="font-display text-xl text-[var(--gold)]">25 000 ₸</span></div>
+    <div class="relative">
+      <div class="tcarousel" id="carousel-rooms">
+        <!-- Standard -->
+        <article class="card card-float shadow-elevated overflow-hidden flex flex-col w-[300px] sm:w-[330px]">
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Standard" alt="Стандартный номер" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-6 flex flex-col grow">
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.std.title">Стандартный номер</h3>
+            <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+            </div>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.std.desc">Уютный номер с всем необходимым для комфортного отдыха после насыщенного дня.</p>
+            <div class="flex items-end justify-between mb-4">
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">25 000 ₸</span></div>
+            </div>
+            <div class="flex gap-2">
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room="Стандартный номер" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room="Стандартный номер"><span data-i18n="rooms.book">Брондау</span></a>
+            </div>
           </div>
-          <a href="#" class="book-room-btn btn btn-outline mt-4 w-full" data-room="Стандартный номер">
-            <span data-i18n="rooms.book">Забронировать</span>
-          </a>
-        </div>
+        </article>
+        <!-- Deluxe -->
+        <article class="card card-float shadow-elevated overflow-hidden flex flex-col w-[300px] sm:w-[330px]">
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=De-Luxe" alt="Де-люкс" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-6 flex flex-col grow">
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.dlx.title">Де-люкс</h3>
+            <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+            </div>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.dlx.desc">Просторный номер с продуманным интерьером и рабочей зоной для деловых гостей.</p>
+            <div class="flex items-end justify-between mb-4">
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">30 000 ₸</span></div>
+            </div>
+            <div class="flex gap-2">
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room="Де-люкс" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room="Де-люкс"><span data-i18n="rooms.book">Брондау</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- Twin -->
+        <article class="card card-float shadow-elevated overflow-hidden flex flex-col w-[300px] sm:w-[330px]">
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Twin" alt="Twin" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-6 flex flex-col grow">
+            <h3 class="font-display text-2xl mb-2">TWIN</h3>
+            <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+            </div>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.twin.desc">Две отдельные кровати — идеальный вариант для коллег или друзей, путешествующих вместе.</p>
+            <div class="flex items-end justify-between mb-4">
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">30 000 ₸</span></div>
+            </div>
+            <div class="flex gap-2">
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room="TWIN" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room="TWIN"><span data-i18n="rooms.book">Брондау</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- Lux -->
+        <article class="card card-float shadow-elevated overflow-hidden flex flex-col relative w-[300px] sm:w-[330px]">
+          <span class="absolute top-4 right-4 z-10 text-[.65rem] font-bold tracking-widest uppercase bg-[var(--red)] text-white px-3 py-1 rounded-full" data-i18n="rooms.popular">Танымал</span>
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Lux" alt="Люкс" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-6 flex flex-col grow">
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.lux.title">Люкс</h3>
+            <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+            </div>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.lux.desc">Самый просторный номер отеля с зоной отдыха — для особых случаев и VIP-гостей.</p>
+            <div class="flex items-end justify-between mb-4">
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">35 000 ₸</span></div>
+            </div>
+            <div class="flex gap-2">
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room="Люкс" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room="Люкс"><span data-i18n="rooms.book">Брондау</span></a>
+            </div>
+          </div>
+        </article>
       </div>
-      <!-- Deluxe -->
-      <div class="reveal card card-float shadow-elevated overflow-hidden flex flex-col">
-        <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/1c1f2b/c9a15a?text=De-Luxe" alt="Де-люкс" class="w-full h-full object-cover"></div>
-        <div class="p-6 flex flex-col grow">
-          <h3 class="font-display text-2xl mb-2" data-i18n="rooms.dlx.title">Де-люкс</h3>
-          <p class="text-sm text-[var(--ink-text-dim)] mb-4 grow" data-i18n="rooms.dlx.desc">Просторный номер с продуманным интерьером и рабочей зоной для деловых гостей.</p>
-          <ul class="text-xs text-[var(--ink-text-dim)] space-y-1.5 mb-5">
-            <li data-i18n="rooms.amenity.desk">· Письменный стол</li>
-            <li data-i18n="rooms.amenity.tv">· Спутниковое ТВ</li>
-            <li data-i18n="rooms.amenity.breakfast">· Завтрак включён</li>
-          </ul>
-          <div><span class="text-[var(--ink-text-dim)] text-xs" data-i18n="rooms.from">от</span> <span class="font-display text-xl text-[var(--gold)]">30 000 ₸</span></div>
-          <a href="#" class="book-room-btn btn btn-outline mt-4 w-full" data-room="Де-люкс"><span data-i18n="rooms.book">Забронировать</span></a>
-        </div>
-      </div>
-      <!-- Twin -->
-      <div class="reveal card card-float shadow-elevated overflow-hidden flex flex-col">
-        <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/1c1f2b/c9a15a?text=Twin" alt="Twin" class="w-full h-full object-cover"></div>
-        <div class="p-6 flex flex-col grow">
-          <h3 class="font-display text-2xl mb-2">TWIN</h3>
-          <p class="text-sm text-[var(--ink-text-dim)] mb-4 grow" data-i18n="rooms.twin.desc">Две отдельные кровати — идеальный вариант для коллег или друзей, путешествующих вместе.</p>
-          <ul class="text-xs text-[var(--ink-text-dim)] space-y-1.5 mb-5">
-            <li data-i18n="rooms.amenity.wifi">· Wi-Fi</li>
-            <li data-i18n="rooms.amenity.bathrobe">· Халат и фен</li>
-            <li data-i18n="rooms.amenity.breakfast">· Завтрак включён</li>
-          </ul>
-          <div><span class="text-[var(--ink-text-dim)] text-xs" data-i18n="rooms.from">от</span> <span class="font-display text-xl text-[var(--gold)]">30 000 ₸</span></div>
-          <a href="#" class="book-room-btn btn btn-outline mt-4 w-full" data-room="TWIN"><span data-i18n="rooms.book">Забронировать</span></a>
-        </div>
-      </div>
-      <!-- Lux -->
-      <div class="reveal card card-float shadow-elevated overflow-hidden flex flex-col relative">
-        <span class="absolute top-4 right-4 z-10 text-[.65rem] font-bold tracking-widest uppercase bg-[var(--gold)] text-[#211705] px-3 py-1 rounded-full" data-i18n="rooms.popular">Популярный</span>
-        <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/1c1f2b/c9a15a?text=Lux" alt="Люкс" class="w-full h-full object-cover"></div>
-        <div class="p-6 flex flex-col grow">
-          <h3 class="font-display text-2xl mb-2" data-i18n="rooms.lux.title">Люкс</h3>
-          <p class="text-sm text-[var(--ink-text-dim)] mb-4 grow" data-i18n="rooms.lux.desc">Самый просторный номер отеля с зоной отдыха — для особых случаев и VIP-гостей.</p>
-          <ul class="text-xs text-[var(--ink-text-dim)] space-y-1.5 mb-5">
-            <li data-i18n="rooms.amenity.tv">· Спутниковое ТВ</li>
-            <li data-i18n="rooms.amenity.bidet">· Биде, отдельный санузел</li>
-            <li data-i18n="rooms.amenity.breakfast">· Завтрак включён</li>
-          </ul>
-          <div><span class="text-[var(--ink-text-dim)] text-xs" data-i18n="rooms.from">от</span> <span class="font-display text-xl text-[var(--gold)]">35 000 ₸</span></div>
-          <a href="#" class="book-room-btn btn btn-gold mt-4 w-full shadow-gold" data-room="Люкс"><span data-i18n="rooms.book">Забронировать</span></a>
-        </div>
-      </div>
+      <button class="carousel-arrow hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 shadow-elevated" data-dir="-1" data-target="carousel-rooms" aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="carousel-arrow hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 shadow-elevated" data-dir="1" data-target="carousel-rooms" aria-label="Вперёд"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
-    <p class="reveal text-xs text-[var(--ink-text-dim)] mt-6" data-i18n="rooms.note">Цены указаны от минимальной стоимости за сутки и могут уточняться у администрации отеля.</p>
+    <div class="flex items-center justify-center gap-2 mt-8" id="dots-rooms"></div>
+    <p class="reveal text-xs text-[var(--text-dim)] text-center mt-4" data-i18n="rooms.note">Цены указаны от минимальной стоимости за сутки и могут уточняться у администрации отеля.</p>
   </div>
 </section>
 
-<!-- ============ CONFERENCE ============ -->
-<section id="conference" class="py-24 md:py-32">
-  <div class="container-x grid lg:grid-cols-2 gap-14 items-center">
-    <div class="reveal img-tone rounded-2xl overflow-hidden shadow-floating aspect-[4/3]">
-      <img src="https://placehold.co/900x680/191c26/c9a15a?text=Conference+Hall" alt="Конференц-зал" class="w-full h-full object-cover">
-    </div>
-    <div class="reveal">
-      <p class="eyebrow mb-4" data-i18n="conf.eyebrow">Деловые мероприятия</p>
-      <h2 class="text-4xl md:text-5xl mb-6" data-i18n="conf.title">Конференц-залы для событий любого масштаба</h2>
-      <div class="divider-gold mb-6"></div>
-      <p class="text-[var(--ink-text-dim)] mb-8" data-i18n="conf.desc">Два зала вместимостью до 50 человек, оснащённых проектором и звуковым оборудованием. Подходят для переговоров, презентаций, тренингов и семинаров.</p>
-      <div class="grid grid-cols-2 gap-5 mb-9">
-        <div class="flex items-center gap-3"><div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2M17 11a3 3 0 100-6M22 21v-2a5 5 0 00-3-4.6"/></svg></div><p class="text-sm" data-i18n="conf.f1">До 50 человек</p></div>
-        <div class="flex items-center gap-3"><div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><p class="text-sm" data-i18n="conf.f2">Проектор и экран</p></div>
-        <div class="flex items-center gap-3"><div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 18v-6a9 9 0 0118 0v6M3 18a2 2 0 002 2h1v-6H4a1 1 0 00-1 1v3zM21 18a2 2 0 01-2 2h-1v-6h2a1 1 0 011 1v3z"/></svg></div><p class="text-sm" data-i18n="conf.f3">Звуковое оборудование</p></div>
-        <div class="flex items-center gap-3"><div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3v4M3 5h4M6 17v4M4 19h4M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5L13 3z"/></svg></div><p class="text-sm" data-i18n="conf.f4">2 зала на выбор</p></div>
-      </div>
-      <a href="#booking" class="btn btn-gold shadow-gold" data-i18n="conf.cta">Отправить запрос</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BANQUET ============ -->
-<section id="banquet" class="py-24 md:py-32 bg-[var(--ink-2)] border-y border-[var(--line)]">
-  <div class="container-x grid lg:grid-cols-2 gap-14 items-center">
-    <div class="reveal order-2 lg:order-1">
-      <p class="eyebrow mb-4" data-i18n="banq.eyebrow">Торжества</p>
-      <h2 class="text-4xl md:text-5xl mb-6" data-i18n="banq.title">Банкетный зал для незабываемых событий</h2>
-      <div class="divider-gold mb-6"></div>
-      <p class="text-[var(--ink-text-dim)] mb-8" data-i18n="banq.desc">Свадьбы, юбилеи, корпоративные праздники — банкетный зал отеля создаст нужную атмосферу для любого торжества, а команда отеля возьмёт организацию на себя.</p>
-      <a href="#booking" class="btn btn-outline" data-i18n="banq.cta">Узнать варианты меню</a>
-    </div>
-    <div class="reveal order-1 lg:order-2 img-tone rounded-2xl overflow-hidden shadow-floating aspect-[4/3]">
-      <img src="https://placehold.co/900x680/191c26/c9a15a?text=Banquet+Hall" alt="Банкетный зал" class="w-full h-full object-cover">
-    </div>
-  </div>
-</section>
-
-<!-- ============ KARAOKE ============ -->
-<section id="karaoke" class="py-24 md:py-32">
-  <div class="container-x grid lg:grid-cols-2 gap-14 items-center">
-    <div class="reveal img-tone rounded-2xl overflow-hidden shadow-floating aspect-[4/3]">
-      <img src="https://placehold.co/900x680/191c26/c9a15a?text=Karaoke+Club" alt="Karaoke Club" class="w-full h-full object-cover">
-    </div>
-    <div class="reveal">
-      <p class="eyebrow mb-4" data-i18n="karaoke.eyebrow">@karaokeclub_kz</p>
-      <h2 class="text-4xl md:text-5xl mb-6">Karaoke Club</h2>
-      <div class="divider-gold mb-6"></div>
-      <p class="text-[var(--ink-text-dim)] mb-8" data-i18n="karaoke.desc">Собственный караоке-клуб на территории отеля — отличное место для вечернего отдыха с друзьями или коллегами после насыщенного дня.</p>
-      <a href="https://wa.me/77072188629" target="_blank" rel="noopener" class="btn btn-gold shadow-gold" data-i18n="karaoke.cta">Забронировать столик</a>
+<!-- ============ CONFERENCE / BANQUET / KARAOKE ============ -->
+<section class="py-20 md:py-28">
+  <div class="container-x">
+    <div class="grid lg:grid-cols-3 gap-6">
+      <!-- Conference -->
+      <article id="conference" class="reveal card shadow-elevated overflow-hidden flex flex-col">
+        <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/700x525/F4F2EF/9E1010?text=Conference+Hall" alt="Конференц-залдар" class="w-full h-full object-cover" loading="lazy"></div>
+        <div class="p-7 flex flex-col grow">
+          <p class="eyebrow mb-2 !text-[.65rem]" data-i18n="conf.eyebrow">Деловые мероприятия</p>
+          <h3 class="font-display text-2xl mb-3" data-i18n="nav.conferenceFull">Конференц-залдар</h3>
+          <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="conf.desc">Два зала вместимостью до 50 человек, оснащённых проектором и звуковым оборудованием. Подходят для переговоров, презентаций, тренингов и семинаров.</p>
+          <a href="#booking" class="inline-flex items-center gap-2 text-[var(--red)] font-bold text-sm hover:gap-3 transition-all" data-i18n="conf.cta">Залға сұраныс жіберу <span>→</span></a>
+        </div>
+      </article>
+      <!-- Banquet -->
+      <article id="banquet" class="reveal card shadow-elevated overflow-hidden flex flex-col">
+        <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/700x525/F4F2EF/9E1010?text=Banquet+Hall" alt="Банкет залы" class="w-full h-full object-cover" loading="lazy"></div>
+        <div class="p-7 flex flex-col grow">
+          <p class="eyebrow mb-2 !text-[.65rem]" data-i18n="banq.eyebrow">Торжества</p>
+          <h3 class="font-display text-2xl mb-3" data-i18n="nav.banquetFull">Банкет залы</h3>
+          <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="banq.desc">Свадьбы, юбилеи, корпоративные праздники — банкетный зал отеля создаст нужную атмосферу, а команда отеля возьмёт организацию на себя.</p>
+          <a href="#booking" class="inline-flex items-center gap-2 text-[var(--red)] font-bold text-sm hover:gap-3 transition-all" data-i18n="banq.cta">Сұраныс жіберу <span>→</span></a>
+        </div>
+      </article>
+      <!-- Karaoke -->
+      <article id="karaoke" class="reveal card shadow-elevated overflow-hidden flex flex-col relative" style="background:#171717">
+        <div class="img-tone aspect-[4/3] relative">
+          <img src="https://placehold.co/700x525/171717/C9A45C?text=Karaoke+Club" alt="Karaoke Club" class="w-full h-full object-cover opacity-90" loading="lazy">
+          <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(23,23,23,0) 40%,rgba(23,23,23,.75) 100%)"></div>
+        </div>
+        <div class="p-7 flex flex-col grow">
+          <p class="!text-[.65rem] font-bold tracking-[.22em] uppercase mb-2" style="color:var(--gold)" data-i18n="karaoke.eyebrow">@karaokeclub_kz</p>
+          <h3 class="font-display text-2xl mb-3 text-white">Karaoke Club</h3>
+          <p class="text-sm text-white/65 mb-5 grow" data-i18n="karaoke.desc">Собственный караоке-клуб на территории отеля — отличное место для вечернего отдыха с друзьями или коллегами после насыщенного дня.</p>
+          <a href="https://wa.me/77072188629" target="_blank" rel="noopener" class="btn btn-red shadow-red w-fit" data-i18n="karaoke.cta">Брондау</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ============ RESTAURANT ============ -->
-<section id="restaurant" class="py-24 md:py-32 bg-[var(--ink-2)] border-y border-[var(--line)]">
+<section id="restaurant" class="py-20 md:py-28 bg-[var(--off-white)] border-y border-[var(--line)]">
   <div class="container-x">
-    <div class="reveal max-w-2xl mb-14">
+    <div class="reveal section-eyebrow-wrap max-w-2xl mx-auto mb-14 text-center">
       <p class="eyebrow mb-4" data-i18n="rest.eyebrow">Питание</p>
-      <h2 class="text-4xl md:text-5xl mb-6" data-i18n="rest.title">Ресторан и завтрак</h2>
-      <div class="divider-gold"></div>
+      <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
+      <h2 class="text-4xl md:text-5xl" data-i18n="rest.title">Ресторан и завтрак</h2>
     </div>
     <div class="grid md:grid-cols-2 gap-6">
       <div class="reveal card card-float shadow-elevated overflow-hidden">
-        <div class="img-tone aspect-[16/10]"><img src="images/restaurant-entrance-1.jpg" alt="Ресторан на территории отеля" class="w-full h-full object-cover"></div>
+        <div class="img-tone aspect-[16/10]"><img src="images/restaurant-entrance-1.jpg" alt="Ресторан на территории отеля" class="w-full h-full object-cover" loading="lazy"></div>
         <div class="p-7">
           <h3 class="font-display text-2xl mb-2" data-i18n="rest.card1.title">Континентальный завтрак</h3>
-          <p class="text-sm text-[var(--ink-text-dim)]" data-i18n="rest.card1.desc">Завтрак включён в стоимость проживания и подаётся ежедневно для всех гостей отеля.</p>
+          <p class="text-sm text-[var(--text-dim)]" data-i18n="rest.card1.desc">Завтрак включён в стоимость проживания и подаётся ежедневно для всех гостей отеля.</p>
         </div>
       </div>
       <div class="reveal card card-float shadow-elevated overflow-hidden">
-        <div class="img-tone aspect-[16/10]"><img src="images/restaurant-entrance-2.jpg" alt="Ресторан китайской кухни" class="w-full h-full object-cover"></div>
+        <div class="img-tone aspect-[16/10]"><img src="images/restaurant-entrance-2.jpg" alt="Ресторан на территории" class="w-full h-full object-cover" loading="lazy"></div>
         <div class="p-7">
           <h3 class="font-display text-2xl mb-2" data-i18n="rest.card2.title">Ресторан на территории</h3>
-          <p class="text-sm text-[var(--ink-text-dim)]" data-i18n="rest.card2.desc">На первом этаже комплекса работает ресторан — удобно для завтрака, обеда и делового ужина.</p>
+          <p class="text-sm text-[var(--text-dim)]" data-i18n="rest.card2.desc">На первом этаже комплекса работает ресторан — удобно для завтрака, обеда и делового ужина.</p>
         </div>
       </div>
     </div>
@@ -648,191 +812,237 @@
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section id="services" class="py-24 md:py-32">
+<section id="services" class="py-20 md:py-28">
   <div class="container-x">
-    <div class="reveal max-w-2xl mb-14">
+    <div class="reveal section-eyebrow-wrap max-w-2xl mx-auto mb-14 text-center">
       <p class="eyebrow mb-4" data-i18n="serv.eyebrow">Удобства</p>
-      <h2 class="text-4xl md:text-5xl mb-6" data-i18n="serv.title">Всё для комфортного пребывания</h2>
-      <div class="divider-gold"></div>
+      <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
+      <h2 class="text-4xl md:text-5xl" data-i18n="serv.title">Всё для комфортного пребывания</h2>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="reveal card card-float p-7 text-center">
         <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg></div>
         <p class="font-semibold mb-1" data-i18n="serv.wifi.t">Бесплатный Wi-Fi</p>
-        <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="serv.wifi.d">Высокоскоростной интернет во всём отеле</p>
+        <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.wifi.d">Высокоскоростной интернет во всём отеле</p>
       </div>
       <div class="reveal card card-float p-7 text-center">
         <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17h18M5 17V9a7 7 0 0114 0v8M8 21h8"/></svg></div>
         <p class="font-semibold mb-1" data-i18n="serv.park.t">Бесплатный паркинг</p>
-        <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="serv.park.d">25 машиномест на охраняемой территории</p>
+        <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.park.d">25 машиномест на охраняемой территории</p>
       </div>
       <div class="reveal card card-float p-7 text-center">
         <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h10l6 6v10H4zM14 4v6h6"/></svg></div>
         <p class="font-semibold mb-1" data-i18n="serv.laundry.t">Услуги прачечной</p>
-        <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="serv.laundry.d">Стирка и глажка по запросу</p>
+        <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.laundry.d">Стирка и глажка по запросу</p>
       </div>
       <div class="reveal card card-float p-7 text-center">
         <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div>
         <p class="font-semibold mb-1" data-i18n="serv.reception.t">Ресепшн 24/7</p>
-        <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="serv.reception.d">Заселение и поддержка в любое время</p>
+        <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.reception.d">Заселение и поддержка в любое время</p>
+      </div>
+      <div class="reveal card card-float p-7 text-center">
+        <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M6 19V9l6-4 6 4v10"/></svg></div>
+        <p class="font-semibold mb-1" data-i18n="serv.access.t">Қолжетімді орта</p>
+        <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.access.d">Пандус, кең кіреберіс</p>
+      </div>
+      <div class="reveal card card-float p-7 text-center">
+        <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M9 7h6M9 11h6"/></svg></div>
+        <p class="font-semibold mb-1" data-i18n="serv.lift.t">Кең лифт</p>
+        <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.lift.d">Барлық қабаттарға қолжетімді</p>
+      </div>
+      <div class="reveal card card-float p-7 text-center">
+        <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21h16M4 21l7-13h2l7 13M9 21v-5h6v5"/></svg></div>
+        <p class="font-semibold mb-1" data-i18n="serv.ramp.t">Пандус</p>
+        <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.ramp.d">Мүгедек арбасына қолжетімді</p>
+      </div>
+      <div class="reveal card card-float p-7 text-center">
+        <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg></div>
+        <p class="font-semibold mb-1" data-i18n="serv.breakfast.t">Тегін таңғы ас</p>
+        <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.breakfast.d">Континентальды таңғы ас</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ GALLERY ============ -->
-<section id="gallery" class="py-24 md:py-32 bg-[var(--ink-2)] border-y border-[var(--line)]">
+<section id="gallery" class="py-20 md:py-28">
   <div class="container-x">
-    <div class="reveal max-w-2xl mb-14">
+    <div class="reveal section-eyebrow-wrap max-w-2xl mx-auto mb-14 text-center">
       <p class="eyebrow mb-4" data-i18n="gal.eyebrow">Галерея</p>
-      <h2 class="text-4xl md:text-5xl mb-6" data-i18n="gal.title">Отель в деталях</h2>
-      <div class="divider-gold"></div>
+      <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
+      <h2 class="text-4xl md:text-5xl" data-i18n="gal.title">Отель в деталях</h2>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="img-tone rounded-xl overflow-hidden aspect-square reveal"><img src="images/hero-exterior-2.jpg" class="w-full h-full object-cover" alt="Экстерьер отеля"></div>
-      <div class="img-tone rounded-xl overflow-hidden aspect-square reveal"><img src="images/lobby-lounge-1.jpg" class="w-full h-full object-cover" alt="Лаунж-зона"></div>
-      <div class="img-tone rounded-xl overflow-hidden aspect-square reveal"><img src="images/lobby-reception-2.jpg" class="w-full h-full object-cover" alt="Ресепшн"></div>
-      <div class="img-tone rounded-xl overflow-hidden aspect-square reveal"><img src="images/exterior-facade-1.jpg" class="w-full h-full object-cover" alt="Фасад отеля"></div>
-      <div class="img-tone rounded-xl overflow-hidden aspect-square reveal"><img src="images/lobby-lounge-3.jpg" class="w-full h-full object-cover" alt="Лобби"></div>
-      <div class="img-tone rounded-xl overflow-hidden aspect-square reveal"><img src="images/restaurant-entrance-1.jpg" class="w-full h-full object-cover" alt="Ресторан"></div>
-      <div class="img-tone rounded-xl overflow-hidden aspect-square reveal"><img src="https://placehold.co/500x500/1c1f2b/c9a15a?text=Room" class="w-full h-full object-cover" alt="Номер"></div>
-      <div class="img-tone rounded-xl overflow-hidden aspect-square reveal"><img src="images/exterior-facade-2.jpg" class="w-full h-full object-cover" alt="Отель вечером"></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-grid">
+      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Экстерьер отеля"><img src="images/hero-exterior-2.jpg" class="w-full h-full object-cover" alt="Экстерьер отеля" loading="lazy"></button>
+      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Лаунж-зона"><img src="images/lobby-lounge-1.jpg" class="w-full h-full object-cover" alt="Лаунж-зона" loading="lazy"></button>
+      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ресепшн"><img src="images/lobby-reception-2.jpg" class="w-full h-full object-cover" alt="Ресепшн" loading="lazy"></button>
+      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Фасад отеля"><img src="images/exterior-facade-1.jpg" class="w-full h-full object-cover" alt="Фасад отеля" loading="lazy"></button>
+      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Лобби"><img src="images/lobby-lounge-3.jpg" class="w-full h-full object-cover" alt="Лобби" loading="lazy"></button>
+      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ресторан"><img src="images/restaurant-entrance-1.jpg" class="w-full h-full object-cover" alt="Ресторан" loading="lazy"></button>
+      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Номер"><img src="https://placehold.co/500x500/F4F2EF/9E1010?text=Room" class="w-full h-full object-cover" alt="Номер" loading="lazy"></button>
+      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Отель вечером"><img src="images/exterior-facade-2.jpg" class="w-full h-full object-cover" alt="Отель вечером" loading="lazy"></button>
     </div>
   </div>
 </section>
 
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[90] bg-black/90 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4" aria-hidden="true">
+  <button id="lightbox-close" class="absolute top-5 right-5 w-11 h-11 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white/10" aria-label="Жабу">
+    <svg width="18" height="18" viewBox="0 0 18 18"><path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <button id="lightbox-prev" class="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white/10" aria-label="Алдыңғы"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button id="lightbox-next" class="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white/10" aria-label="Келесі"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+  <figure class="max-w-4xl w-full">
+    <img id="lightbox-img" src="" alt="" class="w-full max-h-[78vh] object-contain rounded-lg">
+    <figcaption id="lightbox-caption" class="text-white/80 text-center text-sm mt-4"></figcaption>
+  </figure>
+</div>
+
 <!-- ============ REVIEWS / TESTIMONIALS ============ -->
-<section id="reviews" class="py-24 md:py-32">
+<section id="reviews" class="py-20 md:py-28 bg-[var(--off-white)] border-y border-[var(--line)]">
   <div class="container-x">
-    <div class="reveal max-w-2xl mb-10">
+    <div class="reveal section-eyebrow-wrap max-w-2xl mx-auto mb-10 text-center">
       <p class="eyebrow mb-4" data-i18n="rev.eyebrow">Отзывы гостей</p>
-      <h2 class="text-4xl md:text-5xl mb-6" data-i18n="rev.title">Нам доверяют гости со всего мира</h2>
-      <div class="divider-gold"></div>
+      <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
+      <h2 class="text-4xl md:text-5xl" data-i18n="rev.title">Нам доверяют гости со всего мира</h2>
     </div>
 
-    <div class="reveal flex flex-wrap items-center gap-3 mb-10" role="tablist" aria-label="Review types">
+    <div class="reveal flex flex-wrap items-center justify-center gap-3 mb-10" role="tablist" aria-label="Review types">
       <button class="tab-btn" data-tab="video" aria-selected="false" role="tab" data-i18n="rev.tab.video">Видео</button>
       <button class="tab-btn" data-tab="written" aria-selected="true" role="tab" data-i18n="rev.tab.written">Письменные</button>
       <button class="tab-btn" data-tab="audio" aria-selected="false" role="tab" data-i18n="rev.tab.audio">Аудио</button>
-      <a href="https://2gis.kz/almaty/firm/70000001019390802/76.876636%2C43.256927" target="_blank" rel="noopener" class="btn gis-btn ml-auto">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" fill="#fff"/><circle cx="12" cy="10" r="3" fill="#1e9e46"/></svg>
-        2ГИС · 4.9 ★
-      </a>
     </div>
 
-    <!-- WRITTEN -->
-    <div id="panel-written" class="tab-panel reveal">
-      <div class="relative">
-        <div class="tcarousel" id="carousel-written">
-          <article class="card p-7 w-[300px] sm:w-[340px] shadow-elevated">
-            <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
-            <p class="text-sm text-[var(--ink-text-dim)] mb-6" data-i18n="rev.w1.text">«Номера просторные, чистые и уютные. Завтрак хороший, персонал внимательный, расположение удобное».</p>
-            <p class="font-semibold text-sm">Umit Orazalieva</p>
-            <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
-          </article>
-          <article class="card p-7 w-[300px] sm:w-[340px] shadow-elevated">
-            <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
-            <p class="text-sm text-[var(--ink-text-dim)] mb-6" data-i18n="rev.w2.text">«Очень красивое место, атмосфера классная».</p>
-            <p class="font-semibold text-sm">Bakhargul</p>
-            <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
-          </article>
-          <article class="card p-7 w-[300px] sm:w-[340px] shadow-elevated">
-            <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
-            <p class="text-sm text-[var(--ink-text-dim)] mb-6" data-i18n="rev.w3.text">«Отличная гостиница».</p>
-            <p class="font-semibold text-sm">Azat Nadyrbekov</p>
-            <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
-          </article>
-          <article class="card p-7 w-[300px] sm:w-[340px] shadow-elevated">
-            <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
-            <p class="text-sm text-[var(--ink-text-dim)] mb-6" data-i18n="rev.w4.text">«Топ, всё понравилось».</p>
-            <p class="font-semibold text-sm">Qaz Shym</p>
-            <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
-          </article>
-          <article class="card p-7 w-[300px] sm:w-[340px] shadow-elevated">
-            <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
-            <p class="text-sm text-[var(--ink-text-dim)] mb-6" data-i18n="rev.w5.text">«Классный отель».</p>
-            <p class="font-semibold text-sm">Умит Нурашова</p>
-            <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
-          </article>
-          <article class="card p-7 w-[300px] sm:w-[340px] shadow-elevated">
-            <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
-            <p class="text-sm text-[var(--ink-text-dim)] mb-6" data-i18n="rev.w6.text">«Хорошее соотношение цены и качества, бесплатный паркинг, отзывчивый менеджер».</p>
-            <p class="font-semibold text-sm">Edonit Vitia</p>
-            <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
-          </article>
+    <div class="reveal grid lg:grid-cols-[280px_1fr] gap-8 items-start">
+      <div class="card shadow-elevated p-7 text-center lg:text-left">
+        <div class="flex items-center justify-center lg:justify-start gap-2 mb-3">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" fill="#1e9e46"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+          <span class="font-bold text-lg">2GIS</span>
         </div>
-        <div class="flex justify-end gap-3 mt-6">
-          <button class="carousel-arrow" data-dir="-1" data-target="carousel-written" aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <button class="carousel-arrow" data-dir="1" data-target="carousel-written" aria-label="Вперёд"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-        </div>
+        <p class="font-display text-5xl mb-2">4.9</p>
+        <div class="flex gap-0.5 justify-center lg:justify-start text-[var(--gold)] mb-3">★★★★★</div>
+        <p class="text-sm text-[var(--text-dim)] mb-5" data-i18n="hero.ratingNote">880 оценок · 154 отзыва на 2ГИС</p>
+        <a href="https://2gis.kz/almaty/firm/70000001019390802/76.876636%2C43.256927" target="_blank" rel="noopener" class="btn gis-btn w-full">
+          <span data-i18n="rev.allReviews">Барлық пікірлерді көру</span>
+        </a>
       </div>
-    </div>
 
-    <!-- VIDEO -->
-    <div id="panel-video" class="tab-panel reveal" hidden>
-      <div class="relative">
-        <div class="tcarousel" id="carousel-video">
-          <article class="card w-[260px] shadow-elevated overflow-hidden">
-            <div class="aspect-[9/16] relative bg-[var(--ink-3)] flex items-center justify-center">
-              <img src="https://placehold.co/400x700/20232f/20232f" class="absolute inset-0 w-full h-full object-cover opacity-80" alt="Видео-отзыв">
-              <span class="relative w-14 h-14 rounded-full bg-[var(--gold)] flex items-center justify-center text-[#211705]"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+      <div>
+        <!-- WRITTEN -->
+        <div id="panel-written" class="tab-panel">
+          <div class="relative">
+            <div class="tcarousel" id="carousel-written">
+              <article class="card p-7 w-[280px] sm:w-[320px] shadow-elevated">
+                <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
+                <p class="text-sm text-[var(--text-dim)] mb-6" data-i18n="rev.w1.text">«Номера просторные, чистые и уютные. Завтрак хороший, персонал внимательный, расположение удобное».</p>
+                <p class="font-semibold text-sm">Umit Orazalieva</p>
+                <p class="text-xs text-[var(--text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
+              </article>
+              <article class="card p-7 w-[280px] sm:w-[320px] shadow-elevated">
+                <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
+                <p class="text-sm text-[var(--text-dim)] mb-6" data-i18n="rev.w2.text">«Очень красивое место, атмосфера классная».</p>
+                <p class="font-semibold text-sm">Bakhargul</p>
+                <p class="text-xs text-[var(--text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
+              </article>
+              <article class="card p-7 w-[280px] sm:w-[320px] shadow-elevated">
+                <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
+                <p class="text-sm text-[var(--text-dim)] mb-6" data-i18n="rev.w3.text">«Отличная гостиница».</p>
+                <p class="font-semibold text-sm">Azat Nadyrbekov</p>
+                <p class="text-xs text-[var(--text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
+              </article>
+              <article class="card p-7 w-[280px] sm:w-[320px] shadow-elevated">
+                <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
+                <p class="text-sm text-[var(--text-dim)] mb-6" data-i18n="rev.w4.text">«Топ, всё понравилось».</p>
+                <p class="font-semibold text-sm">Qaz Shym</p>
+                <p class="text-xs text-[var(--text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
+              </article>
+              <article class="card p-7 w-[280px] sm:w-[320px] shadow-elevated">
+                <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
+                <p class="text-sm text-[var(--text-dim)] mb-6" data-i18n="rev.w5.text">«Классный отель».</p>
+                <p class="font-semibold text-sm">Умит Нурашова</p>
+                <p class="text-xs text-[var(--text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
+              </article>
+              <article class="card p-7 w-[280px] sm:w-[320px] shadow-elevated">
+                <div class="flex gap-0.5 text-[var(--gold)] mb-4">★★★★★</div>
+                <p class="text-sm text-[var(--text-dim)] mb-6" data-i18n="rev.w6.text">«Хорошее соотношение цены и качества, бесплатный паркинг, отзывчивый менеджер».</p>
+                <p class="font-semibold text-sm">Edonit Vitia</p>
+                <p class="text-xs text-[var(--text-dim)]" data-i18n="rev.src2gis">Отзыв на 2ГИС</p>
+              </article>
             </div>
-            <div class="p-4"><p class="font-semibold text-sm">Гость отеля</p><p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.videoNote">Видео-отзыв</p></div>
-          </article>
-          <article class="card w-[260px] shadow-elevated overflow-hidden">
-            <div class="aspect-[9/16] relative bg-[var(--ink-3)] flex items-center justify-center">
-              <img src="https://placehold.co/400x700/20232f/20232f" class="absolute inset-0 w-full h-full object-cover opacity-80" alt="Видео-отзыв">
-              <span class="relative w-14 h-14 rounded-full bg-[var(--gold)] flex items-center justify-center text-[#211705]"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <div class="flex justify-end gap-3 mt-6">
+              <button class="carousel-arrow" data-dir="-1" data-target="carousel-written" aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button class="carousel-arrow" data-dir="1" data-target="carousel-written" aria-label="Вперёд"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
             </div>
-            <div class="p-4"><p class="font-semibold text-sm">Гость отеля</p><p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.videoNote">Видео-отзыв</p></div>
-          </article>
-          <article class="card w-[260px] shadow-elevated overflow-hidden">
-            <div class="aspect-[9/16] relative bg-[var(--ink-3)] flex items-center justify-center">
-              <img src="https://placehold.co/400x700/20232f/20232f" class="absolute inset-0 w-full h-full object-cover opacity-80" alt="Видео-отзыв">
-              <span class="relative w-14 h-14 rounded-full bg-[var(--gold)] flex items-center justify-center text-[#211705]"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-            </div>
-            <div class="p-4"><p class="font-semibold text-sm">Гость отеля</p><p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.videoNote">Видео-отзыв</p></div>
-          </article>
+          </div>
         </div>
-        <div class="flex justify-end gap-3 mt-6">
-          <button class="carousel-arrow" data-dir="-1" data-target="carousel-video" aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <button class="carousel-arrow" data-dir="1" data-target="carousel-video" aria-label="Вперёд"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-        </div>
-      </div>
-    </div>
 
-    <!-- AUDIO -->
-    <div id="panel-audio" class="tab-panel reveal" hidden>
-      <div class="relative">
-        <div class="tcarousel" id="carousel-audio">
-          <article class="card p-6 w-[300px] shadow-elevated">
-            <div class="flex items-center gap-3 mb-4">
-              <button class="w-11 h-11 rounded-full bg-[var(--gold)] text-[#211705] flex items-center justify-center shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-              <svg viewBox="0 0 120 24" class="w-full h-6 text-[var(--gold)]"><g fill="currentColor"><rect x="0" y="8" width="3" height="8"/><rect x="6" y="4" width="3" height="16"/><rect x="12" y="10" width="3" height="4"/><rect x="18" y="2" width="3" height="20"/><rect x="24" y="7" width="3" height="10"/><rect x="30" y="9" width="3" height="6"/><rect x="36" y="3" width="3" height="18"/><rect x="42" y="8" width="3" height="8"/><rect x="48" y="5" width="3" height="14"/><rect x="54" y="10" width="3" height="4"/><rect x="60" y="2" width="3" height="20"/><rect x="66" y="7" width="3" height="10"/><rect x="72" y="9" width="3" height="6"/><rect x="78" y="4" width="3" height="16"/><rect x="84" y="8" width="3" height="8"/><rect x="90" y="6" width="3" height="12"/><rect x="96" y="9" width="3" height="6"/><rect x="102" y="3" width="3" height="18"/><rect x="108" y="8" width="3" height="8"/><rect x="114" y="10" width="3" height="4"/></g></svg>
+        <!-- VIDEO -->
+        <div id="panel-video" class="tab-panel" hidden>
+          <div class="relative">
+            <div class="tcarousel" id="carousel-video">
+              <article class="card w-[240px] shadow-elevated overflow-hidden">
+                <div class="aspect-[9/16] relative bg-[var(--off-white)] flex items-center justify-center">
+                  <img src="https://placehold.co/400x700/F4F2EF/F4F2EF" class="absolute inset-0 w-full h-full object-cover" alt="Видео-отзыв">
+                  <span class="relative w-14 h-14 rounded-full bg-[var(--red)] flex items-center justify-center text-white"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                </div>
+                <div class="p-4"><p class="font-semibold text-sm">Гость отеля</p><p class="text-xs text-[var(--text-dim)]" data-i18n="rev.videoNote">Видео-отзыв</p></div>
+              </article>
+              <article class="card w-[240px] shadow-elevated overflow-hidden">
+                <div class="aspect-[9/16] relative bg-[var(--off-white)] flex items-center justify-center">
+                  <img src="https://placehold.co/400x700/F4F2EF/F4F2EF" class="absolute inset-0 w-full h-full object-cover" alt="Видео-отзыв">
+                  <span class="relative w-14 h-14 rounded-full bg-[var(--red)] flex items-center justify-center text-white"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                </div>
+                <div class="p-4"><p class="font-semibold text-sm">Гость отеля</p><p class="text-xs text-[var(--text-dim)]" data-i18n="rev.videoNote">Видео-отзыв</p></div>
+              </article>
+              <article class="card w-[240px] shadow-elevated overflow-hidden">
+                <div class="aspect-[9/16] relative bg-[var(--off-white)] flex items-center justify-center">
+                  <img src="https://placehold.co/400x700/F4F2EF/F4F2EF" class="absolute inset-0 w-full h-full object-cover" alt="Видео-отзыв">
+                  <span class="relative w-14 h-14 rounded-full bg-[var(--red)] flex items-center justify-center text-white"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+                </div>
+                <div class="p-4"><p class="font-semibold text-sm">Гость отеля</p><p class="text-xs text-[var(--text-dim)]" data-i18n="rev.videoNote">Видео-отзыв</p></div>
+              </article>
             </div>
-            <p class="font-semibold text-sm">Гость отеля</p>
-            <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.audioNote">Аудио-отзыв · 0:42</p>
-          </article>
-          <article class="card p-6 w-[300px] shadow-elevated">
-            <div class="flex items-center gap-3 mb-4">
-              <button class="w-11 h-11 rounded-full bg-[var(--gold)] text-[#211705] flex items-center justify-center shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-              <svg viewBox="0 0 120 24" class="w-full h-6 text-[var(--gold)]"><g fill="currentColor"><rect x="0" y="6" width="3" height="12"/><rect x="6" y="9" width="3" height="6"/><rect x="12" y="3" width="3" height="18"/><rect x="18" y="8" width="3" height="8"/><rect x="24" y="5" width="3" height="14"/><rect x="30" y="10" width="3" height="4"/><rect x="36" y="2" width="3" height="20"/><rect x="42" y="7" width="3" height="10"/><rect x="48" y="9" width="3" height="6"/><rect x="54" y="4" width="3" height="16"/><rect x="60" y="8" width="3" height="8"/><rect x="66" y="6" width="3" height="12"/><rect x="72" y="9" width="3" height="6"/><rect x="78" y="3" width="3" height="18"/><rect x="84" y="8" width="3" height="8"/><rect x="90" y="10" width="3" height="4"/><rect x="96" y="2" width="3" height="20"/><rect x="102" y="7" width="3" height="10"/><rect x="108" y="9" width="3" height="6"/><rect x="114" y="4" width="3" height="16"/></g></svg>
+            <div class="flex justify-end gap-3 mt-6">
+              <button class="carousel-arrow" data-dir="-1" data-target="carousel-video" aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button class="carousel-arrow" data-dir="1" data-target="carousel-video" aria-label="Вперёд"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
             </div>
-            <p class="font-semibold text-sm">Гость отеля</p>
-            <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.audioNote">Аудио-отзыв · 0:35</p>
-          </article>
-          <article class="card p-6 w-[300px] shadow-elevated">
-            <div class="flex items-center gap-3 mb-4">
-              <button class="w-11 h-11 rounded-full bg-[var(--gold)] text-[#211705] flex items-center justify-center shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-              <svg viewBox="0 0 120 24" class="w-full h-6 text-[var(--gold)]"><g fill="currentColor"><rect x="0" y="9" width="3" height="6"/><rect x="6" y="3" width="3" height="18"/><rect x="12" y="8" width="3" height="8"/><rect x="18" y="5" width="3" height="14"/><rect x="24" y="10" width="3" height="4"/><rect x="30" y="2" width="3" height="20"/><rect x="36" y="7" width="3" height="10"/><rect x="42" y="9" width="3" height="6"/><rect x="48" y="4" width="3" height="16"/><rect x="54" y="8" width="3" height="8"/><rect x="60" y="6" width="3" height="12"/><rect x="66" y="9" width="3" height="6"/><rect x="72" y="3" width="3" height="18"/><rect x="78" y="8" width="3" height="8"/><rect x="84" y="10" width="3" height="4"/><rect x="90" y="2" width="3" height="20"/><rect x="96" y="7" width="3" height="10"/><rect x="102" y="9" width="3" height="6"/><rect x="108" y="4" width="3" height="16"/><rect x="114" y="8" width="3" height="8"/></g></svg>
-            </div>
-            <p class="font-semibold text-sm">Гость отеля</p>
-            <p class="text-xs text-[var(--ink-text-dim)]" data-i18n="rev.audioNote">Аудио-отзыв · 0:51</p>
-          </article>
+          </div>
         </div>
-        <div class="flex justify-end gap-3 mt-6">
-          <button class="carousel-arrow" data-dir="-1" data-target="carousel-audio" aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <button class="carousel-arrow" data-dir="1" data-target="carousel-audio" aria-label="Вперёд"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+
+        <!-- AUDIO -->
+        <div id="panel-audio" class="tab-panel" hidden>
+          <div class="relative">
+            <div class="tcarousel" id="carousel-audio">
+              <article class="card p-6 w-[280px] shadow-elevated">
+                <div class="flex items-center gap-3 mb-4">
+                  <button class="w-11 h-11 rounded-full bg-[var(--red)] text-white flex items-center justify-center shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+                  <svg viewBox="0 0 120 24" class="w-full h-6 text-[var(--red)]"><g fill="currentColor"><rect x="0" y="8" width="3" height="8"/><rect x="6" y="4" width="3" height="16"/><rect x="12" y="10" width="3" height="4"/><rect x="18" y="2" width="3" height="20"/><rect x="24" y="7" width="3" height="10"/><rect x="30" y="9" width="3" height="6"/><rect x="36" y="3" width="3" height="18"/><rect x="42" y="8" width="3" height="8"/><rect x="48" y="5" width="3" height="14"/><rect x="54" y="10" width="3" height="4"/><rect x="60" y="2" width="3" height="20"/><rect x="66" y="7" width="3" height="10"/><rect x="72" y="9" width="3" height="6"/><rect x="78" y="4" width="3" height="16"/><rect x="84" y="8" width="3" height="8"/><rect x="90" y="6" width="3" height="12"/><rect x="96" y="9" width="3" height="6"/><rect x="102" y="3" width="3" height="18"/><rect x="108" y="8" width="3" height="8"/><rect x="114" y="10" width="3" height="4"/></g></svg>
+                </div>
+                <p class="font-semibold text-sm">Гость отеля</p>
+                <p class="text-xs text-[var(--text-dim)]" data-i18n="rev.audioNote">Аудио-отзыв · 0:42</p>
+              </article>
+              <article class="card p-6 w-[280px] shadow-elevated">
+                <div class="flex items-center gap-3 mb-4">
+                  <button class="w-11 h-11 rounded-full bg-[var(--red)] text-white flex items-center justify-center shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+                  <svg viewBox="0 0 120 24" class="w-full h-6 text-[var(--red)]"><g fill="currentColor"><rect x="0" y="6" width="3" height="12"/><rect x="6" y="9" width="3" height="6"/><rect x="12" y="3" width="3" height="18"/><rect x="18" y="8" width="3" height="8"/><rect x="24" y="5" width="3" height="14"/><rect x="30" y="10" width="3" height="4"/><rect x="36" y="2" width="3" height="20"/><rect x="42" y="7" width="3" height="10"/><rect x="48" y="9" width="3" height="6"/><rect x="54" y="4" width="3" height="16"/><rect x="60" y="8" width="3" height="8"/><rect x="66" y="6" width="3" height="12"/><rect x="72" y="9" width="3" height="6"/><rect x="78" y="3" width="3" height="18"/><rect x="84" y="8" width="3" height="8"/><rect x="90" y="10" width="3" height="4"/><rect x="96" y="2" width="3" height="20"/><rect x="102" y="7" width="3" height="10"/><rect x="108" y="9" width="3" height="6"/><rect x="114" y="4" width="3" height="16"/></g></svg>
+                </div>
+                <p class="font-semibold text-sm">Гость отеля</p>
+                <p class="text-xs text-[var(--text-dim)]" data-i18n="rev.audioNote">Аудио-отзыв · 0:35</p>
+              </article>
+              <article class="card p-6 w-[280px] shadow-elevated">
+                <div class="flex items-center gap-3 mb-4">
+                  <button class="w-11 h-11 rounded-full bg-[var(--red)] text-white flex items-center justify-center shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+                  <svg viewBox="0 0 120 24" class="w-full h-6 text-[var(--red)]"><g fill="currentColor"><rect x="0" y="9" width="3" height="6"/><rect x="6" y="3" width="3" height="18"/><rect x="12" y="8" width="3" height="8"/><rect x="18" y="5" width="3" height="14"/><rect x="24" y="10" width="3" height="4"/><rect x="30" y="2" width="3" height="20"/><rect x="36" y="7" width="3" height="10"/><rect x="42" y="9" width="3" height="6"/><rect x="48" y="4" width="3" height="16"/><rect x="54" y="8" width="3" height="8"/><rect x="60" y="6" width="3" height="12"/><rect x="66" y="9" width="3" height="6"/><rect x="72" y="3" width="3" height="18"/><rect x="78" y="8" width="3" height="8"/><rect x="84" y="10" width="3" height="4"/><rect x="90" y="2" width="3" height="20"/><rect x="96" y="7" width="3" height="10"/><rect x="102" y="9" width="3" height="6"/><rect x="108" y="4" width="3" height="16"/><rect x="114" y="8" width="3" height="8"/></g></svg>
+                </div>
+                <p class="font-semibold text-sm">Гость отеля</p>
+                <p class="text-xs text-[var(--text-dim)]" data-i18n="rev.audioNote">Аудио-отзыв · 0:51</p>
+              </article>
+            </div>
+            <div class="flex justify-end gap-3 mt-6">
+              <button class="carousel-arrow" data-dir="-1" data-target="carousel-audio" aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button class="carousel-arrow" data-dir="1" data-target="carousel-audio" aria-label="Вперёд"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -840,30 +1050,34 @@
 </section>
 
 <!-- ============ LOCATION ============ -->
-<section id="location" class="py-24 md:py-32 bg-[var(--ink-2)] border-y border-[var(--line)]">
+<section id="location" class="py-20 md:py-28">
   <div class="container-x grid lg:grid-cols-2 gap-10 items-stretch">
     <div class="reveal">
       <p class="eyebrow mb-4" data-i18n="loc.eyebrow">Как добраться</p>
       <h2 class="text-4xl md:text-5xl mb-6" data-i18n="loc.title">Локация и контакты</h2>
-      <div class="divider-gold mb-8"></div>
+      <div class="divider-flourish left-align mb-8"><span class="fl-line"></span></div>
 
       <div class="space-y-6 mb-9">
         <div class="flex items-start gap-4">
           <div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.3 7-12a7 7 0 10-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-          <div><p class="font-semibold" data-i18n="loc.addrT">Адрес</p><p class="text-sm text-[var(--ink-text-dim)]">г. Алматы, пр. Райымбека, 298А</p></div>
+          <div><p class="font-semibold" data-i18n="loc.addrT">Адрес</p><p class="text-sm text-[var(--text-dim)]">г. Алматы, пр. Райымбека, 298А</p></div>
         </div>
         <div class="flex items-start gap-4">
           <div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.9.36 1.79.7 2.63a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.45-1.27a2 2 0 012.11-.45c.84.34 1.73.58 2.63.7A2 2 0 0122 16.92z"/></svg></div>
-          <div><p class="font-semibold" data-i18n="loc.phoneT">Телефон / WhatsApp</p><a href="tel:+77072188629" class="text-sm text-[var(--ink-text-dim)] hover:text-[var(--gold)] transition-colors">+7 707 218-86-29</a></div>
+          <div><p class="font-semibold" data-i18n="loc.phoneT">Телефон / WhatsApp</p><a href="tel:+77072188629" class="text-sm text-[var(--text-dim)] hover:text-[var(--red)] transition-colors">+7 707 218-86-29</a></div>
         </div>
         <div class="flex items-start gap-4">
           <div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 4h17L12 14 3.5 4zM3 5.5V18a1 1 0 001 1h16a1 1 0 001-1V5.5"/></svg></div>
-          <div><p class="font-semibold" data-i18n="loc.hoursT">Режим работы</p><p class="text-sm text-[var(--ink-text-dim)]" data-i18n="loc.hoursV">Круглосуточно, 24/7</p></div>
+          <div><p class="font-semibold" data-i18n="loc.hoursT">Режим работы</p><p class="text-sm text-[var(--text-dim)]" data-i18n="loc.hoursV">Круглосуточно, 24/7</p></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l6-13 6 13M3 21h18M5.5 15h7"/><path d="M15 21l4-9 3 9"/></svg></div>
+          <div><p class="font-semibold" data-i18n="loc.airportT">Әуежай / вокзал</p><p class="text-sm text-[var(--text-dim)]" data-i18n="loc.airportV">Тұрғыт Озал көшесі — 250 м / 2 мин жаяу</p></div>
         </div>
       </div>
 
       <div class="flex flex-wrap gap-4">
-        <a href="https://wa.me/77072188629" target="_blank" rel="noopener" class="btn btn-gold shadow-gold" data-i18n="loc.whatsapp">Написать в WhatsApp</a>
+        <a href="https://wa.me/77072188629" target="_blank" rel="noopener" class="btn btn-red shadow-red" data-i18n="loc.whatsapp">Написать в WhatsApp</a>
         <a href="https://2gis.kz/almaty/firm/70000001019390802/76.876636%2C43.256927" target="_blank" rel="noopener" class="btn gis-btn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8z" fill="#fff"/><circle cx="12" cy="10" r="3" fill="#1e9e46"/></svg>
           <span data-i18n="loc.route">Маршрут в 2ГИС</span>
@@ -876,14 +1090,33 @@
   </div>
 </section>
 
-<!-- ============ BOOKING ============ -->
-<section id="booking" class="py-24 md:py-32">
+<!-- ============ FINAL CTA BANNER ============ -->
+<section id="final-cta" class="relative py-20 md:py-24 overflow-hidden" style="background:linear-gradient(120deg,var(--red-dark),var(--red))">
+  <div class="lattice-bg" style="opacity:.12"></div>
+  <div class="container-x relative grid lg:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <h2 class="text-3xl md:text-4xl text-white mb-6" data-i18n="cta.title">Алматыдағы жайлы әрі іскерлік сапарыңызды бүгін бастаңыз</h2>
+      <ul class="space-y-3 mb-8">
+        <li class="flex items-center gap-3 text-white/90"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="cta.b1">Ең төмен бағалар</span></li>
+        <li class="flex items-center gap-3 text-white/90"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="cta.b2">Жасырын төлемдер жоқ</span></li>
+        <li class="flex items-center gap-3 text-white/90"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2.4"><path d="M5 12l5 5L20 7"/></svg><span data-i18n="cta.b3">Тез және оңай брондау</span></li>
+      </ul>
+      <a href="#booking" class="btn bg-white text-[var(--red)] hover:bg-[var(--off-white)] shadow-floating" data-i18n="hero.cta">Нөмірді брондау</a>
+    </div>
+    <div class="reveal hidden lg:block img-tone rounded-2xl overflow-hidden aspect-[4/3] shadow-floating">
+      <img src="images/exterior-facade-1.jpg" alt="Business Hotel Almaty" class="w-full h-full object-cover" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING FORM ============ -->
+<section id="booking" class="py-20 md:py-28">
   <div class="container-x">
-    <div class="reveal max-w-2xl mb-14">
+    <div class="reveal section-eyebrow-wrap max-w-2xl mx-auto mb-14 text-center">
       <p class="eyebrow mb-4" data-i18n="book.eyebrow">Бронирование</p>
-      <h2 class="text-4xl md:text-5xl mb-6" data-i18n="book.title">Забронируйте номер за минуту</h2>
-      <div class="divider-gold mb-6"></div>
-      <p class="text-[var(--ink-text-dim)]" data-i18n="book.desc">Заполните форму — заявка сразу сформируется в WhatsApp, и мы подтвердим бронирование лично.</p>
+      <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
+      <h2 class="text-4xl md:text-5xl mb-4" data-i18n="book.title">Забронируйте номер за минуту</h2>
+      <p class="text-[var(--text-dim)]" data-i18n="book.desc">Заполните форму — заявка сразу сформируется в WhatsApp, и мы подтвердим бронирование лично.</p>
     </div>
 
     <form id="booking-form" class="reveal card shadow-floating p-6 md:p-10 grid md:grid-cols-2 gap-6" novalidate>
@@ -924,12 +1157,12 @@
       </div>
 
       <div class="md:col-span-2 flex items-start gap-3">
-        <input id="f-consent" type="checkbox" required class="mt-1 accent-[var(--gold)] w-4 h-4">
-        <label for="f-consent" class="text-xs text-[var(--ink-text-dim)]" data-i18n="book.consent">Я согласен(-на) на обработку персональных данных</label>
+        <input id="f-consent" type="checkbox" required class="mt-1 accent-[var(--red)] w-4 h-4">
+        <label for="f-consent" class="text-xs text-[var(--text-dim)]" data-i18n="book.consent">Я согласен(-на) на обработку персональных данных</label>
       </div>
 
       <div class="md:col-span-2">
-        <button type="submit" class="btn btn-gold shadow-gold w-full sm:w-auto" data-i18n="book.submit">Отправить в WhatsApp</button>
+        <button type="submit" class="btn btn-red shadow-red w-full sm:w-auto" data-i18n="book.submit">Отправить в WhatsApp</button>
       </div>
     </form>
   </div>
@@ -938,40 +1171,64 @@
 </main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="border-t border-[var(--line)] bg-[var(--ink-2)] pt-16 pb-8">
+<footer class="border-t border-[var(--line)] bg-white pt-16 pb-8">
   <div class="container-x grid md:grid-cols-4 gap-10 mb-12">
     <div>
-      <span class="font-display text-xl block mb-3">Business Hotel Almaty</span>
-      <p class="text-sm text-[var(--ink-text-dim)]" data-i18n="foot.tagline">4-звёздочный бизнес-отель в Алматы с рейтингом 4.9 на 2ГИС.</p>
+      <div class="flex items-center gap-2 mb-3">
+        <svg width="34" height="34" viewBox="0 0 44 44" class="shrink-0">
+          <circle cx="22" cy="22" r="21" fill="#C91818"/>
+          <g stroke="#fff" stroke-width="1.3" fill="none" stroke-linecap="round">
+            <circle cx="22" cy="22" r="14"/>
+            <path d="M22 8v28M8 22h28M11.6 11.6l20.8 20.8M32.4 11.6L11.6 32.4"/>
+            <circle cx="22" cy="22" r="5.5"/>
+          </g>
+        </svg>
+        <span class="font-display text-lg leading-none"><span class="text-[var(--red)]">Business Hotel</span> Almaty</span>
+      </div>
+      <p class="text-sm text-[var(--text-dim)] mb-4" data-i18n="foot.tagline">4-звёздочный бизнес-отель в Алматы с рейтингом 4.9 на 2ГИС.</p>
+      <div class="flex items-center gap-3">
+        <a href="https://instagram.com/businesshotelalmaty" target="_blank" rel="noopener" class="w-9 h-9 rounded-full border border-[var(--line)] flex items-center justify-center text-[var(--text)] hover:border-[var(--red)] hover:text-[var(--red)] transition-colors" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://wa.me/77072188629" target="_blank" rel="noopener" class="w-9 h-9 rounded-full border border-[var(--line)] flex items-center justify-center text-[var(--text)] hover:border-[var(--red)] hover:text-[var(--red)] transition-colors" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+      </div>
     </div>
     <div>
       <p class="font-semibold mb-4" data-i18n="foot.nav">Навигация</p>
-      <ul class="space-y-2 text-sm text-[var(--ink-text-dim)]">
-        <li><a href="#rooms" class="hover:text-[var(--gold)] transition-colors" data-i18n="nav.rooms">Номера</a></li>
-        <li><a href="#conference" class="hover:text-[var(--gold)] transition-colors" data-i18n="nav.conference">Конференц-залы</a></li>
-        <li><a href="#gallery" class="hover:text-[var(--gold)] transition-colors" data-i18n="nav.gallery">Галерея</a></li>
-        <li><a href="#reviews" class="hover:text-[var(--gold)] transition-colors" data-i18n="nav.reviews">Отзывы</a></li>
+      <ul class="space-y-2 text-sm text-[var(--text-dim)]">
+        <li><a href="#home" class="hover:text-[var(--red)] transition-colors" data-i18n="nav.home">Басты бет</a></li>
+        <li><a href="#rooms" class="hover:text-[var(--red)] transition-colors" data-i18n="nav.rooms">Нөмірлер</a></li>
+        <li><a href="#conference" class="hover:text-[var(--red)] transition-colors" data-i18n="nav.conferenceFull">Конференц-залдар</a></li>
+        <li><a href="#banquet" class="hover:text-[var(--red)] transition-colors" data-i18n="nav.banquetFull">Банкет залы</a></li>
+        <li><a href="#karaoke" class="hover:text-[var(--red)] transition-colors" data-i18n="nav.karaoke">Karaoke</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold mb-4" data-i18n="foot.services">Қызметтер</p>
+      <ul class="space-y-2 text-sm text-[var(--text-dim)]">
+        <li><a href="#services" class="hover:text-[var(--red)] transition-colors" data-i18n="nav.services">Қызметтер</a></li>
+        <li><a href="#gallery" class="hover:text-[var(--red)] transition-colors" data-i18n="nav.gallery">Галерея</a></li>
+        <li><a href="#reviews" class="hover:text-[var(--red)] transition-colors" data-i18n="nav.reviews">Пікірлер</a></li>
+        <li><a href="#location" class="hover:text-[var(--red)] transition-colors" data-i18n="nav.contact">Байланыс</a></li>
       </ul>
     </div>
     <div>
       <p class="font-semibold mb-4" data-i18n="foot.contacts">Контакты</p>
-      <ul class="space-y-2 text-sm text-[var(--ink-text-dim)]">
+      <ul class="space-y-2 text-sm text-[var(--text-dim)] mb-5">
         <li>г. Алматы, пр. Райымбека, 298А</li>
-        <li><a href="tel:+77072188629" class="hover:text-[var(--gold)] transition-colors">+7 707 218-86-29</a></li>
-        <li><a href="https://wa.me/77072188629" target="_blank" rel="noopener" class="hover:text-[var(--gold)] transition-colors">WhatsApp</a></li>
+        <li><a href="tel:+77072188629" class="hover:text-[var(--red)] transition-colors">+7 707 218-86-29</a></li>
       </ul>
-    </div>
-    <div>
-      <p class="font-semibold mb-4" data-i18n="foot.lang">Язык сайта</p>
-      <div class="flex flex-wrap gap-2">
-        <button class="lang-btn border border-[var(--line)] rounded-full" data-lang="kz" aria-pressed="false">ҚАЗ</button>
-        <button class="lang-btn border border-[var(--line)] rounded-full" data-lang="ru" aria-pressed="true">РУС</button>
-        <button class="lang-btn border border-[var(--line)] rounded-full" data-lang="en" aria-pressed="false">ENG</button>
-        <button class="lang-btn border border-[var(--line)] rounded-full" data-lang="zh" aria-pressed="false">中文</button>
+      <a href="https://wa.me/77072188629" target="_blank" rel="noopener" class="btn btn-red shadow-red w-full !text-xs">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+        <span data-i18n="loc.whatsapp">Написать в WhatsApp</span>
+      </a>
+      <div class="flex items-center gap-2 mt-4">
+        <button class="lang-btn-footer" data-lang="kz" aria-pressed="false">ҚАЗ</button>
+        <button class="lang-btn-footer" data-lang="ru" aria-pressed="true">РУС</button>
+        <button class="lang-btn-footer" data-lang="en" aria-pressed="false">ENG</button>
+        <button class="lang-btn-footer" data-lang="zh" aria-pressed="false">中文</button>
       </div>
     </div>
   </div>
-  <div class="container-x border-t border-[var(--line)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs text-[var(--ink-text-dim)]">
+  <div class="container-x border-t border-[var(--line)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs text-[var(--text-dim)]">
     <p data-i18n="foot.copy">© 2026 Business Hotel Almaty. Все права защищены.</p>
     <p data-i18n="foot.legal">ТОО «Международный Гранд-отель «Шёлковый путь – Один пояс, один путь»» · БИН 260840028695 · пр. Райымбека, 298А, Алматы</p>
   </div>
@@ -1005,35 +1262,40 @@
 
   /* ---------- I18N ---------- */
   var STRINGS = {
+    "topbar.address":{ru:"Алматы, проспект Райымбека, 298а",kz:"Алматы, Райымбек даңғылы, 298а",en:"Almaty, Raiymbek Ave, 298a",zh:"阿拉木图，赖姆别克大道298a"},
+
+    "nav.home":{ru:"Главная",kz:"Басты бет",en:"Home",zh:"首页"},
     "nav.about":{ru:"Отель",kz:"Қонақ үй",en:"Hotel",zh:"关于酒店"},
     "nav.rooms":{ru:"Номера",kz:"Нөмірлер",en:"Rooms",zh:"客房"},
-    "nav.conference":{ru:"Конференц",kz:"Конференц",en:"Conference",zh:"会议厅"},
-    "nav.banquet":{ru:"Банкет",kz:"Банкет",en:"Banquet",zh:"宴会厅"},
+    "nav.conferenceFull":{ru:"Конференц-залы",kz:"Конференц-залдар",en:"Conference Halls",zh:"会议厅"},
+    "nav.banquetFull":{ru:"Банкетный зал",kz:"Банкет залы",en:"Banquet Hall",zh:"宴会厅"},
     "nav.karaoke":{ru:"Karaoke",kz:"Karaoke",en:"Karaoke",zh:"卡拉OK"},
     "nav.restaurant":{ru:"Ресторан",kz:"Мейрамхана",en:"Restaurant",zh:"餐厅"},
     "nav.services":{ru:"Услуги",kz:"Қызметтер",en:"Services",zh:"服务设施"},
     "nav.gallery":{ru:"Галерея",kz:"Галерея",en:"Gallery",zh:"相册"},
     "nav.reviews":{ru:"Отзывы",kz:"Пікірлер",en:"Reviews",zh:"评价"},
+    "nav.contact":{ru:"Контакты",kz:"Байланыс",en:"Contact",zh:"联系方式"},
     "nav.location":{ru:"Локация",kz:"Орналасу",en:"Location",zh:"位置"},
-    "nav.book":{ru:"Забронировать",kz:"Брондау",en:"Book now",zh:"立即预订"},
+    "nav.book":{ru:"Брондау",kz:"Брондау",en:"Book now",zh:"立即预订"},
 
-    "hero.eyebrow":{ru:"Бизнес-отель · Алматы",kz:"Бизнес-отель · Алматы",en:"Business hotel · Almaty",zh:"商务酒店 · 阿拉木图"},
-    "hero.title":{ru:"Гостеприимство<br>в сердце Алматы",kz:"Алматының жүрегіндегі<br>қонақжайлылық",en:"Hospitality<br>in the heart of Almaty",zh:"阿拉木图中心的<br>热情款待"},
-    "hero.subtitle":{ru:"118 номеров, конференц-залы, банкетный зал и Karaoke Club — всё для бизнеса и отдыха под одной крышей.",kz:"118 нөмір, конференц-залдар, банкет залы және Karaoke Club — бизнес пен демалысқа қажеттінің бәрі бір шаңырақ астында.",en:"118 rooms, conference halls, a banquet hall and a Karaoke Club — everything for business and leisure under one roof.",zh:"118间客房、会议厅、宴会厅和卡拉OK俱乐部——商务与休闲一应俱全。"},
-    "hero.cta":{ru:"Забронировать номер",kz:"Нөмір брондау",en:"Book a room",zh:"预订客房"},
+    "hero.eyebrow":{ru:"4-звёздочный бизнес-отель в Алматы",kz:"Алматыдағы 4 жұлдызды бизнес-отель",en:"A 4-star business hotel in Almaty",zh:"阿拉木图四星级商务酒店"},
+    "hero.subtitle":{ru:"Современный отель, удобно расположенный для деловых поездок, отдыха и мероприятий.",kz:"Бизнес сапарлары, демалыс және іс-шаралар үшін ыңғайлы орналасқан заманауи қонақ үй.",en:"A modern hotel conveniently located for business trips, leisure and events.",zh:"现代化酒店，地理位置优越，适合商务出行、休闲与各类活动。"},
+    "hero.statRooms":{ru:"118 номеров",kz:"118 нөмір",en:"118 rooms",zh:"118间客房"},
+    "hero.statStars":{ru:"4 звезды",kz:"4 жұлдыз",en:"4 stars",zh:"4星级"},
+    "hero.statService":{ru:"24/7 сервис",kz:"24/7 қызмет",en:"24/7 service",zh:"24小时服务"},
+    "hero.statHalls":{ru:"2 конференц-зала",kz:"2 конференц-зал",en:"2 conference halls",zh:"2个会议厅"},
+    "hero.cta":{ru:"Забронировать номер",kz:"Нөмірді брондау",en:"Book a room",zh:"预订客房"},
+    "hero.ctaSecondary":{ru:"Наши преимущества",kz:"Біздің артықшылықтарымыз",en:"Our advantages",zh:"我们的优势"},
     "hero.whatsapp":{ru:"Написать в WhatsApp",kz:"WhatsApp-қа жазу",en:"Message on WhatsApp",zh:"WhatsApp联系我们"},
-    "hero.ratingNote":{ru:"880 оценок · 154 отзыва на 2ГИС",kz:"880 баға · 154 пікір · 2ГИС",en:"880 ratings · 154 reviews on 2GIS",zh:"880个评分·154条评价（2GIS）"},
-    "hero.rooms":{ru:"номеров",kz:"нөмір",en:"rooms",zh:"间客房"},
-    "hero.halls":{ru:"конференц-зала",kz:"конференц-зал",en:"conference halls",zh:"个会议厅"},
-    "hero.parking":{ru:"мест паркинга",kz:"тегін тұрақ орны",en:"parking spaces",zh:"个停车位"},
+    "hero.ratingNote":{ru:"880 оценок · 154 отзыва на 2ГИС",kz:"880 баға · 154 пікір · 2ГІС",en:"880 ratings · 154 reviews on 2GIS",zh:"880个评分·154条评价（2GIS）"},
 
-    "trust.rating":{ru:"Лучший рейтинг района",kz:"Аймақтағы үздік рейтинг",en:"Top-rated in the area",zh:"该地区最高评分"},
-    "trust.starsVal":{ru:"4 звезды",kz:"4 жұлдыз",en:"4 stars",zh:"4星级"},
-    "trust.stars":{ru:"Официальная категория",kz:"Ресми санат",en:"Official category",zh:"官方星级"},
-    "trust.hoursVal":{ru:"24 / 7",kz:"24 / 7",en:"24 / 7",zh:"24小时"},
-    "trust.hours":{ru:"Круглосуточный ресепшн",kz:"Тәулік бойы ресепшн",en:"Round-the-clock reception",zh:"全天候前台服务"},
-    "trust.locVal":{ru:"Тастак-2",kz:"Тастак-2",en:"Tastak-2",zh:"塔斯塔克-2"},
-    "trust.loc":{ru:"Алмалинский район",kz:"Алмалы ауданы",en:"Almaly district",zh:"阿尔马利区"},
+    "trust.gisRating":{ru:"Рейтинг на 2ГИС",kz:"2ГИС рейтингі",en:"2GIS rating",zh:"2GIS评分"},
+    "trust.roomsLabel":{ru:"Номер",kz:"Нөмір",en:"Rooms",zh:"客房"},
+    "trust.parkingLabel":{ru:"Бесплатный паркинг",kz:"Тегін автотұрақ",en:"Free parking",zh:"免费停车"},
+    "trust.serviceLabel":{ru:"Сервис",kz:"Қызмет",en:"Service",zh:"服务"},
+    "trust.breakfast":{ru:"Бесплатный завтрак",kz:"Тегін таңғы ас",en:"Free breakfast",zh:"免费早餐"},
+    "trust.wifi":{ru:"Wi-Fi",kz:"Wi-Fi",en:"Wi-Fi",zh:"Wi-Fi"},
+    "trust.locationLine":{ru:"Улица Тургут Озал — 250 м / 2 мин пешком",kz:"Тұрғыт Озал көшесі — 250 м / 2 мин жаяу",en:"Turgut Ozal Street — 250 m / 2 min walk",zh:"图尔古特·厄扎尔街——250米/步行2分钟"},
 
     "about.eyebrow":{ru:"О нас",kz:"Біз туралы",en:"About us",zh:"关于我们"},
     "about.title":{ru:"История, построенная на гостеприимстве",kz:"Қонақжайлылыққа құрылған тарих",en:"A story built on hospitality",zh:"以热情好客为基础的历史"},
@@ -1046,6 +1308,7 @@
 
     "rooms.eyebrow":{ru:"Размещение",kz:"Орналасу",en:"Accommodation",zh:"住宿"},
     "rooms.title":{ru:"Номера на любой формат поездки",kz:"Кез келген сапар түріне лайық нөмірлер",en:"Rooms for every kind of stay",zh:"满足各种出行需求的客房"},
+    "rooms.guests2":{ru:"2 гостя",kz:"2 адам",en:"2 guests",zh:"2位客人"},
     "rooms.std.title":{ru:"Стандартный номер",kz:"Стандартты нөмір",en:"Standard Room",zh:"标准间"},
     "rooms.std.desc":{ru:"Уютный номер с всем необходимым для комфортного отдыха после насыщенного дня.",kz:"Толық күннен кейінгі жайлы демалыс үшін қажеттінің бәрі бар жайлы нөмір.",en:"A cosy room with everything you need for a comfortable rest after a busy day.",zh:"舒适客房，配备一切所需，让您在繁忙一天后惬意休息。"},
     "rooms.dlx.title":{ru:"Де-люкс",kz:"Де-люкс",en:"De Luxe",zh:"豪华间"},
@@ -1053,35 +1316,23 @@
     "rooms.twin.desc":{ru:"Две отдельные кровати — идеальный вариант для коллег или друзей, путешествующих вместе.",kz:"Екі бөлек төсек — бірге саяхаттайтын әріптестер немесе достар үшін тамаша нұсқа.",en:"Two separate beds — an ideal option for colleagues or friends travelling together.",zh:"两张独立床铺——是同行同事或朋友的理想选择。"},
     "rooms.lux.title":{ru:"Люкс",kz:"Люкс",en:"Lux Suite",zh:"套房"},
     "rooms.lux.desc":{ru:"Самый просторный номер отеля с зоной отдыха — для особых случаев и VIP-гостей.",kz:"Демалыс аймағы бар отельдің ең кең нөмірі — арнайы жағдайлар мен VIP қонақтарға.",en:"The hotel's most spacious room with a lounge area — for special occasions and VIP guests.",zh:"酒店最宽敞的客房，设有休息区——专为特殊场合和贵宾客人打造。"},
-    "rooms.amenity.wifi":{ru:"· Wi-Fi",kz:"· Wi-Fi",en:"· Wi-Fi",zh:"· Wi-Fi"},
-    "rooms.amenity.ac":{ru:"· Кондиционер",kz:"· Кондиционер",en:"· Air conditioning",zh:"· 空调"},
-    "rooms.amenity.breakfast":{ru:"· Завтрак включён",kz:"· Таңғы ас бағаға кіреді",en:"· Breakfast included",zh:"· 含早餐"},
-    "rooms.amenity.desk":{ru:"· Письменный стол",kz:"· Жазу үстелі",en:"· Work desk",zh:"· 书桌"},
-    "rooms.amenity.tv":{ru:"· Спутниковое ТВ",kz:"· Спутниктік теледидар",en:"· Satellite TV",zh:"· 卫星电视"},
-    "rooms.amenity.bathrobe":{ru:"· Халат и фен",kz:"· Халат және шаш кептіргіш",en:"· Bathrobe & hairdryer",zh:"· 浴袍和吹风机"},
-    "rooms.amenity.bidet":{ru:"· Биде, отдельный санузел",kz:"· Биде, бөлек дәретхана",en:"· Bidet, separate bathroom",zh:"· 坐浴盆，独立卫生间"},
     "rooms.popular":{ru:"Популярный",kz:"Танымал",en:"Popular",zh:"热门"},
-    "rooms.from":{ru:"от",kz:"бағадан бастап",en:"from",zh:"起价"},
+    "rooms.from":{ru:"от / сутки",kz:"бастап / тәулік",en:"from / night",zh:"起 / 晚"},
+    "rooms.more":{ru:"Подробнее",kz:"Толығырақ",en:"Learn more",zh:"了解更多"},
     "rooms.book":{ru:"Забронировать",kz:"Брондау",en:"Book now",zh:"立即预订"},
     "rooms.note":{ru:"Цены указаны от минимальной стоимости за сутки и могут уточняться у администрации отеля.",kz:"Бағалар тәуліктік ең төменгі құннан көрсетілген, қонақ үй әкімшілігінде нақтылануы мүмкін.",en:"Prices shown are starting rates per night and may be confirmed with hotel management.",zh:"价格为每晚起价，具体请与酒店管理方确认。"},
 
     "conf.eyebrow":{ru:"Деловые мероприятия",kz:"Іскерлік іс-шаралар",en:"Business events",zh:"商务活动"},
-    "conf.title":{ru:"Конференц-залы для событий любого масштаба",kz:"Кез келген ауқымдағы іс-шараларға конференц-залдар",en:"Conference halls for events of any scale",zh:"适合各种规模活动的会议厅"},
     "conf.desc":{ru:"Два зала вместимостью до 50 человек, оснащённых проектором и звуковым оборудованием. Подходят для переговоров, презентаций, тренингов и семинаров.",kz:"50 адамға дейінгі сыйымдылықтағы, проектор мен дыбыс жабдығы бар екі зал. Келіссөздер, презентациялар, тренингтер мен семинарларға қолайлы.",en:"Two halls with capacity up to 50 people, equipped with a projector and sound system. Suitable for negotiations, presentations, trainings and seminars.",zh:"两个可容纳50人的会议厅，配备投影仪和音响设备。适合谈判、演示、培训和研讨会。"},
-    "conf.f1":{ru:"До 50 человек",kz:"50 адамға дейін",en:"Up to 50 guests",zh:"可容纳50人"},
-    "conf.f2":{ru:"Проектор и экран",kz:"Проектор мен экран",en:"Projector & screen",zh:"投影仪和屏幕"},
-    "conf.f3":{ru:"Звуковое оборудование",kz:"Дыбыс жабдығы",en:"Sound equipment",zh:"音响设备"},
-    "conf.f4":{ru:"2 зала на выбор",kz:"Таңдауға 2 зал",en:"2 halls to choose from",zh:"2个会议厅可选"},
-    "conf.cta":{ru:"Отправить запрос",kz:"Сұраныс жіберу",en:"Send a request",zh:"发送咨询"},
+    "conf.cta":{ru:"Отправить запрос",kz:"Залға сұраныс жіберу",en:"Send a request",zh:"发送咨询"},
 
     "banq.eyebrow":{ru:"Торжества",kz:"Тойлар",en:"Celebrations",zh:"庆典活动"},
-    "banq.title":{ru:"Банкетный зал для незабываемых событий",kz:"Ұмытылмас іс-шараларға арналған банкет залы",en:"A banquet hall for unforgettable events",zh:"打造难忘活动的宴会厅"},
     "banq.desc":{ru:"Свадьбы, юбилеи, корпоративные праздники — банкетный зал отеля создаст нужную атмосферу для любого торжества, а команда отеля возьмёт организацию на себя.",kz:"Той, мерейтой, корпоративтік мерекелер — отельдің банкет залы кез келген той үшін қажетті атмосфераны жасайды, ал ұйымдастыруды отель командасы өз мойнына алады.",en:"Weddings, anniversaries, corporate parties — the hotel's banquet hall creates the right atmosphere for any celebration, and the hotel team handles the organisation.",zh:"婚礼、纪念日、企业庆典——酒店宴会厅为各类庆典营造理想氛围，酒店团队全程负责组织安排。"},
-    "banq.cta":{ru:"Узнать варианты меню",kz:"Мәзір нұсқаларын білу",en:"See menu options",zh:"了解菜单选项"},
+    "banq.cta":{ru:"Отправить запрос",kz:"Сұраныс жіберу",en:"Send a request",zh:"发送咨询"},
 
     "karaoke.eyebrow":{ru:"@karaokeclub_kz",kz:"@karaokeclub_kz",en:"@karaokeclub_kz",zh:"@karaokeclub_kz"},
     "karaoke.desc":{ru:"Собственный караоке-клуб на территории отеля — отличное место для вечернего отдыха с друзьями или коллегами после насыщенного дня.",kz:"Отель аумағындағы жеке караоке-клуб — толық күннен кейін достармен немесе әріптестермен кешкі демалуға тамаша орын.",en:"An in-house karaoke club — a great place for an evening out with friends or colleagues after a busy day.",zh:"酒店内设的专属卡拉OK俱乐部——忙碌一天后与朋友或同事共度夜晚的绝佳去处。"},
-    "karaoke.cta":{ru:"Забронировать столик",kz:"Үстел брондау",en:"Reserve a table",zh:"预订桌位"},
+    "karaoke.cta":{ru:"Забронировать",kz:"Брондау",en:"Book now",zh:"立即预订"},
 
     "rest.eyebrow":{ru:"Питание",kz:"Тамақтану",en:"Dining",zh:"餐饮"},
     "rest.title":{ru:"Ресторан и завтрак",kz:"Мейрамхана және таңғы ас",en:"Restaurant & breakfast",zh:"餐厅与早餐"},
@@ -1100,6 +1351,14 @@
     "serv.laundry.d":{ru:"Стирка и глажка по запросу",kz:"Сұраныс бойынша жуу және үтіктеу",en:"Washing and ironing on request",zh:"可预约洗涤熨烫"},
     "serv.reception.t":{ru:"Ресепшн 24/7",kz:"Тәулік бойы ресепшн",en:"24/7 reception",zh:"24小时前台"},
     "serv.reception.d":{ru:"Заселение и поддержка в любое время",kz:"Кез келген уақытта тіркелу және қолдау",en:"Check-in and support at any time",zh:"随时办理入住及提供支持"},
+    "serv.access.t":{ru:"Доступная среда",kz:"Қолжетімді орта",en:"Accessible environment",zh:"无障碍环境"},
+    "serv.access.d":{ru:"Пандус, широкий вход",kz:"Пандус, кең кіреберіс",en:"Ramp, wide entrance",zh:"坡道、宽敞入口"},
+    "serv.lift.t":{ru:"Просторный лифт",kz:"Кең лифт",en:"Spacious elevator",zh:"宽敞电梯"},
+    "serv.lift.d":{ru:"Доступен на всех этажах",kz:"Барлық қабаттарға қолжетімді",en:"Available on every floor",zh:"可到达每一层"},
+    "serv.ramp.t":{ru:"Пандус",kz:"Пандус",en:"Ramp",zh:"坡道"},
+    "serv.ramp.d":{ru:"Доступно для инвалидных колясок",kz:"Мүгедек арбасына қолжетімді",en:"Wheelchair accessible",zh:"轮椅可通行"},
+    "serv.breakfast.t":{ru:"Бесплатный завтрак",kz:"Тегін таңғы ас",en:"Free breakfast",zh:"免费早餐"},
+    "serv.breakfast.d":{ru:"Континентальный завтрак",kz:"Континентальды таңғы ас",en:"Continental breakfast",zh:"欧陆式早餐"},
 
     "gal.eyebrow":{ru:"Галерея",kz:"Галерея",en:"Gallery",zh:"相册"},
     "gal.title":{ru:"Отель в деталях",kz:"Отель егжей-тегжейлі",en:"The hotel in detail",zh:"细览酒店"},
@@ -1109,6 +1368,7 @@
     "rev.tab.video":{ru:"Видео",kz:"Видео",en:"Video",zh:"视频"},
     "rev.tab.written":{ru:"Письменные",kz:"Жазбаша",en:"Written",zh:"文字"},
     "rev.tab.audio":{ru:"Аудио",kz:"Аудио",en:"Audio",zh:"音频"},
+    "rev.allReviews":{ru:"Смотреть все отзывы",kz:"Барлық пікірлерді көру",en:"View all reviews",zh:"查看所有评价"},
     "rev.src2gis":{ru:"Отзыв на 2ГИС",kz:"2ГІС-тегі пікір",en:"Review on 2GIS",zh:"来自2GIS的评价"},
     "rev.videoNote":{ru:"Видео-отзыв",kz:"Видео-пікір",en:"Video review",zh:"视频评价"},
     "rev.audioNote":{ru:"Аудио-отзыв",kz:"Аудио-пікір",en:"Audio review",zh:"音频评价"},
@@ -1125,8 +1385,15 @@
     "loc.phoneT":{ru:"Телефон / WhatsApp",kz:"Телефон / WhatsApp",en:"Phone / WhatsApp",zh:"电话 / WhatsApp"},
     "loc.hoursT":{ru:"Режим работы",kz:"Жұмыс кестесі",en:"Working hours",zh:"营业时间"},
     "loc.hoursV":{ru:"Круглосуточно, 24/7",kz:"Тәулік бойы, 24/7",en:"Around the clock, 24/7",zh:"全天候24小时"},
+    "loc.airportT":{ru:"Ближайшая остановка",kz:"Жақын аялдама",en:"Nearest stop",zh:"最近站点"},
+    "loc.airportV":{ru:"Улица Тургут Озал — 250 м / 2 мин пешком",kz:"Тұрғыт Озал көшесі — 250 м / 2 мин жаяу",en:"Turgut Ozal Street — 250 m / 2 min walk",zh:"图尔古特·厄扎尔街——250米/步行2分钟"},
     "loc.whatsapp":{ru:"Написать в WhatsApp",kz:"WhatsApp-қа жазу",en:"Message on WhatsApp",zh:"WhatsApp联系我们"},
     "loc.route":{ru:"Маршрут в 2ГИС",kz:"2ГІС-те бағыт",en:"Route on 2GIS",zh:"2GIS路线导航"},
+
+    "cta.title":{ru:"Начните свою комфортную и деловую поездку в Алматы уже сегодня",kz:"Алматыдағы жайлы әрі іскерлік сапарыңызды бүгін бастаңыз",en:"Start your comfortable business trip to Almaty today",zh:"即刻开启您在阿拉木图舒适的商务之旅"},
+    "cta.b1":{ru:"Самые низкие цены",kz:"Ең төмен бағалар",en:"Lowest prices",zh:"最优惠价格"},
+    "cta.b2":{ru:"Без скрытых платежей",kz:"Жасырын төлемдер жоқ",en:"No hidden fees",zh:"无隐藏费用"},
+    "cta.b3":{ru:"Быстрое и простое бронирование",kz:"Тез және оңай брондау",en:"Fast and easy booking",zh:"快速简便预订"},
 
     "book.eyebrow":{ru:"Бронирование",kz:"Брондау",en:"Booking",zh:"预订"},
     "book.title":{ru:"Забронируйте номер за минуту",kz:"Нөмірді бір минутта брондаңыз",en:"Book a room in a minute",zh:"一分钟即可预订客房"},
@@ -1134,7 +1401,8 @@
     "book.checkin":{ru:"Дата заезда",kz:"Кіру күні",en:"Check-in date",zh:"入住日期"},
     "book.checkout":{ru:"Дата выезда",kz:"Шығу күні",en:"Check-out date",zh:"离店日期"},
     "book.roomType":{ru:"Тип номера",kz:"Нөмір түрі",en:"Room type",zh:"房型"},
-    "book.guests":{ru:"Количество гостей",kz:"Қонақ саны",en:"Number of guests",zh:"入住人数"},
+    "book.guests":{ru:"Количество гостей",kz:"Қонақтар саны",en:"Number of guests",zh:"入住人数"},
+    "book.search":{ru:"Найти номер",kz:"Нөмірді іздеу",en:"Search rooms",zh:"搜索客房"},
     "book.name":{ru:"Имя",kz:"Аты-жөні",en:"Name",zh:"姓名"},
     "book.phone":{ru:"Телефон",kz:"Телефон",en:"Phone",zh:"电话"},
     "book.comment":{ru:"Комментарий",kz:"Қосымша тілек",en:"Comment",zh:"备注"},
@@ -1144,13 +1412,15 @@
 
     "foot.tagline":{ru:"4-звёздочный бизнес-отель в Алматы с рейтингом 4.9 на 2ГИС.",kz:"2ГІС-тегі рейтингі 4.9 болатын Алматыдағы 4 жұлдызды бизнес-отель.",en:"A 4-star business hotel in Almaty with a 4.9 rating on 2GIS.",zh:"位于阿拉木图的四星级商务酒店，2GIS评分4.9。"},
     "foot.nav":{ru:"Навигация",kz:"Навигация",en:"Navigation",zh:"导航"},
+    "foot.services":{ru:"Услуги",kz:"Қызметтер",en:"Services",zh:"服务"},
     "foot.contacts":{ru:"Контакты",kz:"Байланыс",en:"Contacts",zh:"联系方式"},
-    "foot.lang":{ru:"Язык сайта",kz:"Сайт тілі",en:"Site language",zh:"网站语言"},
     "foot.copy":{ru:"© 2026 Business Hotel Almaty. Все права защищены.",kz:"© 2026 Business Hotel Almaty. Барлық құқықтар қорғалған.",en:"© 2026 Business Hotel Almaty. All rights reserved.",zh:"© 2026 Business Hotel Almaty. 保留所有权利。"},
     "foot.legal":{ru:"ТОО «Международный Гранд-отель «Шёлковый путь – Один пояс, один путь»» · БИН 260840028695 · пр. Райымбека, 298А, Алматы",kz:"«Халықаралық Гранд-отель «Жібек жолы – Бір белдеу, бір жол»» ЖШС · БСН 260840028695 · Райымбек даңғ., 298А, Алматы",en:"LLP \"International Grand Hotel Silk Road – One Belt, One Road\" · BIN 260840028695 · 298A Raiymbek Ave, Almaty",zh:"“国际丝绸之路大酒店——一带一路”有限公司 · 商业识别号260840028695 · 阿拉木图赖姆别克大道298A"}
   };
 
+  var LANG_LABEL = {kz:"ҚАЗ", ru:"РУС", en:"ENG", zh:"中文"};
   var LS_KEY = "bha_lang";
+
   function applyLang(lang){
     document.documentElement.setAttribute("lang", lang === "zh" ? "zh-CN" : lang);
     document.querySelectorAll("[data-i18n]").forEach(function(el){
@@ -1163,17 +1433,68 @@
       var entry = STRINGS[key];
       if(entry && entry[lang] !== undefined){ el.setAttribute("placeholder", entry[lang]); }
     });
-    document.querySelectorAll(".lang-btn").forEach(function(btn){
+    document.querySelectorAll(".lang-dd-item, .lang-btn-footer").forEach(function(btn){
       btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
+    });
+    document.querySelectorAll("[data-lang-current]").forEach(function(el){
+      el.textContent = LANG_LABEL[lang] || lang.toUpperCase();
     });
     try{ localStorage.setItem(LS_KEY, lang); }catch(e){}
   }
-  document.querySelectorAll(".lang-btn").forEach(function(btn){
-    btn.addEventListener("click", function(){ applyLang(btn.getAttribute("data-lang")); });
+
+  document.querySelectorAll(".lang-dd-item, .lang-btn-footer").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      applyLang(btn.getAttribute("data-lang"));
+      document.querySelectorAll(".lang-dd.open").forEach(function(dd){ closeDropdown(dd); });
+    });
   });
+
   var savedLang;
   try{ savedLang = localStorage.getItem(LS_KEY); }catch(e){}
   applyLang(savedLang || "ru");
+
+  /* ---------- LANGUAGE DROPDOWNS ---------- */
+  function closeDropdown(dd){
+    dd.classList.remove("open");
+    var btn = dd.querySelector(".lang-dd-btn");
+    if(btn) btn.setAttribute("aria-expanded", "false");
+  }
+  document.querySelectorAll(".lang-dd").forEach(function(dd){
+    var btn = dd.querySelector(".lang-dd-btn");
+    btn.addEventListener("click", function(e){
+      e.stopPropagation();
+      var isOpen = dd.classList.contains("open");
+      document.querySelectorAll(".lang-dd.open").forEach(function(other){ closeDropdown(other); });
+      if(!isOpen){ dd.classList.add("open"); btn.setAttribute("aria-expanded", "true"); }
+    });
+  });
+  document.addEventListener("click", function(){
+    document.querySelectorAll(".lang-dd.open").forEach(function(dd){ closeDropdown(dd); });
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ document.querySelectorAll(".lang-dd.open").forEach(function(dd){ closeDropdown(dd); }); }
+  });
+
+  /* ---------- STICKY HEADER: compact on scroll ---------- */
+  var siteHeader = document.getElementById("site-header");
+  function onHeaderScroll(){
+    if(window.scrollY > 40){ siteHeader.classList.add("is-scrolled"); }
+    else{ siteHeader.classList.remove("is-scrolled"); }
+  }
+  window.addEventListener("scroll", onHeaderScroll, {passive:true});
+  onHeaderScroll();
+
+  /* ---------- ACTIVE NAV LINK ON SCROLL ---------- */
+  var navLinks = document.querySelectorAll(".nav-link[href^='#']");
+  var navSections = Array.prototype.map.call(navLinks, function(a){ return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+  function onNavScroll(){
+    var pos = window.scrollY + 140;
+    var activeIdx = 0;
+    navSections.forEach(function(sec, i){ if(sec.offsetTop <= pos) activeIdx = i; });
+    navLinks.forEach(function(a, i){ a.classList.toggle("is-active", i === activeIdx); });
+  }
+  window.addEventListener("scroll", onNavScroll, {passive:true});
+  onNavScroll();
 
   /* ---------- MOBILE MENU ---------- */
   var menuToggle = document.getElementById("mobile-menu-toggle");
@@ -1194,17 +1515,11 @@
     document.body.style.overflow = "";
     if(fabWrapEl) fabWrapEl.style.display = "";
   }
-  menuToggle.addEventListener("click", function(){
-    menu.classList.contains("open") ? closeMenu() : openMenu();
-  });
+  menuToggle.addEventListener("click", function(){ menu.classList.contains("open") ? closeMenu() : openMenu(); });
   menuClose.addEventListener("click", closeMenu);
   menu.addEventListener("click", function(e){ if(e.target === menu) closeMenu(); });
   document.querySelectorAll(".mobile-link").forEach(function(a){ a.addEventListener("click", closeMenu); });
   document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeMenu(); });
-
-  var mobileLinkStyle = document.createElement("style");
-  mobileLinkStyle.textContent = ".mobile-link{padding:.85rem 0;border-bottom:1px solid var(--line);font-weight:600;font-size:1.05rem;color:var(--ink-text)} .mobile-link:active{color:var(--gold)}";
-  document.head.appendChild(mobileLinkStyle);
 
   /* ---------- REVEAL ON SCROLL ---------- */
   var io = new IntersectionObserver(function(entries){
@@ -1226,7 +1541,7 @@
     });
   });
 
-  /* ---------- CAROUSEL: manual only, wraps to start ---------- */
+  /* ---------- CAROUSELS: manual only, wrap to start ---------- */
   document.querySelectorAll(".carousel-arrow").forEach(function(btn){
     btn.addEventListener("click", function(){
       var track = document.getElementById(btn.getAttribute("data-target"));
@@ -1236,34 +1551,103 @@
       var maxScroll = track.scrollWidth - track.clientWidth;
       var atEnd = track.scrollLeft >= maxScroll - 4;
       var atStart = track.scrollLeft <= 4;
-      if(dir > 0 && atEnd){
-        track.scrollTo({left:0, behavior:"smooth"});
-      } else if(dir < 0 && atStart){
-        track.scrollTo({left:maxScroll, behavior:"smooth"});
-      } else {
-        track.scrollBy({left: dir * step, behavior:"smooth"});
-      }
+      if(dir > 0 && atEnd){ track.scrollTo({left:0, behavior:"smooth"}); }
+      else if(dir < 0 && atStart){ track.scrollTo({left:maxScroll, behavior:"smooth"}); }
+      else{ track.scrollBy({left: dir * step, behavior:"smooth"}); }
     });
   });
 
-  /* ---------- FLOATING CONTACT BUTTON ---------- */
-  var fabMain = document.getElementById("fab-main");
-  var fabMenu = document.getElementById("fab-menu");
-  var fabChat = document.getElementById("fab-icon-chat");
-  var fabCloseIcon = document.getElementById("fab-icon-close");
-  fabMain.addEventListener("click", function(){
-    var open = fabMenu.classList.toggle("open");
-    fabMain.setAttribute("aria-expanded", open ? "true" : "false");
-    fabChat.classList.toggle("hidden", open);
-    fabCloseIcon.classList.toggle("hidden", !open);
-  });
-  document.addEventListener("click", function(e){
-    if(!document.getElementById("fab-wrap").contains(e.target)){
-      fabMenu.classList.remove("open");
-      fabMain.setAttribute("aria-expanded","false");
-      fabChat.classList.remove("hidden");
-      fabCloseIcon.classList.add("hidden");
+  /* ---------- ROOMS CAROUSEL DOTS ---------- */
+  (function(){
+    var track = document.getElementById("carousel-rooms");
+    var dotsWrap = document.getElementById("dots-rooms");
+    if(!track || !dotsWrap) return;
+    var cards = Array.prototype.slice.call(track.children);
+    cards.forEach(function(card, i){
+      var dot = document.createElement("button");
+      dot.className = "dot" + (i === 0 ? " is-active" : "");
+      dot.setAttribute("aria-label", "Slide " + (i + 1));
+      dot.addEventListener("click", function(){
+        track.scrollTo({left: card.offsetLeft - track.offsetLeft, behavior:"smooth"});
+      });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+    var ticking = false;
+    track.addEventListener("scroll", function(){
+      if(ticking) return;
+      ticking = true;
+      requestAnimationFrame(function(){
+        var closest = 0, minDist = Infinity;
+        cards.forEach(function(card, i){
+          var dist = Math.abs((card.offsetLeft - track.offsetLeft) - track.scrollLeft);
+          if(dist < minDist){ minDist = dist; closest = i; }
+        });
+        dots.forEach(function(d, i){ d.classList.toggle("is-active", i === closest); });
+        ticking = false;
+      });
+    }, {passive:true});
+  })();
+
+  /* ---------- LIGHTBOX ---------- */
+  (function(){
+    var lightbox = document.getElementById("lightbox");
+    var lbImg = document.getElementById("lightbox-img");
+    var lbCaption = document.getElementById("lightbox-caption");
+    var triggers = Array.prototype.slice.call(document.querySelectorAll("[data-lightbox]"));
+    var current = 0;
+    function open(i){
+      current = i;
+      var t = triggers[i];
+      var img = t.querySelector("img");
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || "";
+      lbCaption.textContent = t.getAttribute("data-caption") || "";
+      lightbox.classList.remove("pointer-events-none");
+      lightbox.classList.add("opacity-100");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
     }
+    function close(){
+      lightbox.classList.add("pointer-events-none");
+      lightbox.classList.remove("opacity-100");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+    function next(dir){ open((current + dir + triggers.length) % triggers.length); }
+    triggers.forEach(function(t, i){ t.addEventListener("click", function(){ open(i); }); });
+    document.getElementById("lightbox-close").addEventListener("click", close);
+    document.getElementById("lightbox-prev").addEventListener("click", function(){ next(-1); });
+    document.getElementById("lightbox-next").addEventListener("click", function(){ next(1); });
+    lightbox.addEventListener("click", function(e){ if(e.target === lightbox) close(); });
+    document.addEventListener("keydown", function(e){
+      if(lightbox.getAttribute("aria-hidden") === "false"){
+        if(e.key === "Escape") close();
+        if(e.key === "ArrowRight") next(1);
+        if(e.key === "ArrowLeft") next(-1);
+      }
+    });
+  })();
+
+  /* ---------- BOOKING WIDGET -> BOOKING FORM ---------- */
+  var bookingWidget = document.getElementById("booking-widget");
+  bookingWidget.addEventListener("submit", function(e){
+    e.preventDefault();
+    var ci = document.getElementById("bw-checkin").value;
+    var co = document.getElementById("bw-checkout").value;
+    var guests = document.getElementById("bw-guests").value;
+    var roomLabel = document.getElementById("bw-room").selectedOptions[0].textContent.trim();
+
+    if(ci) document.getElementById("f-checkin").value = ci;
+    if(co) document.getElementById("f-checkout").value = co;
+    if(guests) document.getElementById("f-guests").value = guests;
+    var realSelect = document.getElementById("f-room");
+    Array.prototype.forEach.call(realSelect.options, function(opt){
+      if(opt.textContent.trim() === roomLabel) realSelect.value = opt.value;
+    });
+
+    document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+    setTimeout(function(){ document.getElementById("f-name").focus(); }, 500);
   });
 
   /* ---------- WHATSAPP BOOKING FORM ---------- */
@@ -1297,6 +1681,15 @@
     };
     var text = encodeURIComponent(buildMessage(data));
     window.open("https://wa.me/" + WA_NUMBER + "?text=" + text, "_blank", "noopener");
+  });
+
+  document.querySelectorAll(".room-more-btn").forEach(function(btn){
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      var room = btn.getAttribute("data-room");
+      var text = encodeURIComponent("🏨 Business Hotel Almaty\n\nЗдравствуйте! Расскажите, пожалуйста, подробнее о номере «" + room + "»: фото, площадь, наличие свободных дат.");
+      window.open("https://wa.me/" + WA_NUMBER + "?text=" + text, "_blank", "noopener");
+    });
   });
 
   document.querySelectorAll(".book-room-btn").forEach(function(btn){
