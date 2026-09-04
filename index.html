@@ -297,6 +297,20 @@
   .tcarousel::-webkit-scrollbar{display:none}
   .tcarousel > *{scroll-snap-align:start; flex:0 0 auto;}
 
+  /* Check-in policy accordion */
+  .policy-item summary{
+    list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; padding:1.1rem 1.5rem; font-weight:700; font-size:.95rem;
+    transition:background-color .2s ease;
+  }
+  .policy-item summary::-webkit-details-marker{display:none}
+  .policy-item summary:hover{background:var(--off-white)}
+  .policy-chevron{flex-shrink:0; color:var(--red); transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+  .policy-item[open] .policy-chevron{transform:rotate(180deg)}
+  .policy-answer{
+    padding:0 1.5rem 1.25rem; font-size:.875rem; color:var(--text-dim); line-height:1.7;
+  }
+
   .tab-btn{
     font-size:.78rem; font-weight:700; letter-spacing:.02em;
     padding:.6rem 1.1rem; border-radius:999px; border:1px solid var(--line);
@@ -500,6 +514,7 @@
       <a href="#karaoke" class="mobile-link" data-i18n="nav.karaoke">Karaoke Club</a>
       <a href="#restaurant" class="mobile-link" data-i18n="nav.restaurant">Мейрамхана</a>
       <a href="#services" class="mobile-link" data-i18n="nav.services">Қызметтер</a>
+      <a href="#policy" class="mobile-link" data-i18n="policy.eyebrow">Тіркелу ережелері</a>
       <a href="#gallery" class="mobile-link" data-i18n="nav.gallery">Галерея</a>
       <a href="#reviews" class="mobile-link" data-i18n="nav.reviews">Пікірлер</a>
       <a href="#location" class="mobile-link" data-i18n="nav.contact">Байланыс</a>
@@ -618,8 +633,9 @@
       <p class="eyebrow mb-4" data-i18n="about.eyebrow">О нас</p>
       <h2 class="text-4xl md:text-5xl mb-6" data-i18n="about.title">История, построенная на гостеприимстве</h2>
       <div class="divider-flourish left-align mb-6"><span class="fl-line"></span></div>
-      <p class="text-[var(--text-dim)] mb-5" data-i18n="about.p1">Business Hotel Almaty — четырёхзвёздочный отель на проспекте Райымбека, в шаговой доступности от центра деловой активности города. За годы работы отель стал выбором тысяч гостей — от деловых путешественников до участников торжеств.</p>
-      <p class="text-[var(--text-dim)] mb-8" data-i18n="about.p2">118 номеров четырёх категорий, два конференц-зала, банкетный зал, собственный Karaoke Club и ресторан — всё продумано для комфортного пребывания и продуктивной работы.</p>
+      <p class="text-[var(--text-dim)] mb-5" data-i18n="about.p1">Международный Гранд-отель «Шёлковый путь — Один пояс, один путь» — четырёхзвёздочный отель на проспекте Райымбека, работающий с 2022 года, в шаговой доступности от центра деловой активности города. За годы работы отель стал выбором тысяч гостей — от деловых путешественников до участников торжеств.</p>
+      <p class="text-[var(--text-dim)] mb-5" data-i18n="about.p2">118 номеров восьми категорий, два конференц-зала, банкетный зал, собственный Karaoke Club и ресторан — всё продумано для комфортного пребывания и продуктивной работы.</p>
+      <p class="text-[var(--text-dim)] mb-8" data-i18n="about.p3">Отель работает в рамках миссии международной группы SICO и уделяет особое внимание китайскоязычному сообществу и туристическим группам из Китая, пребывающим в Казахстане.</p>
       <div class="grid grid-cols-2 gap-6">
         <div class="flex items-start gap-3">
           <div class="icon-badge shrink-0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M6 19V9l6-4 6 4v10"/></svg></div>
@@ -628,6 +644,10 @@
         <div class="flex items-start gap-3">
           <div class="icon-badge shrink-0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
           <div><p class="font-semibold" data-i18n="about.f2t">Удобное расположение</p><p class="text-sm text-[var(--text-dim)]" data-i18n="about.f2d">Рядом остановки и деловой центр</p></div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="icon-badge shrink-0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14M5 8a2 2 0 002 2h2m-4-2a2 2 0 012-2h2m8 2a2 2 0 01-2 2h-2m4-2a2 2 0 00-2-2h-2M9 8v10m6-10v10M7 21h10"/></svg></div>
+          <div><p class="font-semibold" data-i18n="about.f3t">Обслуживание на китайском</p><p class="text-sm text-[var(--text-dim)]" data-i18n="about.f3d">Персонал говорит на китайском языке</p></div>
         </div>
       </div>
     </div>
@@ -650,7 +670,15 @@
       <p class="eyebrow mb-4" data-i18n="rooms.eyebrow">Размещение</p>
       <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
       <h2 class="text-4xl md:text-5xl mb-5" data-i18n="rooms.title">Номера на любой формат поездки</h2>
-      <span class="inline-flex items-center gap-2 text-xs font-bold tracking-wide bg-[var(--gold)]/15 text-[var(--gold-deep)] border border-[var(--gold)]/40 px-4 py-1.5 rounded-full" data-i18n="rooms.priceFrom">От 45 000 ₸</span>
+      <span class="inline-flex items-center gap-2 text-xs font-bold tracking-wide bg-[var(--gold)]/15 text-[var(--gold-deep)] border border-[var(--gold)]/40 px-4 py-1.5 rounded-full mb-5" data-i18n="rooms.priceFrom">От 45 000 ₸</span>
+      <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-[var(--text-dim)] font-semibold">
+        <span class="font-bold text-[var(--text)]" data-i18n="rooms.includesLabel">В стоимость включено:</span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg> <span data-i18n="serv.breakfast.t">Тегін таңғы ас</span></span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M12 2a5 5 0 015 5v2h1a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2v-8a2 2 0 012-2h1V7a5 5 0 015-5zM7 9h10V7a5 5 0 00-10 0v2z"/></svg> <span data-i18n="rooms.includeHygiene">Гигиена жинағы</span></span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M3 17h18M5 17V9a7 7 0 0114 0v8M8 21h8"/></svg> <span data-i18n="serv.park.t">Бесплатный паркинг</span></span>
+        <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><rect x="4" y="9" width="16" height="10" rx="1"/><path d="M8 9V7a4 4 0 018 0v2M12 13v3"/></svg> <span data-i18n="rooms.includeAC">Кондиционер</span></span>
+      </div>
     </div>
 
     <div class="relative">
@@ -776,7 +804,7 @@
           <div class="p-6 flex flex-col grow">
             <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r7.title">Семейный люкс</h3>
             <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
-              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests4">4 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests3">3 адам</span></span>
               <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 35 м²</span>
             </div>
             <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r7.desc">Для родителей с ребёнком — с дополнительной кроватью.</p>
@@ -796,7 +824,7 @@
           <div class="p-6 flex flex-col grow">
             <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r8.title">Делюкс семейный люкс</h3>
             <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
-              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests4">4 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests3">3 адам</span></span>
               <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 50 м²</span>
             </div>
             <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r8.desc">Самый просторный номер отеля — для отдыха всей семьёй.</p>
@@ -876,10 +904,10 @@
         </div>
       </div>
       <div class="reveal card card-float shadow-elevated overflow-hidden">
-        <div class="img-tone aspect-[16/10]"><img src="images/restaurant-entrance-2.jpg" alt="Ресторан на территории" class="w-full h-full object-cover" loading="lazy"></div>
+        <div class="img-tone aspect-[16/10]"><img src="images/restaurant-entrance-2.jpg" alt="Ресторан китайской кухни" class="w-full h-full object-cover" loading="lazy"></div>
         <div class="p-7">
-          <h3 class="font-display text-2xl mb-2" data-i18n="rest.card2.title">Ресторан на территории</h3>
-          <p class="text-sm text-[var(--text-dim)]" data-i18n="rest.card2.desc">На первом этаже комплекса работает ресторан — удобно для завтрака, обеда и делового ужина.</p>
+          <h3 class="font-display text-2xl mb-2" data-i18n="rest.card2.title">Ресторан китайской кухни</h3>
+          <p class="text-sm text-[var(--text-dim)]" data-i18n="rest.card2.desc">На первом этаже комплекса работает ресторан китайской кухни — удобно для завтрака, обеда и делового ужина, знакомые блюда для гостей из Китая.</p>
         </div>
       </div>
     </div>
@@ -894,7 +922,7 @@
       <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
       <h2 class="text-4xl md:text-5xl" data-i18n="serv.title">Всё для комфортного пребывания</h2>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="reveal card card-float p-7 text-center">
         <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg></div>
         <p class="font-semibold mb-1" data-i18n="serv.wifi.t">Бесплатный Wi-Fi</p>
@@ -909,6 +937,13 @@
         <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h10l6 6v10H4zM14 4v6h6"/></svg></div>
         <p class="font-semibold mb-1" data-i18n="serv.laundry.t">Услуги прачечной</p>
         <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.laundry.d">Стирка и глажка по запросу</p>
+        <p class="text-xs text-[var(--red)] font-bold mt-2" data-i18n="serv.laundry.price">Короткая вещь — 3 000 ₸ / шт., длинная — 7 000 ₸ / шт.</p>
+      </div>
+      <div class="reveal card card-float p-7 text-center">
+        <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l2-6h14l2 6M5 12h14v6H5v-6zM7 18v2M17 18v2M5 12l1.5-4.5M19 12l-1.5-4.5"/></svg></div>
+        <p class="font-semibold mb-1" data-i18n="serv.transfer.t">Трансфер из аэропорта</p>
+        <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.transfer.d">Встреча и доставка по запросу</p>
+        <p class="text-xs text-[var(--red)] font-bold mt-2" data-i18n="serv.transfer.price">10 000 ₸ / поездка</p>
       </div>
       <div class="reveal card card-float p-7 text-center">
         <div class="icon-badge mx-auto mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div>
@@ -935,6 +970,51 @@
         <p class="font-semibold mb-1" data-i18n="serv.breakfast.t">Тегін таңғы ас</p>
         <p class="text-xs text-[var(--text-dim)]" data-i18n="serv.breakfast.d">Континентальды таңғы ас</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHECK-IN POLICY ============ -->
+<section id="policy" class="py-20 md:py-28 bg-[var(--off-white)] border-y border-[var(--line)]">
+  <div class="container-x">
+    <div class="reveal section-eyebrow-wrap max-w-2xl mx-auto mb-14 text-center">
+      <p class="eyebrow mb-4" data-i18n="policy.eyebrow">Правила проживания</p>
+      <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
+      <h2 class="text-4xl md:text-5xl" data-i18n="policy.title">Правила заселения и проживания</h2>
+    </div>
+    <div class="reveal max-w-3xl mx-auto rounded-2xl border border-[var(--line)] bg-white overflow-hidden divide-y divide-[var(--line)]">
+      <details class="policy-item group">
+        <summary><span data-i18n="policy.checkin.q">Время заезда / выезда</span><svg class="policy-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="policy-answer" data-i18n="policy.checkin.a">Заезд — с 06:00, выезд — до 12:00 следующего дня.</div>
+      </details>
+      <details class="policy-item group">
+        <summary><span data-i18n="policy.early.q">Ранний заезд / поздний выезд</span><svg class="policy-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="policy-answer" data-i18n="policy.early.a">Платно: до 6 часов — 50% от суточной цены, свыше 6 часов — 100%.</div>
+      </details>
+      <details class="policy-item group">
+        <summary><span data-i18n="policy.hourly.q">Почасовая аренда</span><svg class="policy-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="policy-answer" data-i18n="policy.hourly.a">До 4 часов — 50% от суточной цены номера.</div>
+      </details>
+      <details class="policy-item group">
+        <summary><span data-i18n="policy.cancel.q">Отмена бронирования</span><svg class="policy-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="policy-answer" data-i18n="policy.cancel.a">Бесплатная отмена возможна до 18:00 в день заезда.</div>
+      </details>
+      <details class="policy-item group">
+        <summary><span data-i18n="policy.children.q">Дети</span><svg class="policy-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="policy-answer" data-i18n="policy.children.a">Дети старше 12 лет оплачиваются как взрослые.</div>
+      </details>
+      <details class="policy-item group">
+        <summary><span data-i18n="policy.pets.q">Домашние животные</span><svg class="policy-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="policy-answer" data-i18n="policy.pets.a">Проживание с животными не допускается.</div>
+      </details>
+      <details class="policy-item group">
+        <summary><span data-i18n="policy.smoking.q">Курение и алкоголь</span><svg class="policy-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="policy-answer" data-i18n="policy.smoking.a">Курение внутри здания запрещено; в номерах с балконом курить разрешено только на балконе.</div>
+      </details>
+      <details class="policy-item group">
+        <summary><span data-i18n="policy.document.q">Документы при заселении</span><svg class="policy-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="policy-answer" data-i18n="policy.document.a">Паспорт или удостоверение личности.</div>
+      </details>
     </div>
   </div>
 </section>
@@ -971,6 +1051,35 @@
     <img id="lightbox-img" src="" alt="" class="w-full max-h-[78vh] object-contain rounded-lg">
     <figcaption id="lightbox-caption" class="text-white/80 text-center text-sm mt-4"></figcaption>
   </figure>
+</div>
+
+<!-- Room detail modal -->
+<div id="room-modal" class="fixed inset-0 z-[90] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4" aria-hidden="true">
+  <div class="bg-white rounded-2xl shadow-floating max-w-xl w-full max-h-[88vh] overflow-y-auto relative">
+    <button id="room-modal-close" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 border border-[var(--line)] flex items-center justify-center hover:bg-[var(--off-white)]" aria-label="Жабу">
+      <svg width="16" height="16" viewBox="0 0 18 18"><path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="img-tone aspect-[16/10]"><img id="room-modal-img" src="" alt="" class="w-full h-full object-cover"></div>
+    <div class="p-6 md:p-8">
+      <h3 id="room-modal-title" class="font-display text-2xl md:text-3xl mb-3"></h3>
+      <div id="room-modal-meta" class="flex items-center gap-4 text-sm text-[var(--text-dim)] font-semibold mb-4"></div>
+      <p id="room-modal-desc" class="text-sm text-[var(--text-dim)] mb-6"></p>
+      <div class="border-t border-[var(--line)] pt-5 mb-6">
+        <p class="font-bold text-sm mb-3" data-i18n="rooms.includesLabel">В стоимость включено:</p>
+        <div class="grid grid-cols-2 gap-y-2 text-xs text-[var(--text-dim)] font-semibold">
+          <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg> <span data-i18n="serv.breakfast.t">Тегін таңғы ас</span></span>
+          <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+          <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M12 2a5 5 0 015 5v2h1a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2v-8a2 2 0 012-2h1V7a5 5 0 015-5zM7 9h10V7a5 5 0 00-10 0v2z"/></svg> <span data-i18n="rooms.includeHygiene">Гигиена жинағы</span></span>
+          <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M3 17h18M5 17V9a7 7 0 0114 0v8M8 21h8"/></svg> <span data-i18n="serv.park.t">Бесплатный паркинг</span></span>
+          <span class="flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><rect x="4" y="9" width="16" height="10" rx="1"/><path d="M8 9V7a4 4 0 018 0v2M12 13v3"/></svg> <span data-i18n="rooms.includeAC">Кондиционер</span></span>
+        </div>
+      </div>
+      <div class="flex items-end justify-between gap-4">
+        <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span id="room-modal-price" class="font-display text-2xl"></span></div>
+        <button id="room-modal-book" class="btn btn-red shadow-red" data-i18n="rooms.book">Брондау</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ============ REVIEWS / TESTIMONIALS ============ -->
@@ -1191,7 +1300,8 @@
       <p class="eyebrow mb-4" data-i18n="book.eyebrow">Бронирование</p>
       <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
       <h2 class="text-4xl md:text-5xl mb-4" data-i18n="book.title">Забронируйте номер за минуту</h2>
-      <p class="text-[var(--text-dim)]" data-i18n="book.desc">Заполните форму — заявка сразу сформируется в WhatsApp, и мы подтвердим бронирование лично.</p>
+      <p class="text-[var(--text-dim)] mb-3" data-i18n="book.desc">Заполните форму — заявка сразу сформируется в WhatsApp, и мы подтвердим бронирование лично.</p>
+      <p class="inline-flex items-center gap-2 text-xs font-semibold text-[var(--gold-deep)] bg-[var(--gold)]/10 border border-[var(--gold)]/30 px-4 py-2 rounded-full" data-i18n="book.groupNote">Групповое или долгосрочное бронирование — индивидуальные условия, уточняйте в WhatsApp.</p>
     </div>
 
     <form id="booking-form" class="reveal card shadow-floating p-6 md:p-10 grid md:grid-cols-2 gap-6" novalidate>
@@ -1379,8 +1489,11 @@
 
     "about.eyebrow":{ru:"О нас",kz:"Біз туралы",en:"About us",zh:"关于我们"},
     "about.title":{ru:"История, построенная на гостеприимстве",kz:"Қонақжайлылыққа құрылған тарих",en:"A story built on hospitality",zh:"以热情好客为基础的历史"},
-    "about.p1":{ru:"Международный Гранд-отель «Шёлковый путь — Один пояс, один путь» — четырёхзвёздочный отель на проспекте Райымбека, в шаговой доступности от центра деловой активности города. За годы работы отель стал выбором тысяч гостей — от деловых путешественников до участников торжеств.",kz:"Халықаралық Гранд-отель «Жібек жолы — Бір белдеу, бір жол» — Райымбек даңғылындағы 4 жұлдызды қонақ үй, қаланың іскерлік орталығына жақын орналасқан. Жұмыс жылдары ішінде отель мыңдаған қонақтың таңдауына айналды — іссапар қонақтарынан бастап той қонақтарына дейін.",en:"International Grand Hotel \"Silk Road — One Belt, One Road\" is a 4-star hotel on Raiymbek Avenue, within walking distance of the city's business hub. Over the years it has become the choice of thousands of guests — from business travellers to celebration guests.",zh:"国际丝绸之路大酒店\"一带一路\"是位于赖姆别克大道上的四星级酒店，步行即可到达市中心商务区。多年来，它已成为数千位客人的首选——从商务旅客到庆典宾客。"},
-    "about.p2":{ru:"118 номеров четырёх категорий, два конференц-зала, банкетный зал, собственный Karaoke Club и ресторан — всё продумано для комфортного пребывания и продуктивной работы.",kz:"4 санаттағы 118 нөмір, екі конференц-зал, банкет залы, өз Karaoke Club-ы және мейрамхана — барлығы қолайлы демалыс пен өнімді жұмыс үшін ойластырылған.",en:"118 rooms across four categories, two conference halls, a banquet hall, its own Karaoke Club and a restaurant — everything designed for a comfortable stay and productive work.",zh:"四种类型共118间客房、两个会议厅、一个宴会厅、专属卡拉OK俱乐部和餐厅——一切都为舒适入住和高效工作而设计。"},
+    "about.p1":{ru:"Международный Гранд-отель «Шёлковый путь — Один пояс, один путь» — четырёхзвёздочный отель на проспекте Райымбека, работающий с 2022 года, в шаговой доступности от центра деловой активности города. За годы работы отель стал выбором тысяч гостей — от деловых путешественников до участников торжеств.",kz:"Халықаралық Гранд-отель «Жібек жолы — Бір белдеу, бір жол» — Райымбек даңғылындағы 4 жұлдызды қонақ үй, 2022 жылдан бері қызмет етеді, қаланың іскерлік орталығына жақын орналасқан. Жұмыс жылдары ішінде отель мыңдаған қонақтың таңдауына айналды — іссапар қонақтарынан бастап той қонақтарына дейін.",en:"International Grand Hotel \"Silk Road — One Belt, One Road\" is a 4-star hotel on Raiymbek Avenue, operating since 2022, within walking distance of the city's business hub. Over the years it has become the choice of thousands of guests — from business travellers to celebration guests.",zh:"国际丝绸之路大酒店\"一带一路\"是位于赖姆别克大道上的四星级酒店，自2022年起营业，步行即可到达市中心商务区。多年来，它已成为数千位客人的首选——从商务旅客到庆典宾客。"},
+    "about.p2":{ru:"118 номеров восьми категорий, два конференц-зала, банкетный зал, собственный Karaoke Club и ресторан — всё продумано для комфортного пребывания и продуктивной работы.",kz:"8 санаттағы 118 нөмір, екі конференц-зал, банкет залы, өз Karaoke Club-ы және мейрамхана — барлығы қолайлы демалыс пен өнімді жұмыс үшін ойластырылған.",en:"118 rooms across eight categories, two conference halls, a banquet hall, its own Karaoke Club and a restaurant — everything designed for a comfortable stay and productive work.",zh:"八种类型共118间客房、两个会议厅、一个宴会厅、专属卡拉OK俱乐部和餐厅——一切都为舒适入住和高效工作而设计。"},
+    "about.p3":{ru:"Отель работает в рамках миссии международной группы SICO и уделяет особое внимание китайскоязычному сообществу и туристическим группам из Китая, пребывающим в Казахстане.",kz:"Отель SICO халықаралық тобының миссиясы негізінде қызмет етеді және Қазақстанда болатын қытай тілді қауымға және қытай туристік топтарына ерекше көңіл бөледі.",en:"The hotel operates as part of the mission of the international SICO group, with special attention to the Chinese-speaking community and tour groups from China visiting Kazakhstan.",zh:"酒店秉承国际SICO集团的使命，特别关注在哈萨克斯坦的华语社区及中国旅游团体。"},
+    "about.f3t":{ru:"Обслуживание на китайском",kz:"Қытай тілінде қызмет",en:"Service in Chinese",zh:"中文服务"},
+    "about.f3d":{ru:"Персонал говорит на китайском языке",kz:"Қызметкерлер қытай тілінде қызмет көрсетеді",en:"Staff speak Chinese",zh:"员工可用中文交流"},
     "about.f1t":{ru:"Доступная среда",kz:"Қолжетімді орта",en:"Accessible environment",zh:"无障碍环境"},
     "about.f1d":{ru:"Пандус, широкий лифт, вход для МГН",kz:"Пандус, кең лифт, мүгедектерге арналған кіреберіс",en:"Ramp, wide elevator, accessible entrance",zh:"坡道、宽敞电梯、无障碍入口"},
     "about.f2t":{ru:"Удобное расположение",kz:"Қолайлы орналасу",en:"Convenient location",zh:"便利的位置"},
@@ -1389,8 +1502,11 @@
     "rooms.eyebrow":{ru:"Размещение",kz:"Орналасу",en:"Accommodation",zh:"住宿"},
     "rooms.title":{ru:"Номера на любой формат поездки",kz:"Кез келген сапар түріне лайық нөмірлер",en:"Rooms for every kind of stay",zh:"满足各种出行需求的客房"},
     "rooms.guests2":{ru:"2 гостя",kz:"2 адам",en:"2 guests",zh:"2位客人"},
-    "rooms.guests4":{ru:"4 гостя",kz:"4 адам",en:"4 guests",zh:"4位客人"},
+    "rooms.guests3":{ru:"3 гостя",kz:"3 адам",en:"3 guests",zh:"3位客人"},
     "rooms.priceFrom":{ru:"От 45 000 ₸",kz:"45 000 ₸-ден бастап",en:"From ₸45,000",zh:"起价45,000₸"},
+    "rooms.includesLabel":{ru:"В стоимость включено:",kz:"Бағаға кіреді:",en:"Included in the price:",zh:"价格包含："},
+    "rooms.includeHygiene":{ru:"Гигиенический набор",kz:"Гигиена жинағы",en:"Hygiene kit",zh:"洗漱用品"},
+    "rooms.includeAC":{ru:"Кондиционер",kz:"Кондиционер",en:"Air conditioning",zh:"空调"},
     "rooms.onlineOnly":{ru:"Только онлайн-бронирование",kz:"Тек онлайн брондау арқылы қолжетімді",en:"Online booking only",zh:"仅限在线预订"},
     "rooms.r1.title":{ru:"Стандарт Твин",kz:"Стандартты қос орындықты",en:"Standard Twin",zh:"标准双床房"},
     "rooms.r1.desc":{ru:"Компактный и уютный номер для командировки. Две отдельные кровати.",kz:"Іссапар үшін ықшам, жайлы нөмір. 2 бөлек кереует.",en:"A compact, comfortable room for business trips. Two separate beds.",zh:"紧凑舒适的商务出行客房，配备两张独立床铺。"},
@@ -1412,7 +1528,7 @@
     "rooms.from":{ru:"от / сутки",kz:"бастап / тәулік",en:"from / night",zh:"起 / 晚"},
     "rooms.more":{ru:"Подробнее",kz:"Толығырақ",en:"Learn more",zh:"了解更多"},
     "rooms.book":{ru:"Забронировать",kz:"Брондау",en:"Book now",zh:"立即预订"},
-    "rooms.note":{ru:"Цены указаны от минимальной стоимости за сутки и могут уточняться у администрации отеля.",kz:"Бағалар тәуліктік ең төменгі құннан көрсетілген, қонақ үй әкімшілігінде нақтылануы мүмкін.",en:"Prices shown are starting rates per night and may be confirmed with hotel management.",zh:"价格为每晚起价，具体请与酒店管理方确认。"},
+    "rooms.note":{ru:"Цены указаны за сутки. В высокий сезон (май–октябрь) цены могут быть выше, в низкий сезон (ноябрь–апрель) действуют более низкие тарифы — уточняйте у администрации отеля.",kz:"Бағалар тәулікке көрсетілген. Жоғары маусымда (мамыр–қазан) баға жоғары болуы мүмкін, төмен маусымда (қараша–сәуір) төмен тарифтер қолданылады — қонақ үй әкімшілігінде нақтылаңыз.",en:"Prices shown are per night. In high season (May–October) prices may be higher, in low season (November–April) lower rates apply — please confirm with hotel management.",zh:"价格为每晚价格。旺季（5月–10月）价格可能上涨，淡季（11月–4月）执行更低价格——具体请与酒店管理方确认。"},
 
     "conf.eyebrow":{ru:"Деловые мероприятия",kz:"Іскерлік іс-шаралар",en:"Business events",zh:"商务活动"},
     "conf.desc":{ru:"Два зала вместимостью до 50 человек, оснащённых проектором и звуковым оборудованием. Подходят для переговоров, презентаций, тренингов и семинаров.",kz:"50 адамға дейінгі сыйымдылықтағы, проектор мен дыбыс жабдығы бар екі зал. Келіссөздер, презентациялар, тренингтер мен семинарларға қолайлы.",en:"Two halls with capacity up to 50 people, equipped with a projector and sound system. Suitable for negotiations, presentations, trainings and seminars.",zh:"两个可容纳50人的会议厅，配备投影仪和音响设备。适合谈判、演示、培训和研讨会。"},
@@ -1430,8 +1546,8 @@
     "rest.title":{ru:"Ресторан и завтрак",kz:"Мейрамхана және таңғы ас",en:"Restaurant & breakfast",zh:"餐厅与早餐"},
     "rest.card1.title":{ru:"Континентальный завтрак",kz:"Континентальды таңғы ас",en:"Continental breakfast",zh:"欧陆式早餐"},
     "rest.card1.desc":{ru:"Завтрак включён в стоимость проживания и подаётся ежедневно для всех гостей отеля.",kz:"Таңғы ас тұру құнына кіреді және отельдің барлық қонақтарына күнде беріледі.",en:"Breakfast is included in the room rate and served daily for all hotel guests.",zh:"早餐已包含在房费中，每日为所有酒店客人提供。"},
-    "rest.card2.title":{ru:"Ресторан на территории",kz:"Аумақтағы мейрамхана",en:"On-site restaurant",zh:"酒店内餐厅"},
-    "rest.card2.desc":{ru:"На первом этаже комплекса работает ресторан — удобно для завтрака, обеда и делового ужина.",kz:"Кешен ғимаратының бірінші қабатында мейрамхана жұмыс істейді — таңғы ас, түскі ас және іскерлік кешкі асқа қолайлы.",en:"A restaurant operates on the ground floor of the complex — convenient for breakfast, lunch and business dinners.",zh:"综合楼一层设有餐厅——便于享用早餐、午餐和商务晚宴。"},
+    "rest.card2.title":{ru:"Ресторан китайской кухни",kz:"Қытай асханасы мейрамханасы",en:"Chinese cuisine restaurant",zh:"中餐厅"},
+    "rest.card2.desc":{ru:"На первом этаже комплекса работает ресторан китайской кухни — удобно для завтрака, обеда и делового ужина, знакомые блюда для гостей из Китая.",kz:"Кешен ғимаратының бірінші қабатында қытай асханасы мейрамханасы жұмыс істейді — таңғы ас, түскі ас және іскерлік кешкі асқа қолайлы, қытайлық қонақтарға таныс тағамдар.",en:"A Chinese cuisine restaurant operates on the ground floor of the complex — convenient for breakfast, lunch and business dinners, with familiar dishes for guests from China.",zh:"综合楼一层设有中餐厅——便于享用早餐、午餐和商务晚宴，为中国客人提供熟悉的家乡菜。"},
 
     "serv.eyebrow":{ru:"Удобства",kz:"Қызметтер",en:"Amenities",zh:"设施"},
     "serv.title":{ru:"Всё для комфортного пребывания",kz:"Жайлы болу үшін бәрі бар",en:"Everything for a comfortable stay",zh:"舒适入住所需的一切"},
@@ -1441,6 +1557,10 @@
     "serv.park.d":{ru:"25 машиномест на охраняемой территории",kz:"Күзетілетін аумақта 25 автотұрақ орны",en:"25 spaces in a secured area",zh:"25个安保停车位"},
     "serv.laundry.t":{ru:"Услуги прачечной",kz:"Кір жуу қызметі",en:"Laundry service",zh:"洗衣服务"},
     "serv.laundry.d":{ru:"Стирка и глажка по запросу",kz:"Сұраныс бойынша жуу және үтіктеу",en:"Washing and ironing on request",zh:"可预约洗涤熨烫"},
+    "serv.laundry.price":{ru:"Короткая вещь: 3 000 ₸/шт. Длинная: 7 000 ₸/шт.",kz:"Қысқа киім: 3 000 ₸/дана. Ұзын/қысқы киім: 7 000 ₸/дана.",en:"Short item: ₸3,000/pc. Long/winter item: ₸7,000/pc.",zh:"短款：3,000₸/件。长款/冬季：7,000₸/件。"},
+    "serv.transfer.t":{ru:"Трансфер из аэропорта",kz:"Әуежайдан алып жүру",en:"Airport transfer",zh:"机场接送"},
+    "serv.transfer.d":{ru:"Встреча и доставка по запросу",kz:"Сұраныс бойынша қарсы алу және жеткізу",en:"Pickup and drop-off on request",zh:"可预约接机送机"},
+    "serv.transfer.price":{ru:"10 000 ₸ / поездка",kz:"10 000 ₸ / рейс",en:"₸10,000 / trip",zh:"10,000₸/趟"},
     "serv.reception.t":{ru:"Ресепшн 24/7",kz:"Тәулік бойы ресепшн",en:"24/7 reception",zh:"24小时前台"},
     "serv.reception.d":{ru:"Заселение и поддержка в любое время",kz:"Кез келген уақытта тіркелу және қолдау",en:"Check-in and support at any time",zh:"随时办理入住及提供支持"},
     "serv.access.t":{ru:"Доступная среда",kz:"Қолжетімді орта",en:"Accessible environment",zh:"无障碍环境"},
@@ -1451,6 +1571,25 @@
     "serv.ramp.d":{ru:"Доступно для инвалидных колясок",kz:"Мүгедек арбасына қолжетімді",en:"Wheelchair accessible",zh:"轮椅可通行"},
     "serv.breakfast.t":{ru:"Бесплатный завтрак",kz:"Тегін таңғы ас",en:"Free breakfast",zh:"免费早餐"},
     "serv.breakfast.d":{ru:"Континентальный завтрак",kz:"Континентальды таңғы ас",en:"Continental breakfast",zh:"欧陆式早餐"},
+
+    "policy.eyebrow":{ru:"Правила проживания",kz:"Тіркелу ережелері",en:"House rules",zh:"入住须知"},
+    "policy.title":{ru:"Правила заселения и проживания",kz:"Тіркелу және болу ережелері",en:"Check-in & stay policies",zh:"入住与住宿规定"},
+    "policy.checkin.q":{ru:"Время заезда / выезда",kz:"Тіркелу / шығу уақыты",en:"Check-in / check-out time",zh:"入住/退房时间"},
+    "policy.checkin.a":{ru:"Заезд — с 06:00, выезд — до 12:00 следующего дня.",kz:"Тіркелу — 06:00-ден бастап, шығу — келесі күні 12:00-ге дейін.",en:"Check-in from 06:00, check-out by 12:00 the next day.",zh:"入住时间为06:00起，退房时间为次日12:00前。"},
+    "policy.early.q":{ru:"Ранний заезд / поздний выезд",kz:"Ерте тіркелу / кеш шығу",en:"Early check-in / late check-out",zh:"提前入住/延迟退房"},
+    "policy.early.a":{ru:"Платно: до 6 часов — 50% от суточной цены, свыше 6 часов — 100%.",kz:"Ақылы: 6 сағатқа дейін — тәуліктік бағаның 50%-ы, 6 сағаттан асса — 100%.",en:"Paid: up to 6 hours — 50% of the daily rate, over 6 hours — 100%.",zh:"收费：6小时以内为房价的50%，超过6小时为100%。"},
+    "policy.hourly.q":{ru:"Почасовая аренда",kz:"Сағаттық жалдау",en:"Hourly rental",zh:"钟点房"},
+    "policy.hourly.a":{ru:"До 4 часов — 50% от суточной цены номера.",kz:"4 сағатқа дейін — тәуліктік бағаның 50%-ы.",en:"Up to 4 hours — 50% of the room's daily rate.",zh:"4小时以内——房价的50%。"},
+    "policy.cancel.q":{ru:"Отмена бронирования",kz:"Брондауды бас тарту",en:"Cancellation",zh:"取消预订"},
+    "policy.cancel.a":{ru:"Бесплатная отмена возможна до 18:00 в день заезда.",kz:"Сол күні сағат 18:00-ге дейін тегін бас тартуға болады.",en:"Free cancellation is possible until 18:00 on the day of arrival.",zh:"入住当日18:00前可免费取消。"},
+    "policy.children.q":{ru:"Дети",kz:"Балалар саясаты",en:"Children policy",zh:"儿童政策"},
+    "policy.children.a":{ru:"Дети старше 12 лет оплачиваются как взрослые.",kz:"12 жастан асқан балалар ересек ретінде төленеді.",en:"Children over 12 are charged as adults.",zh:"12岁以上儿童按成人收费。"},
+    "policy.pets.q":{ru:"Домашние животные",kz:"Үй жануарлары",en:"Pets",zh:"宠物"},
+    "policy.pets.a":{ru:"Проживание с животными не допускается.",kz:"Рұқсат етілмейді.",en:"Pets are not allowed.",zh:"不允许携带宠物入住。"},
+    "policy.smoking.q":{ru:"Курение и алкоголь",kz:"Темекі / алкоголь",en:"Smoking & alcohol",zh:"吸烟与酒精"},
+    "policy.smoking.a":{ru:"Курение внутри здания запрещено; в номерах с балконом курить разрешено только на балконе.",kz:"Ғимарат ішінде тыйым салынған; тек балконды нөмірлерде балконда темекі шегуге рұқсат етіледі.",en:"Smoking inside the building is prohibited; in balcony rooms, smoking is allowed on the balcony only.",zh:"楼内禁止吸烟；带阳台的客房仅可在阳台吸烟。"},
+    "policy.document.q":{ru:"Документы при заселении",kz:"Тіркелу кезінде қажет құжат",en:"ID at check-in",zh:"入住所需证件"},
+    "policy.document.a":{ru:"Паспорт или удостоверение личности.",kz:"Паспорт немесе жергілікті жеке куәлік.",en:"Passport or national ID card.",zh:"护照或身份证。"},
 
     "gal.eyebrow":{ru:"Галерея",kz:"Галерея",en:"Gallery",zh:"相册"},
     "gal.title":{ru:"Отель в деталях",kz:"Отель егжей-тегжейлі",en:"The hotel in detail",zh:"细览酒店"},
@@ -1490,6 +1629,7 @@
     "book.eyebrow":{ru:"Бронирование",kz:"Брондау",en:"Booking",zh:"预订"},
     "book.title":{ru:"Забронируйте номер за минуту",kz:"Нөмірді бір минутта брондаңыз",en:"Book a room in a minute",zh:"一分钟即可预订客房"},
     "book.desc":{ru:"Заполните форму — заявка сразу сформируется в WhatsApp, и мы подтвердим бронирование лично.",kz:"Форманы толтырыңыз — сұраныс бірден WhatsApp-та қалыптасады, біз брондауды жеке растаймыз.",en:"Fill in the form — your request will be formed in WhatsApp instantly, and we will confirm your booking personally.",zh:"填写表单——申请将立即在WhatsApp中生成，我们会亲自确认您的预订。"},
+    "book.groupNote":{ru:"Групповое или долгосрочное бронирование — индивидуальные условия, уточняйте в WhatsApp.",kz:"Топтық немесе ұзақ мерзімді брондау — жеке шарттар, WhatsApp арқылы сұраңыз.",en:"Group or long-term booking — individual terms, please ask via WhatsApp.",zh:"团体或长期预订——个性化条件，请通过WhatsApp咨询。"},
     "book.checkin":{ru:"Дата заезда",kz:"Кіру күні",en:"Check-in date",zh:"入住日期"},
     "book.checkout":{ru:"Дата выезда",kz:"Шығу күні",en:"Check-out date",zh:"离店日期"},
     "book.roomType":{ru:"Тип номера",kz:"Нөмір түрі",en:"Room type",zh:"房型"},
@@ -1847,14 +1987,56 @@
     window.open("https://wa.me/" + WA_NUMBER + "?text=" + text, "_blank", "noopener");
   });
 
-  document.querySelectorAll(".room-more-btn").forEach(function(btn){
-    btn.addEventListener("click", function(e){
-      e.preventDefault();
-      var room = ROOM_NAMES_RU[btn.getAttribute("data-room-key")] || "";
-      var text = encodeURIComponent("🏨 Международный Гранд-отель «Шёлковый путь — Один пояс, один путь»\n\nЗдравствуйте! Расскажите, пожалуйста, подробнее о номере «" + room + "»: фото, наличие свободных дат.");
-      window.open("https://wa.me/" + WA_NUMBER + "?text=" + text, "_blank", "noopener");
+  /* ---------- ROOM DETAIL MODAL ----------
+     Populated by reading the already-rendered card (image/title/meta/
+     description/price), so it always matches whatever language is
+     currently active without needing a second copy of the room data. */
+  (function(){
+    var modal = document.getElementById("room-modal");
+    var mImg = document.getElementById("room-modal-img");
+    var mTitle = document.getElementById("room-modal-title");
+    var mMeta = document.getElementById("room-modal-meta");
+    var mDesc = document.getElementById("room-modal-desc");
+    var mPrice = document.getElementById("room-modal-price");
+    var mBook = document.getElementById("room-modal-book");
+    var currentKey = null;
+
+    function openModal(card, roomKey){
+      currentKey = roomKey;
+      mImg.src = card.querySelector("img").src;
+      mImg.alt = card.querySelector("img").alt;
+      mTitle.textContent = card.querySelector("h3").textContent.trim();
+      mMeta.innerHTML = card.querySelector(".p-6 > div").innerHTML;
+      mDesc.textContent = card.querySelector(".p-6 p").textContent.trim();
+      mPrice.textContent = card.querySelector(".p-6 span.font-display.text-2xl").textContent.trim();
+      modal.classList.remove("pointer-events-none");
+      modal.classList.add("opacity-100");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function closeModal(){
+      modal.classList.add("pointer-events-none");
+      modal.classList.remove("opacity-100");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+    document.querySelectorAll(".room-more-btn").forEach(function(btn){
+      btn.addEventListener("click", function(e){
+        e.preventDefault();
+        var key = btn.getAttribute("data-room-key");
+        openModal(btn.closest("article"), key);
+      });
     });
-  });
+    document.getElementById("room-modal-close").addEventListener("click", closeModal);
+    modal.addEventListener("click", function(e){ if(e.target === modal) closeModal(); });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal(); });
+    mBook.addEventListener("click", function(){
+      var select = document.getElementById("f-room");
+      if(select && currentKey) select.value = currentKey;
+      closeModal();
+      document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+    });
+  })();
 
   document.querySelectorAll(".book-room-btn").forEach(function(btn){
     btn.addEventListener("click", function(e){
