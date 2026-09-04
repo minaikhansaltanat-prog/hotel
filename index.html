@@ -297,6 +297,15 @@
   .tcarousel::-webkit-scrollbar{display:none}
   .tcarousel > *{scroll-snap-align:start; flex:0 0 auto;}
 
+  /* Gallery: 2-row scrolling carousel */
+  .gallery-carousel{
+    display:grid; grid-auto-flow:column; grid-template-rows:repeat(2,auto);
+    grid-auto-columns:158px; gap:.85rem;
+  }
+  @media (min-width:480px){ .gallery-carousel{grid-auto-columns:190px; gap:1rem} }
+  @media (min-width:768px){ .gallery-carousel{grid-auto-columns:220px; gap:1.25rem} }
+  @media (min-width:1024px){ .gallery-carousel{grid-auto-columns:245px} }
+
   /* Check-in policy accordion */
   .policy-item summary{
     list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between;
@@ -1027,20 +1036,34 @@
       <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
       <h2 class="text-4xl md:text-5xl" data-i18n="gal.title">Отель в деталях</h2>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery-grid">
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Экстерьер отеля"><img src="images/hero-exterior-2.jpg" class="w-full h-full object-cover" alt="Экстерьер отеля" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Лаунж-зона"><img src="images/lobby-lounge-1.jpg" class="w-full h-full object-cover" alt="Лаунж-зона" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ресепшн"><img src="images/lobby-reception-2.jpg" class="w-full h-full object-cover" alt="Ресепшн" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Фасад отеля"><img src="images/exterior-facade-1.jpg" class="w-full h-full object-cover" alt="Фасад отеля" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Лобби"><img src="images/lobby-lounge-3.jpg" class="w-full h-full object-cover" alt="Лобби" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ресторан"><img src="images/restaurant-entrance-1.jpg" class="w-full h-full object-cover" alt="Ресторан" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Номер"><img src="images/room-double-6.jpg" class="w-full h-full object-cover" alt="Номер" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Отель вечером"><img src="images/exterior-facade-2.jpg" class="w-full h-full object-cover" alt="Отель вечером" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ресепшн"><img src="images/lobby-reception-3.jpg" class="w-full h-full object-cover" alt="Ресепшн" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Қонақ бөлмелер дәлізі"><img src="images/corridor-guestfloor-1.jpg" class="w-full h-full object-cover" alt="Қонақ бөлмелер дәлізі" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Фойе"><img src="images/corridor-lobby-1.jpg" class="w-full h-full object-cover" alt="Фойе" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ванна бөлмесі"><img src="images/bathroom-1.jpg" class="w-full h-full object-cover" alt="Ванна бөлмесі" loading="lazy"></button>
-      <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Номер интерьері"><img src="images/room-double-7.jpg" class="w-full h-full object-cover" alt="Номер интерьері" loading="lazy"></button>
+    <div class="relative">
+      <div class="tcarousel gallery-carousel" id="carousel-gallery">
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Экстерьер отеля"><img src="images/hero-exterior-2.jpg" class="w-full h-full object-cover" alt="Экстерьер отеля" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Лаунж-зона"><img src="images/lobby-lounge-1.jpg" class="w-full h-full object-cover" alt="Лаунж-зона" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ресепшн"><img src="images/lobby-reception-2.jpg" class="w-full h-full object-cover" alt="Ресепшн" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Фасад отеля"><img src="images/exterior-facade-1.jpg" class="w-full h-full object-cover" alt="Фасад отеля" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Лобби"><img src="images/lobby-lounge-3.jpg" class="w-full h-full object-cover" alt="Лобби" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ресторан"><img src="images/restaurant-entrance-1.jpg" class="w-full h-full object-cover" alt="Ресторан" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Номер"><img src="images/room-double-6.jpg" class="w-full h-full object-cover" alt="Номер" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Отель вечером"><img src="images/exterior-facade-2.jpg" class="w-full h-full object-cover" alt="Отель вечером" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ресепшн"><img src="images/lobby-reception-3.jpg" class="w-full h-full object-cover" alt="Ресепшн" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Қонақ бөлмелер дәлізі"><img src="images/corridor-guestfloor-1.jpg" class="w-full h-full object-cover" alt="Қонақ бөлмелер дәлізі" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Фойе"><img src="images/corridor-lobby-1.jpg" class="w-full h-full object-cover" alt="Фойе" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ванна бөлмесі"><img src="images/bathroom-1.jpg" class="w-full h-full object-cover" alt="Ванна бөлмесі" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Номер интерьері"><img src="images/room-double-7.jpg" class="w-full h-full object-cover" alt="Номер интерьері" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Банкетный зал"><img src="images/banquet-doors-1.jpg" class="w-full h-full object-cover" alt="Банкетный зал" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Вход в банкетный зал"><img src="images/banquet-doors-2.jpg" class="w-full h-full object-cover" alt="Вход в банкетный зал" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Интерьер отеля"><img src="images/art-yurt-painting.jpg" class="w-full h-full object-cover" alt="Интерьер отеля" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Лифтовый холл"><img src="images/elevator-lobby-1.jpg" class="w-full h-full object-cover" alt="Лифтовый холл" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Лаунж-зона"><img src="images/lobby-lounge-4.jpg" class="w-full h-full object-cover" alt="Лаунж-зона" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Зона отдыха"><img src="images/lobby-lounge-5.jpg" class="w-full h-full object-cover" alt="Зона отдыха" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ванная комната"><img src="images/bathroom-2.jpg" class="w-full h-full object-cover" alt="Ванная комната" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Ванная комната"><img src="images/bathroom-3.jpg" class="w-full h-full object-cover" alt="Ванная комната" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Номер"><img src="images/room-double-8.jpg" class="w-full h-full object-cover" alt="Номер" loading="lazy"></button>
+        <button class="img-tone rounded-xl overflow-hidden aspect-square reveal" data-lightbox data-caption="Номер"><img src="images/room-double-5.jpg" class="w-full h-full object-cover" alt="Номер" loading="lazy"></button>
+      </div>
+      <button class="carousel-arrow hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 shadow-elevated" data-dir="-1" data-target="carousel-gallery" aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="carousel-arrow hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 shadow-elevated" data-dir="1" data-target="carousel-gallery" aria-label="Вперёд"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
   </div>
 </section>
