@@ -150,6 +150,7 @@
   }
   .lang-btn[aria-pressed="true"]{color:var(--gold); background:rgba(201,161,90,.12)}
   .lang-btn:hover{color:var(--ink-text); background:rgba(255,255,255,.06)}
+  .lang-btn-sm{font-size:.62rem; padding:.3rem .38rem; letter-spacing:.01em}
 
   /* Hamburger */
   .hamburger{width:26px;height:18px;position:relative}
@@ -321,12 +322,13 @@
 <!-- ============ HEADER ============ -->
 <header id="site-header">
   <div class="container-x flex items-center justify-between h-[76px] gap-4">
-    <a href="#home" class="flex items-center gap-2 shrink-0 group">
+    <a href="#home" class="flex items-center gap-2 min-w-0 shrink-0 group" aria-label="Business Hotel Almaty">
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" class="shrink-0">
         <path d="M15 2 L18 12 L28 15 L18 18 L15 28 L12 18 L2 15 L12 12 Z" fill="url(#gg)"/>
         <defs><linearGradient id="gg" x1="2" y1="2" x2="28" y2="28"><stop stop-color="#e6cd97"/><stop offset="1" stop-color="#8f6f36"/></linearGradient></defs>
       </svg>
-      <span class="font-display text-[1.15rem] leading-none text-[var(--ink-text)] tracking-tight">Business Hotel<br><span class="text-[var(--gold)] text-[.68rem] font-sans font-bold tracking-[.28em] not-italic" style="font-family:'Manrope',sans-serif">ALMATY · 4★</span></span>
+      <span class="sm:hidden font-display text-[.95rem] leading-none text-[var(--ink-text)] tracking-tight whitespace-nowrap">Business Hotel</span>
+      <span class="hidden sm:block font-display text-[1.15rem] leading-none text-[var(--ink-text)] tracking-tight whitespace-nowrap">Business Hotel<br><span class="text-[var(--gold)] text-[.68rem] font-sans font-bold tracking-[.28em] not-italic" style="font-family:'Manrope',sans-serif">ALMATY · 4★</span></span>
     </a>
 
     <nav class="hidden xl:flex items-center gap-4 2xl:gap-6 overflow-x-auto no-scrollbar min-w-0">
@@ -338,25 +340,25 @@
       <a href="#location" class="nav-link" data-i18n="nav.location">Локация</a>
     </nav>
 
-    <div class="flex items-center gap-2 md:gap-3 shrink-0">
-      <a href="#booking" class="btn btn-gold hidden sm:inline-flex shadow-gold" data-i18n="nav.book">Забронировать</a>
+    <div class="flex items-center gap-1.5 md:gap-3 shrink-0">
+      <a href="#booking" class="btn btn-gold hidden md:inline-flex shadow-gold shrink-0" data-i18n="nav.book">Забронировать</a>
 
-      <div class="hidden md:flex items-center gap-1 border border-[var(--line)] rounded-full px-1 py-1" role="group" aria-label="Language">
+      <div class="hidden md:flex items-center gap-1 border border-[var(--line)] rounded-full px-1 py-1 shrink-0" role="group" aria-label="Language">
         <button class="lang-btn" data-lang="kz" aria-pressed="false">ҚАЗ</button>
         <button class="lang-btn" data-lang="ru" aria-pressed="true">РУС</button>
         <button class="lang-btn" data-lang="en" aria-pressed="false">ENG</button>
         <button class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
       </div>
 
-      <!-- mobile: language switcher (compact) sits left of hamburger -->
-      <div class="flex md:hidden items-center gap-1 border border-[var(--line)] rounded-full px-1 py-1" role="group" aria-label="Language">
-        <button class="lang-btn" data-lang="kz" aria-pressed="false">ҚАЗ</button>
-        <button class="lang-btn" data-lang="ru" aria-pressed="true">РУС</button>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        <button class="lang-btn" data-lang="zh" aria-pressed="false">中</button>
+      <!-- mobile: compact language switcher sits left of hamburger -->
+      <div class="flex md:hidden items-center gap-0.5 border border-[var(--line)] rounded-full px-0.5 py-0.5 shrink-0" role="group" aria-label="Language">
+        <button class="lang-btn lang-btn-sm" data-lang="kz" aria-pressed="false">ҚАЗ</button>
+        <button class="lang-btn lang-btn-sm" data-lang="ru" aria-pressed="true">РУС</button>
+        <button class="lang-btn lang-btn-sm" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn lang-btn-sm" data-lang="zh" aria-pressed="false">中</button>
       </div>
 
-      <button id="mobile-menu-toggle" class="xl:hidden flex items-center justify-center w-11 h-11 rounded-full border border-[var(--line)]" aria-expanded="false" aria-controls="mobile-menu" aria-label="Меню">
+      <button id="mobile-menu-toggle" class="xl:hidden flex items-center justify-center w-11 h-11 rounded-full border border-[var(--line)] shrink-0" aria-expanded="false" aria-controls="mobile-menu" aria-label="Меню">
         <span class="hamburger"><span></span><span></span><span></span></span>
       </button>
     </div>
