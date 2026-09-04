@@ -1,0 +1,20 @@
+node_modules/
+temporary screenshots/
+__pycache__/
+*.pyc
+_qa.mjs
+
+# UI/UX design-intelligence skill scaffolding (not part of the site)
+SKILL.md
+SKILL f.md
+core.py
+design_system.py
+search.py
+plugin.json
+data/
+
+# design mood-board references (not shipped assets)
+Ava/
+
+.DS_Store
+Thumbs.db
