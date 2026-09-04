@@ -568,10 +568,14 @@
       <div class="min-w-0 grow">
         <label class="bw-label block" for="bw-room" data-i18n="book.roomType">Нөмір түрі</label>
         <select id="bw-room" class="bw-input">
-          <option data-i18n="rooms.std.title">Стандарт</option>
-          <option data-i18n="rooms.dlx.title">Де-люкс</option>
-          <option>TWIN</option>
-          <option data-i18n="rooms.lux.title">Люкс</option>
+          <option value="r1" data-i18n="rooms.r1.title">Стандарт Твин</option>
+          <option value="r2" data-i18n="rooms.r2.title">Делюкс Твин</option>
+          <option value="r3" data-i18n="rooms.r3.title">Твин с балконом</option>
+          <option value="r4" data-i18n="rooms.r4.title">Делюкс с большой кроватью</option>
+          <option value="r5" data-i18n="rooms.r5.title">Двойной с балконом</option>
+          <option value="r6" data-i18n="rooms.r6.title">Кинг Сьют</option>
+          <option value="r7" data-i18n="rooms.r7.title">Семейный люкс</option>
+          <option value="r8" data-i18n="rooms.r8.title">Делюкс семейный люкс</option>
         </select>
       </div>
     </div>
@@ -645,85 +649,163 @@
     <div class="reveal section-eyebrow-wrap max-w-2xl mx-auto mb-14 text-center">
       <p class="eyebrow mb-4" data-i18n="rooms.eyebrow">Размещение</p>
       <div class="divider-flourish mb-4"><span class="fl-line"></span><svg width="8" height="8" viewBox="0 0 8 8"><rect x="1" y="1" width="6" height="6" fill="var(--gold)" transform="rotate(45 4 4)"/></svg><span class="fl-line right"></span></div>
-      <h2 class="text-4xl md:text-5xl" data-i18n="rooms.title">Номера на любой формат поездки</h2>
+      <h2 class="text-4xl md:text-5xl mb-5" data-i18n="rooms.title">Номера на любой формат поездки</h2>
+      <span class="inline-flex items-center gap-2 text-xs font-bold tracking-wide bg-[var(--gold)]/15 text-[var(--gold-deep)] border border-[var(--gold)]/40 px-4 py-1.5 rounded-full" data-i18n="rooms.priceFrom">От 45 000 ₸</span>
     </div>
 
     <div class="relative">
       <div class="tcarousel" id="carousel-rooms">
-        <!-- Standard -->
+        <!-- r1: Standard Twin -->
         <article class="card card-float shadow-elevated overflow-hidden flex flex-col w-[300px] sm:w-[330px]">
-          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Standard" alt="Стандартный номер" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Standard+Twin" alt="Стандарт Твин" class="w-full h-full object-cover" loading="lazy"></div>
           <div class="p-6 flex flex-col grow">
-            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.std.title">Стандартный номер</h3>
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r1.title">Стандарт Твин</h3>
             <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
               <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
-              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 25 м²</span>
             </div>
-            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.std.desc">Уютный номер с всем необходимым для комфортного отдыха после насыщенного дня.</p>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r1.desc">Компактный и уютный номер для командировки. Две отдельные кровати.</p>
             <div class="flex items-end justify-between mb-4">
-              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">25 000 ₸</span></div>
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">45 000 ₸</span></div>
             </div>
             <div class="flex gap-2">
-              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room="Стандартный номер" data-i18n="rooms.more">Толығырақ</a>
-              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room="Стандартный номер"><span data-i18n="rooms.book">Брондау</span></a>
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room-key="r1" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room-key="r1"><span data-i18n="rooms.book">Брондау</span></a>
             </div>
           </div>
         </article>
-        <!-- Deluxe -->
+        <!-- r2: Deluxe Twin -->
         <article class="card card-float shadow-elevated overflow-hidden flex flex-col w-[300px] sm:w-[330px]">
-          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=De-Luxe" alt="Де-люкс" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Deluxe+Twin" alt="Делюкс Твин" class="w-full h-full object-cover" loading="lazy"></div>
           <div class="p-6 flex flex-col grow">
-            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.dlx.title">Де-люкс</h3>
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r2.title">Делюкс Твин</h3>
             <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
               <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
-              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 30 м²</span>
             </div>
-            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.dlx.desc">Просторный номер с продуманным интерьером и рабочей зоной для деловых гостей.</p>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r2.desc">Более просторное пространство и обновлённый интерьер.</p>
             <div class="flex items-end justify-between mb-4">
-              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">30 000 ₸</span></div>
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">50 000 ₸</span></div>
             </div>
             <div class="flex gap-2">
-              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room="Де-люкс" data-i18n="rooms.more">Толығырақ</a>
-              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room="Де-люкс"><span data-i18n="rooms.book">Брондау</span></a>
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room-key="r2" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room-key="r2"><span data-i18n="rooms.book">Брондау</span></a>
             </div>
           </div>
         </article>
-        <!-- Twin -->
+        <!-- r3: Balcony Twin -->
         <article class="card card-float shadow-elevated overflow-hidden flex flex-col w-[300px] sm:w-[330px]">
-          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Twin" alt="Twin" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Balcony+Twin" alt="Твин с балконом" class="w-full h-full object-cover" loading="lazy"></div>
           <div class="p-6 flex flex-col grow">
-            <h3 class="font-display text-2xl mb-2">TWIN</h3>
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r3.title">Твин с балконом</h3>
             <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
               <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
-              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 30 м²</span>
             </div>
-            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.twin.desc">Две отдельные кровати — идеальный вариант для коллег или друзей, путешествующих вместе.</p>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r3.desc">Номер с собственным балконом — можно отдохнуть на свежем воздухе.</p>
             <div class="flex items-end justify-between mb-4">
-              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">30 000 ₸</span></div>
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">50 000 ₸</span></div>
             </div>
             <div class="flex gap-2">
-              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room="TWIN" data-i18n="rooms.more">Толығырақ</a>
-              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room="TWIN"><span data-i18n="rooms.book">Брондау</span></a>
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room-key="r3" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room-key="r3"><span data-i18n="rooms.book">Брондау</span></a>
             </div>
           </div>
         </article>
-        <!-- Lux -->
+        <!-- r4: Deluxe Double -->
+        <article class="card card-float shadow-elevated overflow-hidden flex flex-col w-[300px] sm:w-[330px]">
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Deluxe+Double" alt="Делюкс с большой кроватью" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-6 flex flex-col grow">
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r4.title">Делюкс с большой кроватью</h3>
+            <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 30 м²</span>
+            </div>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r4.desc">Удобно для пары или одного гостя — широкая кровать.</p>
+            <div class="flex items-end justify-between mb-4">
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">50 000 ₸</span></div>
+            </div>
+            <div class="flex gap-2">
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room-key="r4" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room-key="r4"><span data-i18n="rooms.book">Брондау</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- r5: Balcony Double -->
+        <article class="card card-float shadow-elevated overflow-hidden flex flex-col w-[300px] sm:w-[330px]">
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Balcony+Double" alt="Двойной с балконом" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-6 flex flex-col grow">
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r5.title">Двойной с балконом</h3>
+            <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 25 м²</span>
+            </div>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r5.desc">Романтичный вариант с балконом для отдыха.</p>
+            <div class="flex items-end justify-between mb-4">
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">50 000 ₸</span></div>
+            </div>
+            <div class="flex gap-2">
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room-key="r5" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room-key="r5"><span data-i18n="rooms.book">Брондау</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- r6: King Suite -->
         <article class="card card-float shadow-elevated overflow-hidden flex flex-col relative w-[300px] sm:w-[330px]">
           <span class="absolute top-4 right-4 z-10 text-[.65rem] font-bold tracking-widest uppercase bg-[var(--red)] text-white px-3 py-1 rounded-full" data-i18n="rooms.popular">Танымал</span>
-          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Lux" alt="Люкс" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=King+Suite" alt="Кинг Сьют" class="w-full h-full object-cover" loading="lazy"></div>
           <div class="p-6 flex flex-col grow">
-            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.lux.title">Люкс</h3>
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r6.title">Кинг Сьют</h3>
             <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
               <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests2">2 адам</span></span>
-              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.82a15 15 0 0120 0M5 12.86a10 10 0 0114 0M8.5 17a5 5 0 017 0M12 21h.01"/></svg> Wi-Fi</span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 45 м²</span>
             </div>
-            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.lux.desc">Самый просторный номер отеля с зоной отдыха — для особых случаев и VIP-гостей.</p>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r6.desc">Просторный люкс с отдельной гостиной — удобен для деловых встреч.</p>
             <div class="flex items-end justify-between mb-4">
-              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">35 000 ₸</span></div>
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">65 000 ₸</span></div>
             </div>
             <div class="flex gap-2">
-              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room="Люкс" data-i18n="rooms.more">Толығырақ</a>
-              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room="Люкс"><span data-i18n="rooms.book">Брондау</span></a>
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room-key="r6" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room-key="r6"><span data-i18n="rooms.book">Брондау</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- r7: Family Suite -->
+        <article class="card card-float shadow-elevated overflow-hidden flex flex-col w-[300px] sm:w-[330px]">
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Family+Suite" alt="Семейный люкс" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-6 flex flex-col grow">
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r7.title">Семейный люкс</h3>
+            <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests4">4 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 35 м²</span>
+            </div>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r7.desc">Для родителей с ребёнком — с дополнительной кроватью.</p>
+            <div class="flex items-end justify-between mb-4">
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">65 000 ₸</span></div>
+            </div>
+            <div class="flex gap-2">
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room-key="r7" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room-key="r7"><span data-i18n="rooms.book">Брондау</span></a>
+            </div>
+          </div>
+        </article>
+        <!-- r8: Deluxe Family Suite (online-only) -->
+        <article class="card card-float shadow-elevated overflow-hidden flex flex-col relative w-[300px] sm:w-[330px]">
+          <span class="absolute top-4 left-4 right-4 z-10 text-[.62rem] leading-tight font-bold tracking-wide uppercase bg-[var(--gold)] text-[#3a2c0f] px-3 py-1.5 rounded-full text-center" data-i18n="rooms.onlineOnly">Тек онлайн брондау арқылы қолжетімді</span>
+          <div class="img-tone aspect-[4/3]"><img src="https://placehold.co/560x420/F4F2EF/9E1010?text=Deluxe+Family+Suite" alt="Делюкс семейный люкс" class="w-full h-full object-cover" loading="lazy"></div>
+          <div class="p-6 flex flex-col grow">
+            <h3 class="font-display text-2xl mb-2" data-i18n="rooms.r8.title">Делюкс семейный люкс</h3>
+            <div class="flex items-center gap-4 text-xs text-[var(--text-dim)] font-semibold mb-3">
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0116 0v1"/></svg> <span data-i18n="rooms.guests4">4 адам</span></span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg> 50 м²</span>
+            </div>
+            <p class="text-sm text-[var(--text-dim)] mb-5 grow" data-i18n="rooms.r8.desc">Самый просторный номер отеля — для отдыха всей семьёй.</p>
+            <div class="flex items-end justify-between mb-4">
+              <div><span class="text-[var(--text-dim)] text-xs block" data-i18n="rooms.from">бастап / тәулік</span><span class="font-display text-2xl">70 000 ₸</span></div>
+            </div>
+            <div class="flex gap-2">
+              <a href="#" class="room-more-btn btn btn-outline flex-1 !px-3 !text-xs" data-room-key="r8" data-i18n="rooms.more">Толығырақ</a>
+              <a href="#" class="book-room-btn btn btn-red !px-3 !text-xs flex-1 shadow-red" data-room-key="r8"><span data-i18n="rooms.book">Брондау</span></a>
             </div>
           </div>
         </article>
@@ -1126,10 +1208,14 @@
       <div>
         <label class="field-label mb-2 block" for="f-room" data-i18n="book.roomType">Тип номера</label>
         <select id="f-room" name="roomType" class="field">
-          <option data-i18n="rooms.std.title">Стандартный номер</option>
-          <option data-i18n="rooms.dlx.title">Де-люкс</option>
-          <option>TWIN</option>
-          <option data-i18n="rooms.lux.title">Люкс</option>
+          <option value="r1" data-i18n="rooms.r1.title">Стандарт Твин</option>
+          <option value="r2" data-i18n="rooms.r2.title">Делюкс Твин</option>
+          <option value="r3" data-i18n="rooms.r3.title">Твин с балконом</option>
+          <option value="r4" data-i18n="rooms.r4.title">Делюкс с большой кроватью</option>
+          <option value="r5" data-i18n="rooms.r5.title">Двойной с балконом</option>
+          <option value="r6" data-i18n="rooms.r6.title">Кинг Сьют</option>
+          <option value="r7" data-i18n="rooms.r7.title">Семейный люкс</option>
+          <option value="r8" data-i18n="rooms.r8.title">Делюкс семейный люкс</option>
         </select>
       </div>
       <div>
@@ -1303,13 +1389,25 @@
     "rooms.eyebrow":{ru:"Размещение",kz:"Орналасу",en:"Accommodation",zh:"住宿"},
     "rooms.title":{ru:"Номера на любой формат поездки",kz:"Кез келген сапар түріне лайық нөмірлер",en:"Rooms for every kind of stay",zh:"满足各种出行需求的客房"},
     "rooms.guests2":{ru:"2 гостя",kz:"2 адам",en:"2 guests",zh:"2位客人"},
-    "rooms.std.title":{ru:"Стандартный номер",kz:"Стандартты нөмір",en:"Standard Room",zh:"标准间"},
-    "rooms.std.desc":{ru:"Уютный номер с всем необходимым для комфортного отдыха после насыщенного дня.",kz:"Толық күннен кейінгі жайлы демалыс үшін қажеттінің бәрі бар жайлы нөмір.",en:"A cosy room with everything you need for a comfortable rest after a busy day.",zh:"舒适客房，配备一切所需，让您在繁忙一天后惬意休息。"},
-    "rooms.dlx.title":{ru:"Де-люкс",kz:"Де-люкс",en:"De Luxe",zh:"豪华间"},
-    "rooms.dlx.desc":{ru:"Просторный номер с продуманным интерьером и рабочей зоной для деловых гостей.",kz:"Іскерлік қонақтарға арналған, жұмыс аймағы бар кең әрі ыңғайлы интерьерлі нөмір.",en:"A spacious room with a thoughtful interior and a work area for business guests.",zh:"宽敞客房，设计精心，设有工作区，专为商务客人打造。"},
-    "rooms.twin.desc":{ru:"Две отдельные кровати — идеальный вариант для коллег или друзей, путешествующих вместе.",kz:"Екі бөлек төсек — бірге саяхаттайтын әріптестер немесе достар үшін тамаша нұсқа.",en:"Two separate beds — an ideal option for colleagues or friends travelling together.",zh:"两张独立床铺——是同行同事或朋友的理想选择。"},
-    "rooms.lux.title":{ru:"Люкс",kz:"Люкс",en:"Lux Suite",zh:"套房"},
-    "rooms.lux.desc":{ru:"Самый просторный номер отеля с зоной отдыха — для особых случаев и VIP-гостей.",kz:"Демалыс аймағы бар отельдің ең кең нөмірі — арнайы жағдайлар мен VIP қонақтарға.",en:"The hotel's most spacious room with a lounge area — for special occasions and VIP guests.",zh:"酒店最宽敞的客房，设有休息区——专为特殊场合和贵宾客人打造。"},
+    "rooms.guests4":{ru:"4 гостя",kz:"4 адам",en:"4 guests",zh:"4位客人"},
+    "rooms.priceFrom":{ru:"От 45 000 ₸",kz:"45 000 ₸-ден бастап",en:"From ₸45,000",zh:"起价45,000₸"},
+    "rooms.onlineOnly":{ru:"Только онлайн-бронирование",kz:"Тек онлайн брондау арқылы қолжетімді",en:"Online booking only",zh:"仅限在线预订"},
+    "rooms.r1.title":{ru:"Стандарт Твин",kz:"Стандартты қос орындықты",en:"Standard Twin",zh:"标准双床房"},
+    "rooms.r1.desc":{ru:"Компактный и уютный номер для командировки. Две отдельные кровати.",kz:"Іссапар үшін ықшам, жайлы нөмір. 2 бөлек кереует.",en:"A compact, comfortable room for business trips. Two separate beds.",zh:"紧凑舒适的商务出行客房，配备两张独立床铺。"},
+    "rooms.r2.title":{ru:"Делюкс Твин",kz:"Люкс қос орындықты",en:"Deluxe Twin",zh:"豪华双床房"},
+    "rooms.r2.desc":{ru:"Более просторное пространство и обновлённый интерьер.",kz:"Кеңірек кеңістік, жаңартылған интерьер.",en:"More spacious, with a refreshed interior.",zh:"空间更宽敞，装修焕然一新。"},
+    "rooms.r3.title":{ru:"Твин с балконом",kz:"Балконды қос орындықты",en:"Balcony Twin",zh:"阳台双床房"},
+    "rooms.r3.desc":{ru:"Номер с собственным балконом — можно отдохнуть на свежем воздухе.",kz:"Жеке балконы бар нұсқа, таза ауада демалу мүмкіндігі.",en:"A room with a private balcony — enjoy fresh air right outside your door.",zh:"带私人阳台，尽享新鲜空气。"},
+    "rooms.r4.title":{ru:"Делюкс с большой кроватью",kz:"Люкс үлкен кереуетті",en:"Deluxe Double",zh:"豪华大床房"},
+    "rooms.r4.desc":{ru:"Удобно для пары или одного гостя — широкая кровать.",kz:"Жұп немесе жалғыз қонаққа ыңғайлы, кең кереует.",en:"Comfortable for couples or solo guests, with a wide bed.",zh:"宽敞大床，适合情侣或单人入住。"},
+    "rooms.r5.title":{ru:"Двойной с балконом",kz:"Балконды үлкен кереуетті",en:"Balcony Double",zh:"阳台大床房"},
+    "rooms.r5.desc":{ru:"Романтичный вариант с балконом для отдыха.",kz:"Балконы бар романтикалық/демалыс нұсқасы.",en:"A romantic option with a balcony to relax.",zh:"带阳台的浪漫休闲之选。"},
+    "rooms.r6.title":{ru:"Кинг Сьют",kz:"King Suite (Үлкен кереуетті сюит)",en:"King Suite",zh:"国王套房"},
+    "rooms.r6.desc":{ru:"Просторный люкс с отдельной гостиной — удобен для деловых встреч.",kz:"Бөлек қонақ бөлмесі бар кең сюит, іскерлік кездесулерге қолайлы.",en:"A spacious suite with a separate living room, ideal for business meetings.",zh:"宽敞套房，配独立客厅，适合商务会面。"},
+    "rooms.r7.title":{ru:"Семейный люкс",kz:"Отбасылық сюит",en:"Family Suite",zh:"家庭套房"},
+    "rooms.r7.desc":{ru:"Для родителей с ребёнком — с дополнительной кроватью.",kz:"Ата-ана мен балаға арналған, қосымша кереуетпен.",en:"For parents with a child, with an extra bed.",zh:"为亲子家庭打造，配备加床。"},
+    "rooms.r8.title":{ru:"Делюкс семейный люкс",kz:"Люкс отбасылық сюит",en:"Deluxe Family Suite",zh:"豪华家庭套房"},
+    "rooms.r8.desc":{ru:"Самый просторный номер отеля — для отдыха всей семьёй.",kz:"Ең кең нөмір, отбасымен демалуға.",en:"The hotel's most spacious room — perfect for a family getaway.",zh:"酒店最宽敞的客房，专为家庭度假打造。"},
     "rooms.popular":{ru:"Популярный",kz:"Танымал",en:"Popular",zh:"热门"},
     "rooms.from":{ru:"от / сутки",kz:"бастап / тәулік",en:"from / night",zh:"起 / 晚"},
     "rooms.more":{ru:"Подробнее",kz:"Толығырақ",en:"Learn more",zh:"了解更多"},
@@ -1683,6 +1781,20 @@
     });
   })();
 
+  /* ---------- ROOM NAME LOOKUP (for WhatsApp text — always sent in
+     Russian regardless of the visitor's active site language, so staff
+     always see a consistent, familiar room name) ---------- */
+  var ROOM_NAMES_RU = {
+    r1: "Стандарт Твин",
+    r2: "Делюкс Твин",
+    r3: "Твин с балконом",
+    r4: "Делюкс с большой кроватью",
+    r5: "Двойной с балконом",
+    r6: "Кинг Сьют",
+    r7: "Семейный люкс",
+    r8: "Делюкс семейный люкс"
+  };
+
   /* ---------- BOOKING WIDGET -> BOOKING FORM ---------- */
   var bookingWidget = document.getElementById("booking-widget");
   bookingWidget.addEventListener("submit", function(e){
@@ -1690,15 +1802,13 @@
     var ci = document.getElementById("bw-checkin").value;
     var co = document.getElementById("bw-checkout").value;
     var guests = document.getElementById("bw-guests").value;
-    var roomLabel = document.getElementById("bw-room").selectedOptions[0].textContent.trim();
+    var roomKey = document.getElementById("bw-room").value;
 
     if(ci) document.getElementById("f-checkin").value = ci;
     if(co) document.getElementById("f-checkout").value = co;
     if(guests) document.getElementById("f-guests").value = guests;
     var realSelect = document.getElementById("f-room");
-    Array.prototype.forEach.call(realSelect.options, function(opt){
-      if(opt.textContent.trim() === roomLabel) realSelect.value = opt.value;
-    });
+    if(realSelect && roomKey) realSelect.value = roomKey;
 
     document.getElementById("booking").scrollIntoView({behavior:"smooth"});
     setTimeout(function(){ document.getElementById("f-name").focus(); }, 500);
@@ -1729,7 +1839,7 @@
       phone: form.phone.value.trim(),
       checkin: form.checkin.value,
       checkout: form.checkout.value,
-      roomType: form.roomType.value,
+      roomType: ROOM_NAMES_RU[form.roomType.value] || form.roomType.selectedOptions[0].textContent.trim(),
       guests: form.guests.value,
       comment: form.comment.value.trim()
     };
@@ -1740,8 +1850,8 @@
   document.querySelectorAll(".room-more-btn").forEach(function(btn){
     btn.addEventListener("click", function(e){
       e.preventDefault();
-      var room = btn.getAttribute("data-room");
-      var text = encodeURIComponent("🏨 Международный Гранд-отель «Шёлковый путь — Один пояс, один путь»\n\nЗдравствуйте! Расскажите, пожалуйста, подробнее о номере «" + room + "»: фото, площадь, наличие свободных дат.");
+      var room = ROOM_NAMES_RU[btn.getAttribute("data-room-key")] || "";
+      var text = encodeURIComponent("🏨 Международный Гранд-отель «Шёлковый путь — Один пояс, один путь»\n\nЗдравствуйте! Расскажите, пожалуйста, подробнее о номере «" + room + "»: фото, наличие свободных дат.");
       window.open("https://wa.me/" + WA_NUMBER + "?text=" + text, "_blank", "noopener");
     });
   });
@@ -1749,13 +1859,9 @@
   document.querySelectorAll(".book-room-btn").forEach(function(btn){
     btn.addEventListener("click", function(e){
       e.preventDefault();
-      var room = btn.getAttribute("data-room");
+      var roomKey = btn.getAttribute("data-room-key");
       var select = document.getElementById("f-room");
-      if(select){
-        Array.prototype.forEach.call(select.options, function(opt){
-          if(opt.textContent.trim() === room) select.value = opt.value;
-        });
-      }
+      if(select && roomKey) select.value = roomKey;
       var target = document.getElementById("booking");
       if(target) target.scrollIntoView({behavior:"smooth"});
     });
