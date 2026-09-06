@@ -288,6 +288,22 @@
   }
   .bw-input:focus{outline:none}
 
+  /* Date inputs: native text is locale-dependent on the visitor's browser/OS
+     (Chromium ignores the element's lang attribute), so we hide the native
+     text and render our own locale-correct overlay on top. Clicks still pass
+     through to the native input/calendar picker via pointer-events:none. */
+  .date-wrap{position:relative}
+  input.date-native{color:transparent}
+  .date-wrap:focus-within input.date-native{color:var(--text)}
+  .date-wrap:focus-within .date-overlay{opacity:0}
+  .date-overlay{
+    position:absolute; inset:0; display:flex; align-items:center;
+    pointer-events:none; font-family:'Manrope',sans-serif; font-weight:700;
+    font-size:.92rem; color:var(--text-dim); white-space:nowrap; overflow:hidden;
+  }
+  .date-overlay.has-value{color:var(--text)}
+  .date-overlay-field{padding:.75rem .9rem}
+
   /* fade-up reveal */
   .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1)}
   .reveal.in{opacity:1; transform:translateY(0)}
@@ -584,14 +600,20 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" class="shrink-0"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
       <div class="min-w-0 grow">
         <label class="bw-label block" for="bw-checkin" data-i18n="book.checkin">Кіру күні</label>
-        <input id="bw-checkin" type="date" class="bw-input">
+        <div class="date-wrap">
+          <input id="bw-checkin" type="date" class="bw-input date-native">
+          <span class="date-overlay" aria-hidden="true"></span>
+        </div>
       </div>
     </div>
     <div class="bw-field flex-1 flex items-center gap-3 px-4 py-3 md:py-2">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.8" class="shrink-0"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
       <div class="min-w-0 grow">
         <label class="bw-label block" for="bw-checkout" data-i18n="book.checkout">Шығу күні</label>
-        <input id="bw-checkout" type="date" class="bw-input">
+        <div class="date-wrap">
+          <input id="bw-checkout" type="date" class="bw-input date-native">
+          <span class="date-overlay" aria-hidden="true"></span>
+        </div>
       </div>
     </div>
     <div class="bw-field flex-1 flex items-center gap-3 px-4 py-3 md:py-2">
@@ -1380,6 +1402,10 @@
           <div><p class="font-semibold" data-i18n="loc.phoneT">Телефон / WhatsApp</p><a href="tel:+77779688222" class="text-sm text-[var(--text-dim)] hover:text-[var(--red)] transition-colors">+7 777 968-82-22</a></div>
         </div>
         <div class="flex items-start gap-4">
+          <div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></svg></div>
+          <div><p class="font-semibold" data-i18n="loc.emailT">Email</p><a href="mailto:sicoinhotel@gmail.com" class="text-sm text-[var(--text-dim)] hover:text-[var(--red)] transition-colors">sicoinhotel@gmail.com</a></div>
+        </div>
+        <div class="flex items-start gap-4">
           <div class="icon-badge shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 4h17L12 14 3.5 4zM3 5.5V18a1 1 0 001 1h16a1 1 0 001-1V5.5"/></svg></div>
           <div><p class="font-semibold" data-i18n="loc.hoursT">Режим работы</p><p class="text-sm text-[var(--text-dim)]" data-i18n="loc.hoursV">Круглосуточно, 24/7</p></div>
         </div>
@@ -1438,11 +1464,17 @@
 
       <div>
         <label class="field-label mb-2 block" for="f-checkin" data-i18n="book.checkin">Дата заезда</label>
-        <input id="f-checkin" name="checkin" type="date" class="field" required>
+        <div class="date-wrap">
+          <input id="f-checkin" name="checkin" type="date" class="field date-native" required>
+          <span class="date-overlay date-overlay-field" aria-hidden="true"></span>
+        </div>
       </div>
       <div>
         <label class="field-label mb-2 block" for="f-checkout" data-i18n="book.checkout">Дата выезда</label>
-        <input id="f-checkout" name="checkout" type="date" class="field" required>
+        <div class="date-wrap">
+          <input id="f-checkout" name="checkout" type="date" class="field date-native" required>
+          <span class="date-overlay date-overlay-field" aria-hidden="true"></span>
+        </div>
       </div>
       <div>
         <label class="field-label mb-2 block" for="f-room" data-i18n="book.roomType">Тип номера</label>
@@ -1526,6 +1558,7 @@
       <ul class="space-y-2 text-sm text-white/70 mb-5">
         <li data-i18n="loc.addrValue">г. Алматы, пр. Райымбека, 298А</li>
         <li><a href="tel:+77779688222" class="hover:text-[var(--red)] transition-colors">+7 777 968-82-22</a></li>
+        <li><a href="mailto:sicoinhotel@gmail.com" class="hover:text-[var(--red)] transition-colors">sicoinhotel@gmail.com</a></li>
       </ul>
       <a href="https://wa.me/77779688222" target="_blank" rel="noopener" class="btn btn-red shadow-red w-full !text-xs">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
@@ -1576,13 +1609,13 @@
     "topbar.address":{ru:"Алматы, проспект Райымбека, 298а",kz:"Алматы, Райымбек даңғылы, 298а",en:"Almaty, Raiymbek Ave, 298a",zh:"阿拉木图，赖姆别克大道298a"},
     "loc.addrValue":{ru:"г. Алматы, пр. Райымбека, 298А",kz:"Алматы қ., Райымбек даңғ., 298А",en:"298A Raiymbek Ave, Almaty",zh:"阿拉木图赖姆别克大道298A"},
 
-    "brand.fullName":{ru:"SICO International Hotel",kz:"SICO International Hotel",en:"SICO International Hotel",zh:"SICO International Hotel"},
+    "brand.fullName":{ru:"SICO International Hotel",kz:"SICO International Hotel",en:"Belt and Road SICO International Hotel",zh:"一带一路丝合国际酒店"},
     "header.brandShort":{ru:"SICO",kz:"SICO",en:"SICO",zh:"SICO"},
-    "header.brandName":{ru:"SICO",kz:"SICO",en:"SICO",zh:"SICO"},
-    "header.brandSub":{ru:"International Hotel",kz:"International Hotel",en:"International Hotel",zh:"International Hotel"},
-    "hero.titleName":{ru:"SICO<br><span class=\"text-[var(--red)]\">International Hotel</span>",kz:"SICO<br><span class=\"text-[var(--red)]\">International Hotel</span>",en:"SICO<br><span class=\"text-[var(--red)]\">International Hotel</span>",zh:"SICO<br><span class=\"text-[var(--red)]\">International Hotel</span>"},
-    "meta.title":{ru:"SICO International Hotel — Алматы",kz:"SICO International Hotel — Алматы",en:"SICO International Hotel — Almaty",zh:"SICO International Hotel——阿拉木图"},
-    "meta.description":{ru:"SICO International Hotel — 4* бизнес-отель в Алматы. 118 номеров, конференц-залы, банкетный зал, Karaoke Club. Рейтинг 4.9 на 2ГИС.",kz:"SICO International Hotel — Алматыдағы 4 жұлдызды бизнес-отель. 118 нөмір, конференц-залдар, банкет залы, Karaoke Club. 2ГИС бойынша рейтинг 4.9.",en:"SICO International Hotel — a 4-star business hotel in Almaty. 118 rooms, conference halls, a banquet hall, Karaoke Club. 4.9 rating on 2GIS.",zh:"SICO International Hotel——阿拉木图四星级商务酒店。118间客房、会议厅、宴会厅、卡拉OK俱乐部。2GIS评分4.9。"},
+    "header.brandName":{ru:"SICO",kz:"SICO",en:"Belt and Road",zh:"一带一路"},
+    "header.brandSub":{ru:"International Hotel",kz:"International Hotel",en:"SICO International Hotel",zh:"丝合国际酒店"},
+    "hero.titleName":{ru:"SICO<br><span class=\"text-[var(--red)]\">International Hotel</span>",kz:"SICO<br><span class=\"text-[var(--red)]\">International Hotel</span>",en:"Belt and Road<br><span class=\"text-[var(--red)]\">SICO International Hotel</span>",zh:"一带一路<br><span class=\"text-[var(--red)]\">丝合国际酒店</span>"},
+    "meta.title":{ru:"SICO International Hotel — Алматы",kz:"SICO International Hotel — Алматы",en:"Belt and Road SICO International Hotel — Almaty",zh:"一带一路丝合国际酒店——阿拉木图"},
+    "meta.description":{ru:"SICO International Hotel — 4* бизнес-отель в Алматы. 118 номеров, конференц-залы, банкетный зал, Karaoke Club. Рейтинг 4.9 на 2ГИС.",kz:"SICO International Hotel — Алматыдағы 4 жұлдызды бизнес-отель. 118 нөмір, конференц-залдар, банкет залы, Karaoke Club. 2ГИС бойынша рейтинг 4.9.",en:"Belt and Road SICO International Hotel — a 4-star business hotel in Almaty. 118 rooms, conference halls, a banquet hall, Karaoke Club. 4.9 rating on 2GIS.",zh:"一带一路丝合国际酒店——阿拉木图四星级商务酒店。118间客房、会议厅、宴会厅、卡拉OK俱乐部。2GIS评分4.9。"},
 
     "nav.home":{ru:"Главная",kz:"Басты бет",en:"Home",zh:"首页"},
     "nav.about":{ru:"Отель",kz:"Қонақ үй",en:"Hotel",zh:"关于酒店"},
@@ -1620,9 +1653,9 @@
 
     "about.eyebrow":{ru:"О нас",kz:"Біз туралы",en:"About us",zh:"关于我们"},
     "about.title":{ru:"История, построенная на гостеприимстве",kz:"Қонақжайлылыққа құрылған тарих",en:"A story built on hospitality",zh:"以热情好客为基础的历史"},
-    "about.p1":{ru:"SICO International Hotel — четырёхзвёздочный отель на проспекте Райымбека, работающий с 2022 года, в шаговой доступности от центра деловой активности города. За годы работы отель стал выбором тысяч гостей — от деловых путешественников до участников торжеств.",kz:"SICO International Hotel — Райымбек даңғылындағы 4 жұлдызды қонақ үй, 2022 жылдан бері қызмет етеді, қаланың іскерлік орталығына жақын орналасқан. Жұмыс жылдары ішінде отель мыңдаған қонақтың таңдауына айналды — іссапар қонақтарынан бастап той қонақтарына дейін.",en:"SICO International Hotel is a 4-star hotel on Raiymbek Avenue, operating since 2022, within walking distance of the city's business hub. Over the years it has become the choice of thousands of guests — from business travellers to celebration guests.",zh:"SICO International Hotel是位于赖姆别克大道上的四星级酒店，自2022年起营业，步行即可到达市中心商务区。多年来，它已成为数千位客人的首选——从商务旅客到庆典宾客。"},
+    "about.p1":{ru:"SICO International Hotel — четырёхзвёздочный отель на проспекте Райымбека, работающий с 2022 года, в шаговой доступности от центра деловой активности города. За годы работы отель стал выбором тысяч гостей — от деловых путешественников до участников торжеств.",kz:"SICO International Hotel — Райымбек даңғылындағы 4 жұлдызды қонақ үй, 2022 жылдан бері қызмет етеді, қаланың іскерлік орталығына жақын орналасқан. Жұмыс жылдары ішінде отель мыңдаған қонақтың таңдауына айналды — іссапар қонақтарынан бастап той қонақтарына дейін.",en:"Belt and Road SICO International Hotel is a 4-star hotel on Raiymbek Avenue, operating since 2022, within walking distance of the city's business hub. Over the years it has become the choice of thousands of guests — from business travellers to celebration guests.",zh:"一带一路丝合国际酒店是位于赖姆别克大道上的四星级酒店，自2022年起营业，步行即可到达市中心商务区。多年来，它已成为数千位客人的首选——从商务旅客到庆典宾客。"},
     "about.p2":{ru:"118 номеров восьми категорий, два конференц-зала, банкетный зал, собственный Karaoke Club и ресторан — всё продумано для комфортного пребывания и продуктивной работы.",kz:"8 санаттағы 118 нөмір, екі конференц-зал, банкет залы, өз Karaoke Club-ы және мейрамхана — барлығы қолайлы демалыс пен өнімді жұмыс үшін ойластырылған.",en:"118 rooms across eight categories, two conference halls, a banquet hall, its own Karaoke Club and a restaurant — everything designed for a comfortable stay and productive work.",zh:"八种类型共118间客房、两个会议厅、一个宴会厅、专属卡拉OK俱乐部和餐厅——一切都为舒适入住和高效工作而设计。"},
-    "about.p3":{ru:"Отель работает в рамках миссии международной группы SICO и уделяет особое внимание китайскоязычному сообществу и туристическим группам из Китая, пребывающим в Казахстане.",kz:"Отель SICO халықаралық тобының миссиясы негізінде қызмет етеді және Қазақстанда болатын қытай тілді қауымға және қытай туристік топтарына ерекше көңіл бөледі.",en:"The hotel operates as part of the mission of the International SICO Group, with special attention to the Chinese-speaking community and tour groups from China visiting Kazakhstan.",zh:"酒店秉承国际SICO集团的使命，特别关注在哈萨克斯坦的华语社区及中国旅游团体。"},
+    "about.p3":{ru:"Отель работает в рамках миссии международной группы SICO и уделяет особое внимание китайскоязычному сообществу и туристическим группам из Китая, пребывающим в Казахстане.",kz:"Отель SICO халықаралық тобының миссиясы негізінде қызмет етеді және Қазақстанда болатын қытай тілді қауымға және қытай туристік топтарына ерекше көңіл бөледі.",en:"The hotel operates as part of the mission of the SICO International Group, with special attention to the Chinese-speaking community and tour groups from China visiting Kazakhstan.",zh:"酒店秉承国际SICO集团的使命，特别关注在哈萨克斯坦的华语社区及中国旅游团体。"},
     "about.f3t":{ru:"Обслуживание на китайском",kz:"Қытай тілінде қызмет",en:"Service in Chinese",zh:"中文服务"},
     "about.f3d":{ru:"Персонал говорит на китайском языке",kz:"Қызметкерлер қытай тілінде қызмет көрсетеді",en:"Staff speak Chinese",zh:"员工可用中文交流"},
     "about.receptionT":{ru:"Ресепшн",kz:"Ресепшн",en:"Reception",zh:"前台"},
@@ -1749,6 +1782,7 @@
     "loc.title":{ru:"Локация и контакты",kz:"Орналасу және байланыс",en:"Location & contacts",zh:"位置与联系方式"},
     "loc.addrT":{ru:"Адрес",kz:"Мекенжай",en:"Address",zh:"地址"},
     "loc.phoneT":{ru:"Телефон / WhatsApp",kz:"Телефон / WhatsApp",en:"Phone / WhatsApp",zh:"电话 / WhatsApp"},
+    "loc.emailT":{ru:"Email",kz:"Email",en:"Email",zh:"电子邮箱"},
     "loc.hoursT":{ru:"Режим работы",kz:"Жұмыс кестесі",en:"Working hours",zh:"营业时间"},
     "loc.hoursV":{ru:"Круглосуточно, 24/7",kz:"Тәулік бойы, 24/7",en:"Around the clock, 24/7",zh:"全天候24小时"},
     "loc.airportT":{ru:"Ближайшая остановка",kz:"Жақын аялдама",en:"Nearest stop",zh:"最近站点"},
@@ -1781,15 +1815,39 @@
     "foot.nav":{ru:"Навигация",kz:"Навигация",en:"Navigation",zh:"导航"},
     "foot.services":{ru:"Услуги",kz:"Қызметтер",en:"Services",zh:"服务"},
     "foot.contacts":{ru:"Контакты",kz:"Байланыс",en:"Contacts",zh:"联系方式"},
-    "foot.copy":{ru:"© 2026 SICO International Hotel. Все права защищены.",kz:"© 2026 SICO International Hotel. Барлық құқықтар қорғалған.",en:"© 2026 SICO International Hotel. All rights reserved.",zh:"© 2026 SICO International Hotel。保留所有权利。"},
-    "foot.legal":{ru:"ТОО «Международный Гранд-отель «Шёлковый путь – Один пояс, один путь»» (бренд SICO International Hotel) · БИН 260840028695 · пр. Райымбека, 298А, Алматы",kz:"«Халықаралық Гранд-отель «Жібек жолы – Бір белдеу, бір жол»» ЖШС (SICO International Hotel брендімен) · БСН 260840028695 · Райымбек даңғ., 298А, Алматы",en:"LLP \"International Grand Hotel Silk Road – One Belt, One Road\" (operating as SICO International Hotel) · BIN 260840028695 · 298A Raiymbek Ave, Almaty",zh:"“国际丝绸之路大酒店——一带一路”有限公司（SICO International Hotel 品牌）· 商业识别号260840028695 · 阿拉木图赖姆别克大道298A"}
+    "foot.copy":{ru:"© 2026 SICO International Hotel. Все права защищены.",kz:"© 2026 SICO International Hotel. Барлық құқықтар қорғалған.",en:"© 2026 Belt and Road SICO International Hotel. All rights reserved.",zh:"© 2026 一带一路丝合国际酒店。保留所有权利。"},
+    "foot.legal":{ru:"ТОО «Международный Гранд-отель «Шёлковый путь – Один пояс, один путь»» (бренд SICO International Hotel) · БИН 260840028695 · пр. Райымбека, 298А, Алматы",kz:"«Халықаралық Гранд-отель «Жібек жолы – Бір белдеу, бір жол»» ЖШС (SICO International Hotel брендімен) · БСН 260840028695 · Райымбек даңғ., 298А, Алматы",en:"LLP \"International Grand Hotel Silk Road – One Belt, One Road\" (operating as Belt and Road SICO International Hotel) · BIN 260840028695 · 298A Raiymbek Ave, Almaty",zh:"“国际丝绸之路大酒店——一带一路”有限公司（一带一路丝合国际酒店品牌）· 商业识别号260840028695 · 阿拉木图赖姆别克大道298A"}
   };
 
   var LANG_LABEL = {kz:"ҚАЗ", ru:"РУС", en:"ENG", zh:"中文"};
   var LS_KEY = "bha_lang";
 
+  var DATE_LOCALE = {ru:"ru-RU", kz:"kk-KZ", en:"en-US", zh:"zh-CN"};
+  var DATE_PLACEHOLDER = {ru:"дд.мм.гггг", kz:"кк.аа.жжжж", en:"mm/dd/yyyy", zh:"年/月/日"};
+  function updateDateOverlay(input, lang){
+    var wrap = input.closest(".date-wrap");
+    var overlay = wrap && wrap.querySelector(".date-overlay");
+    if(!overlay) return;
+    if(input.value){
+      var d = new Date(input.value + "T00:00:00");
+      var fmt = new Intl.DateTimeFormat(DATE_LOCALE[lang] || "en-US", {year:"numeric", month:"2-digit", day:"2-digit"});
+      overlay.textContent = fmt.format(d);
+      overlay.classList.add("has-value");
+    } else {
+      overlay.textContent = DATE_PLACEHOLDER[lang] || DATE_PLACEHOLDER.en;
+      overlay.classList.remove("has-value");
+    }
+  }
+  document.querySelectorAll('input[type="date"]').forEach(function(el){
+    el.addEventListener("input", function(){ updateDateOverlay(el, document.documentElement.getAttribute("lang") === "zh-CN" ? "zh" : (document.documentElement.getAttribute("lang") || "en")); });
+    el.addEventListener("change", function(){ updateDateOverlay(el, document.documentElement.getAttribute("lang") === "zh-CN" ? "zh" : (document.documentElement.getAttribute("lang") || "en")); });
+  });
   function applyLang(lang){
     document.documentElement.setAttribute("lang", lang === "zh" ? "zh-CN" : lang);
+    document.querySelectorAll('input[type="date"]').forEach(function(el){
+      el.setAttribute("lang", DATE_LOCALE[lang] || "en-US");
+      updateDateOverlay(el, lang);
+    });
     if(STRINGS["meta.title"] && STRINGS["meta.title"][lang]){ document.title = STRINGS["meta.title"][lang]; }
     if(STRINGS["meta.description"] && STRINGS["meta.description"][lang]){
       var metaDesc = document.querySelector('meta[name="description"]');
