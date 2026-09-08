@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Кіру — SICO Hotel Админ</title>
+<style>
+  :root{ --red:#D36E3B; --text:#08393D; --line:#E5E5E5; }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F7F7F5;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+  form{background:#fff;padding:2.5rem 2rem;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.08);width:100%;max-width:360px}
+  h1{font-size:1.25rem;margin:0 0 1.5rem}
+  label{display:block;font-size:.8rem;font-weight:600;margin-bottom:.35rem;color:#5C7377}
+  input{width:100%;padding:.7rem .85rem;border:1px solid var(--line);border-radius:8px;font-size:.95rem;margin-bottom:1.1rem}
+  input:focus{outline:none;border-color:var(--red)}
+  button{width:100%;padding:.8rem;border:none;border-radius:8px;background:var(--red);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer}
+  button:hover{opacity:.92}
+  .err{background:#FDEDED;color:#B3261E;padding:.6rem .8rem;border-radius:8px;font-size:.85rem;margin-bottom:1rem}
+</style>
+</head>
+<body>
+<form method="post" action="/admin/login">
+  <h1>SICO Hotel — Админ панель</h1>
+  <div class="err" id="err" style="display:none">Логин немесе құпия сөз қате</div>
+  <label for="username">Логин</label>
+  <input type="text" id="username" name="username" autocomplete="username" required>
+  <label for="password">Құпия сөз</label>
+  <input type="password" id="password" name="password" autocomplete="current-password" required>
+  <button type="submit">Кіру</button>
+</form>
+<script>
+  if (location.search.indexOf("error=1") !== -1) document.getElementById("err").style.display = "block";
+</script>
+</body>
+</html>

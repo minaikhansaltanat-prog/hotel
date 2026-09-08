@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>SICO Hotel — Админ панель</title>
+<link rel="stylesheet" href="/admin/assets/admin.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-title">SICO Hotel — Админ панель</div>
+  <div class="topbar-actions">
+    <a href="/" target="_blank" class="btn btn-ghost">Сайтты көру ↗</a>
+    <form method="post" action="/admin/logout"><button class="btn btn-ghost" type="submit">Шығу</button></form>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn active" data-tab="text">Мәтіндер</button>
+  <button class="tab-btn" data-tab="media">Фото (тұрақты орындар)</button>
+  <button class="tab-btn" data-tab="gallery">Галерея</button>
+  <button class="tab-btn" data-tab="video">Видео-пікірлер</button>
+</nav>
+
+<main>
+  <section id="tab-text" class="tab-panel active">
+    <p class="hint">Әр блоктың тақырып/мәтінін 4 тілде өзгертіңіз. Өзгерткен соң сол қатардағы «Сақтау» батырмасын басыңыз.</p>
+    <div id="text-sections"></div>
+  </section>
+
+  <section id="tab-media" class="tab-panel">
+    <p class="hint">Әр сурет — сайттағы белгілі бір орынға тұрақты бекітілген. Жаңа сурет таңдасаңыз, ол автоматты түрде ескісінің орнына ауысады.</p>
+    <div id="media-grid" class="media-grid"></div>
+  </section>
+
+  <section id="tab-gallery" class="tab-panel">
+    <p class="hint">Галерея блогына фото қосу, өшіру және ретін өзгерту.</p>
+    <div class="add-box">
+      <input type="file" id="gallery-file" accept="image/*">
+      <input type="text" id="gallery-caption" placeholder="Сурет атауы (мыс. Бассейн)">
+      <button class="btn btn-primary" id="gallery-add-btn">+ Қосу</button>
+    </div>
+    <div id="gallery-list" class="gallery-list"></div>
+  </section>
+
+  <section id="tab-video" class="tab-panel">
+    <p class="hint">Видео-пікірлер картасы: аты, суреті (thumbnail) және видео файлы.</p>
+    <button class="btn btn-primary" id="video-add-btn" style="margin-bottom:1rem">+ Жаңа карточка</button>
+    <div id="video-list" class="video-list"></div>
+  </section>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="/admin/assets/admin.js"></script>
+</body>
+</html>
