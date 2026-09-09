@@ -76,6 +76,10 @@ app.post("/admin/logout", (req, res) => {
   req.session.destroy(() => res.redirect("/admin/login"));
 });
 
+// Static assets (JS/CSS) for the admin UI must be reachable from the
+// unauthenticated login page too, so this is registered before the auth guard.
+app.use("/admin/assets", express.static(path.join(__dirname, "admin", "assets")));
+
 // ---------- Admin: protected dashboard + API ----------
 app.use("/admin", (req, res, next) => {
   if (req.path === "/login") return next();
@@ -85,7 +89,6 @@ app.use("/admin", (req, res, next) => {
 app.get("/admin", (req, res) => {
   res.sendFile(path.join(__dirname, "admin", "index.html"));
 });
-app.use("/admin/assets", express.static(path.join(__dirname, "admin", "assets")));
 
 app.get("/admin/api/manifest", async (req, res) => {
   const strings = await content.getAllStrings(STRINGS_DEFAULTS);
@@ -95,7 +98,7 @@ app.get("/admin/api/manifest", async (req, res) => {
     if (!grouped[section]) grouped[section] = [];
     grouped[section].push(key);
   }
-  const order = TEXT_SECTIONS.map((s) => s.label).concat(["Басқа"]);
+  const order = TEXT_SECTIONS.map((s) => s.id).concat(["other"]);
   res.json({ sections: order.filter((s) => grouped[s]), grouped });
 });
 
@@ -118,8 +121,8 @@ app.get("/admin/api/media", async (req, res) => {
     const stored = await content.getAllMedia();
     const out = MEDIA_SLOTS.map((slot) => ({
       key: slot.key,
-      label: slot.label,
-      section: slot.section,
+      labelKey: slot.labelKey,
+      sectionId: slot.sectionId,
       url: toPublicUrl(stored[slot.key] || slot.default),
     }));
     res.json(out);

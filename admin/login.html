@@ -4,33 +4,62 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Кіру — SICO Hotel Админ</title>
+<title>SICO Hotel — Admin</title>
 <style>
   :root{ --red:#D36E3B; --text:#08393D; --line:#E5E5E5; }
   *{box-sizing:border-box}
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F7F7F5;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:#F7F7F5;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text)}
+  .lang-switch{display:flex;gap:.35rem}
+  .lang-switch-btn{border:1px solid var(--line);background:#fff;border-radius:99px;padding:.3rem .7rem;font-size:.72rem;font-weight:700;cursor:pointer;color:var(--text)}
+  .lang-switch-btn[aria-pressed="true"]{background:var(--red);color:#fff;border-color:var(--red)}
   form{background:#fff;padding:2.5rem 2rem;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.08);width:100%;max-width:360px}
   h1{font-size:1.25rem;margin:0 0 1.5rem}
   label{display:block;font-size:.8rem;font-weight:600;margin-bottom:.35rem;color:#5C7377}
   input{width:100%;padding:.7rem .85rem;border:1px solid var(--line);border-radius:8px;font-size:.95rem;margin-bottom:1.1rem}
   input:focus{outline:none;border-color:var(--red)}
-  button{width:100%;padding:.8rem;border:none;border-radius:8px;background:var(--red);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer}
-  button:hover{opacity:.92}
+  button[type=submit]{width:100%;padding:.8rem;border:none;border-radius:8px;background:var(--red);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer}
+  button[type=submit]:hover{opacity:.92}
   .err{background:#FDEDED;color:#B3261E;padding:.6rem .8rem;border-radius:8px;font-size:.85rem;margin-bottom:1rem}
 </style>
 </head>
 <body>
+<div class="lang-switch">
+  <button class="lang-switch-btn" data-lang="zh" type="button">中文</button>
+  <button class="lang-switch-btn" data-lang="en" type="button">ENG</button>
+  <button class="lang-switch-btn" data-lang="ru" type="button">РУС</button>
+  <button class="lang-switch-btn" data-lang="kz" type="button">ҚАЗ</button>
+</div>
 <form method="post" action="/admin/login">
-  <h1>SICO Hotel — Админ панель</h1>
-  <div class="err" id="err" style="display:none">Логин немесе құпия сөз қате</div>
-  <label for="username">Логин</label>
+  <h1 data-i18n-admin="login.heading">SICO Hotel — Админ панель</h1>
+  <div class="err" id="err" style="display:none" data-i18n-admin="login.errorMsg">Логин немесе құпия сөз қате</div>
+  <label for="username" data-i18n-admin="login.usernameLabel">Логин</label>
   <input type="text" id="username" name="username" autocomplete="username" required>
-  <label for="password">Құпия сөз</label>
+  <label for="password" data-i18n-admin="login.passwordLabel">Құпия сөз</label>
   <input type="password" id="password" name="password" autocomplete="current-password" required>
-  <button type="submit">Кіру</button>
+  <button type="submit" data-i18n-admin="login.submitBtn">Кіру</button>
 </form>
+<script src="/admin/assets/admin-i18n.js"></script>
 <script>
-  if (location.search.indexOf("error=1") !== -1) document.getElementById("err").style.display = "block";
+  (function () {
+    var t = window.adminT;
+    function applyI18n() {
+      document.documentElement.lang = window.getAdminLang();
+      document.querySelectorAll("[data-i18n-admin]").forEach(function (el) {
+        el.textContent = t(el.getAttribute("data-i18n-admin"));
+      });
+      document.querySelectorAll(".lang-switch-btn").forEach(function (btn) {
+        btn.setAttribute("aria-pressed", btn.dataset.lang === window.getAdminLang() ? "true" : "false");
+      });
+    }
+    document.querySelectorAll(".lang-switch-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        window.setAdminLang(btn.dataset.lang);
+        applyI18n();
+      });
+    });
+    applyI18n();
+    if (location.search.indexOf("error=1") !== -1) document.getElementById("err").style.display = "block";
+  })();
 </script>
 </body>
 </html>
